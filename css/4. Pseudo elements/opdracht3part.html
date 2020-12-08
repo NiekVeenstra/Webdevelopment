@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opdracht 3 ::part</title>
+    <style>
+      c-e::part(textspan) {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <template id="c-e-outer-template">
+      <c-e-inner exportparts="innerspan textspan"></c-e-inner>
+    </template>
+
+    <template id="c-e-inner-template">
+      <span part="innerspan">
+        This text will be red because the containing shadow host forwards innerspan to the document
+        as "textspan" and the document style matches it.
+      </span>
+      <span part="textspan">
+        This text will not be red because textspan in the document style cannot match against the
+        part inside the inner custom element if it is not forwarded.
+      </span>
+    </template>
+
+    <c-e></c-e>
+    <script>
+      // Add template as custom elements c-e-inner, c-e-outer
+    </script>
+  </body>
+</html>

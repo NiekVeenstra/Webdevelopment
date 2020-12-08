@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opdracht 5.</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .container {
+        position: relative;
+        width: 110rem;
+        height: 60rem;
+        background-color: rgb(148, 207, 209);
+        border: rgb(212, 171, 68) solid 2px;
+      }
+      img {
+        width: 90%;
+      }
+      .box-back {
+        position: absolute;
+        background-color: thistle;
+        width: 40rem;
+        height: 40rem;
+        border: solid black 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .box-front {
+        position: absolute;
+        background-color: rgb(148, 207, 209);
+        width: 34rem;
+        height: 34rem;
+
+        transition: transform 1s ease-in-out;
+      }
+      .box-back:hover > .box-front {
+          transform: translate(25rem, 25rem) rotate(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Opdracht 3.</h1>
+    <div class="container">
+      <div class="box-back">
+        <img src="/images/Gunz4Hire.jpg" alt="" />
+        <div class="box-front"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opdracht 6.</title>
+    <style>
+      body {
+        display: flex;
+      }
+      .circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: white;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        font-size: 30px;
+        position: relative;
+        margin: 60px;
+      }
+      .circle::before {
+        content: ".";
+        color: white;
+        font-size: 50px;
+        background-color: black;
+        z-index: 2;
+        width: 40%;
+        height: 40%;
+        border-radius: 100%;
+        right: 80%;
+        position: absolute;
+        text-align: center;
+        vertical-align: top;
+      }
+      .circle::after {
+        content: ".";
+        color: white;
+        font-size: 50px;
+        background-color: black;
+        z-index: 2;
+        width: 40%;
+        height: 40%;
+        border-radius: 100%;
+        left: 80%;
+        position: absolute;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Opdracht 6.</h1>
+    <div class="circle">1</div>
+    <div class="circle">2</div>
+    <div class="circle">3</div>
+  </body>
+</html>

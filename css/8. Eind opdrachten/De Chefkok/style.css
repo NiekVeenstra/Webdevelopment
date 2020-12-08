@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lobster", cursive;
+  font-size: 1.4rem;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+/*header*/
+/*NAV*/
+nav {
+  font-size: 1.8rem;
+  min-height: 5rem;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  width: 100%;
+  align-items: center;
+  background-color: rgb(136, 124, 121);
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li {
+  margin-right: 1rem;
+}
+/*header-img*/
+.header-img {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(/images/wokken.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header-content {
+  width: 40rem;
+  color: rgb(120, 120, 216);
+  border: solid 1px rgb(68, 66, 66);
+  border-radius: 5%;
+  background-color: rgba(99, 88, 88, 0.5);
+  padding: 3rem;
+}
+.header-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+.header-buttons button {
+  border: solid rgb(117, 194, 117) 2px;
+  background: transparent;
+  padding: 1.2rem;
+  width: 15rem;
+  color: rgb(120, 120, 216);
+  border-radius: 5%;
+}
+button:nth-child(2) {
+  color: rgb(117, 194, 117);
+}
+.header-img h1 {
+  font-size: 5rem;
+}
+.header-img p {
+  font-size: 2rem;
+}
+
+/*main-content*/
+main {
+  background-color: rgb(136, 124, 121);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*main top*/
+.main-topcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-top: 3rem;
+}
+.main-topcontent h2 {
+  font-size: 3.5rem;
+}
+.top-picks {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.top-picks img {
+  width: 12rem;
+  height: 12rem;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+}
+.name-price {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.show-button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.show-button button {
+  border: none;
+  background: none;
+}
+/*main bottom*/
+.main-bottomcontent {
+  display: flex;
+  width: 80%;
+}
+.img-fergus img {
+  width: 45rem;
+}
+.img-fergus {
+  display: flex;
+  align-items: flex-end;
+}
+.all-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.all-menu h2 {
+  font-size: 3rem;
+}
+.menu-gerechten {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.passie .name-price {
+  margin: 0;
+}
+.passie {
+  margin: 1rem;
+  max-width: 20rem;
+}
+
+/*footer*/
+footer {
+  height: 15vh;
+  background-color: rgb(128, 179, 128);
+  color: rgb(81, 163, 190);
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+}
+.pictogram {
+  color: rgb(81, 163, 190);
+}
+footer ul {
+  list-style: none;
+}
+footer ul li a {
+  color: rgb(81, 163, 190);
+}

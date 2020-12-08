@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opdracht 6.</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 110rem;
+        height: 60rem;
+        background-color: rgb(148, 207, 209);
+        border: rgb(212, 171, 68) solid 2px;
+      }
+      .card {
+        background-color: slateblue;
+        width: 20rem;
+        height: 35rem;
+        border-radius: 3rem;
+        border: solid yellowgreen 1px;
+        font-size: 1.7rem;
+        color: yellowgreen;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: -7rem;
+        box-shadow: rgb(87, 85, 85) 4px 4px 12px 2px;
+        transition: all 0.2s, color 0s ease;
+      }
+      .card:hover {
+        transform: translateY(-1rem);
+        transition: 0;
+      }
+      .card:hover ~ .card {
+        color: red;
+        transform: translateX(7rem);
+      }
+      p {
+        margin: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Opdracht 6.</h1>
+    <div class="container">
+      <div class="card card1">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores atque reprehenderit
+          similique quidem, quaerat velit consequatur dolores! Inventore, quis dicta.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, dolorum?</p>
+      </div>
+      <div class="card card2">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores atque reprehenderit
+          similique quidem, quaerat velit consequatur dolores! Inventore, quis dicta.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, dolorum?</p>
+      </div>
+      <div class="card card3">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores atque reprehenderit
+          similique quidem, quaerat velit consequatur dolores! Inventore, quis dicta.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, dolorum?</p>
+      </div>
+      <div class="card card4">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores atque reprehenderit
+          similique quidem, quaerat velit consequatur dolores! Inventore, quis dicta.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, dolorum?</p>
+      </div>
+    </div>
+  </body>
+</html>

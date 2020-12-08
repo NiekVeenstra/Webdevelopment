@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Child selector</title>
+    <style>
+      div > p {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    child selector: will select the third child in the div.
+    <div>
+      <p>first child</p>
+      <p>second child</p>
+      <p>third child</p>
+      <p>forth child</p>
+    </div>
+    <p>not a child outside the div</p>
+  </body>
+</html>

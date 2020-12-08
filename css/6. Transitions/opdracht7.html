@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opdracht 7.</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 110rem;
+        height: 60rem;
+        background-color: rgb(0, 0, 0);
+        border: rgb(187, 114, 71) solid 2px;
+      }
+      .subject {
+        width: 13rem;
+        height: 13rem;
+        background-color: rgb(187, 114, 71);
+        animation-name: animation;
+        animation-duration: 5s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .dot {
+          width: 1.5rem;
+          height: 1.5rem;
+          background-color: black;
+          border-radius: 50%;
+      }
+
+      @keyframes animation {
+        0% {
+          background-color: rgb(187, 114, 71);
+        }
+        12.5% {
+          background-color: rgb(161, 93, 54);
+          transform: rotate(45deg);
+          border-radius: 50% 0 0 0;
+        }
+        25% {
+          background-color: rgb(126, 73, 43);
+          transform: rotate(90deg);
+          border-radius: 50% 50% 0 0;
+        }
+        37.5% {
+          background-color: rgb(87, 52, 31);
+          transform: rotate(135deg);
+          border-radius: 50% 50% 50% 0;
+        }
+        50% {
+          background-color: rgb(58, 37, 24);
+          transform: rotate(180deg);
+          border-radius: 50% 50% 50% 50%;
+        }
+        62.5% {
+          background-color: rgb(87, 52, 31);
+          transform: rotate(135deg);
+          border-radius: 50% 50% 50% 0;
+        }
+        75% {
+          background-color: rgb(126, 73, 43);
+          transform: rotate(90deg);
+          border-radius: 50% 50% 0 0;
+        }
+        87.5% {
+          background-color: rgb(126, 73, 43);
+          transform: rotate(45deg);
+          border-radius: 50% 0 0 0;
+        }
+        100% {
+          background-color: rgb(187, 114, 71);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Opdracht 7.</h1>
+    <div class="container">
+      <div class="subject">
+          <div class="dot"></div>
+      </div>
+    </div>
+  </body>
+</html>

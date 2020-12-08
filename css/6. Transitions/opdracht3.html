@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opdracht 3.</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .container {
+        width: 90%;
+        background-color: rgb(148, 207, 209);
+        border: rgb(212, 171, 68) solid 2px;
+      }
+      .box {
+        background-color: rgb(53, 119, 53);
+        width: 7rem;
+        height: 7rem;
+        margin: 2.5rem;
+
+        transition: all 5s ease;
+      }
+      .box2 {
+        background-color: rgb(53, 119, 53);
+        width: 7rem;
+        height: 7rem;
+        margin: 2.5rem;
+
+        transition: all 5s ease-in-out;
+      }
+      .box3 {
+        background-color: rgb(53, 119, 53);
+        width: 7rem;
+        height: 7rem;
+        margin: 2.5rem;
+
+        transition: all 5s ease-in;
+      }
+      .box4 {
+        background-color: rgb(53, 119, 53);
+        width: 7rem;
+        height: 7rem;
+        margin: 2.5rem;
+
+        transition: all 5s ease-out;
+      }
+      .box5 {
+        background-color: rgb(53, 119, 53);
+        width: 7rem;
+        height: 7rem;
+        margin: 2.5rem;
+        position: relative;
+
+        transition-duration: 5000ms;
+        transition-property: all;
+      }
+      .container:hover > .box {
+        background-color: rgb(206, 27, 27);
+        transform: translateX(105rem) rotate(180deg);
+      }
+      .container:hover > .box2 {
+        background-color: rgb(27, 69, 206);
+        transform: translateX(105rem) rotate(180deg);
+      }
+      .container:hover > .box3 {
+        background-color: rgb(17, 212, 60);
+        transform: translateX(105rem) rotate(180deg);
+        border-radius: 100%;
+      }
+      .container:hover > .box4 {
+        background-color: rgb(95, 26, 80);
+        transform: translateX(90%) rotate(180deg);
+        border-radius: 30%;
+      }
+      .container:hover > .box5 {
+        background-color: rgb(0, 0, 0);
+        left: 90%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Opdracht 3.</h1>
+    <div class="container">
+      <div class="box"></div>
+      <div class="box2"></div>
+      <div class="box3"></div>
+      <div class="box4"></div>
+      <div class="box5"></div>
+    </div>
+  </body>
+</html>

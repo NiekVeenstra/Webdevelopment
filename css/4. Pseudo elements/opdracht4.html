@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opdracht 4.</title>
+    <style>
+      .opdracht {
+        display: flex;
+        position: relative;
+        width: 300px;
+        height: 100px;
+        z-index: 1;
+      }
+      .button {
+        left: 50%;
+        width: 200%;
+        height: 100%;
+        position: absolute;
+        background-color: teal;
+        display: inline-block;
+        color: white;
+        font-size: 250%;
+        border-left: orange 100px solid;
+        border-right: orange 100px solid;
+        border-top: none;
+        border-bottom: none;
+      }
+      .button:before {
+        content: " ";
+        display: inline-block;
+        top: 0;
+        left: 100%;
+        background-color: teal;
+        height: 90%;
+        width: 22%;
+        position: absolute;
+      }
+      .button:after {
+        content: " ";
+        display: inline-block;
+        top: 10%;
+        right: 100%;
+        background-color: teal;
+        height: 90%;
+        width: 22%;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Opdracht 4.</h1>
+    <div class="opdracht">
+      <button class="button">Button</button>
+    </div>
+  </body>
+</html>
