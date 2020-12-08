@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Netnix</title>
+  </head>
+  <body>
+    <div class="background-top">
+      <div class="background-video">
+        <video autoplay loop muted id="myVideo">
+          <source src="/images/best-movies-2020.mp4" type="video/mp4" id="myVideo" />
+        </video>
+        <div class="video-buttons">
+          <button onclick="enableMute()" type="button" class="mute-sound">
+            <img src="/images/sound-off.png" alt="" />
+          </button>
+          <button onclick="disableMute()" type="button" class="enable-sound">
+            <img src="/images/sound-on.png" alt="" />
+          </button>
+          <button onclick="checkMute()" type="button" class="check-sound">Check muted status</button
+          ><br />
+        </div>
+      </div>
+    </div>
+    <header class="main-head">
+      <nav>
+        <h1 id="logo">NETNIX</h1>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Series</a></li>
+          <li><a href="">Films</a></li>
+          <li><a href="">Latest</a></li>
+          <li><a href="">My List</a></li>
+        </ul>
+      </nav>
+      <div class="search-bar"></div>
+    </header>
+    <main></main>
+    <footer></footer>
+    <script>
+      let vid = document.getElementById("myVideo");
+
+      function enableMute() {
+        vid.muted = true;
+      }
+
+      function disableMute() {
+        vid.muted = false;
+      }
+
+      function checkMute() {
+        alert(vid.muted);
+      }
+    </script>
+  </body>
+</html>
