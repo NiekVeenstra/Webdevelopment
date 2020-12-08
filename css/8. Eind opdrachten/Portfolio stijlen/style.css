@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: antiquewhite;
+  font-size: 1.6rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+nav a {
+  text-decoration: none;
+  color: white
+}
+li {
+  list-style: none;
+}
+.menu {
+  width: 30rem;
+  height: 100vh;
+  background-color: rgb(87, 152, 192);
+  color: white;
+}
+header {
+  border-bottom: rgb(154, 201, 223) solid 1px;
+  padding: 1rem;
+  text-align: center;
+}
+nav {
+  display: flex;
+  justify-content:center;
+}
+nav ul li{
+  margin: 1.8rem;
+}
+nav a {
+  display: flex
+}
+main {
+  width: 80%;
+  margin: 1.5rem;
+  display: flex;
+}
+.left-part {
+  width: 60rem;
+  border-radius: 2%;
+}
+.top-persoonlijk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border-bottom: solid 1px lightgray;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.background-img {
+  background: url(https://safety4sea.com/wp-content/uploads/2019/02/Inmarsat-Cyber-pic-1280x640.jpg);
+  width: 100%;
+  height: 12rem;
+  background-size: cover;
+  background-position: center;
+  border-bottom: solid rgb(70, 139, 196) 2px;
+  margin-bottom: 10rem;
+  border-radius: 5px 5px 0 0;
+}
+.top-persoonlijk img {
+  max-width: 18rem;
+  border-radius: 50%;
+  border: solid rgb(70, 139, 196) 2px;
+  position: absolute;
+  top: 5rem;
+}
+.top-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+.top-text p {
+  text-align: center;
+}
+
+.bottom-persoonlijk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bottom-persoonlijk img {
+  width: 100%;
+}
+.thumbs {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+.right-part {
+  width: 100rem;
+  padding-left: 2rem;
+}
+.personal-info{
+  width: 100%;
+}
+.personal-info h3, .languages h3, .framework-tools h3 {
+  color: white;
+  background-color: rgb(38, 111, 156);
+  padding: 0.5rem;
+  border-radius: 5px 5px 0 0;
+}
+.personal-info td {
+  text-decoration: underline;
+  padding: 0.5rem 0 0.5rem 0;
+}
+.languages .stars {
+  font-size: 3rem;
+}
+.framework-tools {
+  width: 100%;
+}
+.randomness {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+.randomness p:nth-child(1n+1) {
+  font-size: 10rem;
+  color: blue;
+  margin: -0.5rem;
+}
+.randomness p:nth-child(2n+1) {
+  font-size: 5rem;
+  color: rgb(255, 0, 0);
+  margin: 0 0 -7.5rem 0;
+}
+.randomness p:nth-child(4n+2) {
+  font-size: 15rem;
+  color: rgb(128, 235, 6);
+  margin: -2.5rem 0 -5rem 0;
+}
