@@ -1,0 +1,21 @@
+@mixin standard-box($width-box, $height-box) {
+  width: $width-box;
+  height: $height-box;
+  background-color: $background-color;
+  transition: width $time, height $time, background-color $time ease-in;
+}
+
+@mixin standard-box-hover($width-box-after, $height-box-after) {
+  width: $width-box-after;
+  height: $height-box-after;
+  background-color: $background-color-hover;
+}
+
+.colorChangingSquare {
+  margin: 200px;
+  @include standard-box(100px, 100px);
+
+  &:hover {
+    @include standard-box-hover(200px, 200px);
+  }
+}

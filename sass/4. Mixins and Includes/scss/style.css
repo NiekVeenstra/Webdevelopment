@@ -1,0 +1,30 @@
+.button {
+  width: 200px;
+  height: 60px;
+  font-size: 16px;
+  border-radius: 40px;
+  border: solid 2px black;
+  background-color: #868686;
+  color: white;
+}
+
+.button:hover {
+  background-color: #a1973b;
+  color: #aa3c3c;
+}
+
+.colorChangingSquare {
+  margin: 200px;
+  width: 100px;
+  height: 100px;
+  background-color: #868686;
+  -webkit-transition: width 6s, height 6s, background-color 6s ease-in;
+  transition: width 6s, height 6s, background-color 6s ease-in;
+}
+
+.colorChangingSquare:hover {
+  width: 200px;
+  height: 200px;
+  background-color: #a1973b;
+}
+/*# sourceMappingURL=style.css.map */

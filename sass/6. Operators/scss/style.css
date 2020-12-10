@@ -1,0 +1,44 @@
+.try img {
+  width: -100px;
+}
+
+.opdracht1 {
+  height: 800px;
+  width: auto;
+}
+
+.opdracht2 {
+  height: 500px;
+  width: auto;
+}
+
+.opdracht3 {
+  height: 100px;
+  width: auto;
+}
+
+.opdracht4 {
+  height: -100px;
+  width: auto;
+}
+
+.opdracht5 {
+  height: 600px;
+  width: auto;
+}
+
+.opdracht6 {
+  height: 750px;
+  width: auto;
+}
+
+.opdracht8 {
+  height: 30px / 5px;
+  width: 24px / 4;
+}
+
+.opdracht8 {
+  height: 6;
+  width: 6px;
+}
+/*# sourceMappingURL=style.css.map */
