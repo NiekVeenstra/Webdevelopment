@@ -1,5 +1,6 @@
 @import "../abstracts/variables";
 @import "../components/buttons";
+@import "../abstracts/mixins";
 
 .header {
   #{&}__img {
@@ -9,14 +10,11 @@
     background-position: center;
     width: 100%;
     height: 50rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center, column);
   }
   #{&}__content {
     width: 40rem;
-    color: rgb(120, 120, 216);
+    color: $txt-button1-color;
     border: solid 1px rgb(68, 66, 66);
     border-radius: 5%;
     background-color: rgba(99, 88, 88, 0.5);
@@ -24,15 +22,36 @@
   }
   #{&}__button-box {
     width: 100%;
-    display: flex;
-    justify-content: space-around;
     margin-top: 1rem;
+    @include flex(space-around, center, row);
   }
   #{&}__button {
     @include basic-button($txt-button1-color);
 
     &:nth-child(2) {
       @include basic-button($txt-button2-color);
+    }
+  }
+  #{&}__h1 {
+    font-size: $header1;
+  }
+  #{&}__p {
+    font-size: $header2;
+  }
+}
+
+/*media query header*/
+@media only screen and (max-width: 400px) {
+  .header {
+    #{&}__content {
+      width: 30rem;
+    }
+    #{&}__button-box {
+      display: flex;
+      flex-direction: column;
+    }
+    #{&}__button {
+      margin-top: 1rem;
     }
   }
 }

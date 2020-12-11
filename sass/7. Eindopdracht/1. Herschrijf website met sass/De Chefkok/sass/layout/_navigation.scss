@@ -1,15 +1,14 @@
 @import "../abstracts/variables";
+@import "../abstracts/mixins";
 
 .header {
   #{&}__nav {
     font-size: 1.8rem;
     min-height: 5rem;
-    display: flex;
-    justify-content: flex-end;
     padding: 1rem;
     width: 100%;
-    align-items: center;
     background-color: $bck-clr;
+    @include flex(flex-end, center, row);
   }
   #{&}__ul {
     display: flex;

@@ -1,0 +1,26 @@
+@import "../abstracts/variables";
+@import "../components/buttons";
+@import "../abstracts/mixins";
+
+.footer {
+  height: 15vh;
+  background-color: $footer-background-color;
+  color: $footer-txt-color;
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  font-size: $header4;
+  #{&}__ul {
+    list-style: none;
+  }
+  #{&}__a {
+    color: rgb(81, 163, 190);
+  }
+}
+
+/*media query footer*/
+@media only screen and (max-width: 400px) {
+  .footer {
+    height: 20vh;
+  }
+}

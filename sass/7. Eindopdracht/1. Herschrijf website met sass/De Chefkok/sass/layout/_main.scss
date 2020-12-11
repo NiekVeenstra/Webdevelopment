@@ -1,0 +1,109 @@
+@import "../abstracts/variables";
+@import "../components/buttons";
+@import "../abstracts/mixins";
+
+.main {
+  @include flex(initial, center, column);
+  background-color: $back-ground;
+  /*main-top*/
+  #{&}__topcontent {
+    @include flex(center, center, column);
+    width: 80%;
+    margin-top: 3rem;
+  }
+  #{&}__h2 {
+    font-size: $header3;
+  }
+  #{&}__top-picks {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 3rem;
+  }
+  #{&}__img {
+    width: 12rem;
+    height: 12rem;
+  }
+  #{&}__box {
+    @include flex(initial, center, column);
+    width: 20rem;
+  }
+  #{&}__name-price {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  #{&}__h3 {
+    font-size: $header4;
+  }
+  #{&}__p {
+    font-size: $text;
+  }
+  #{&}__show-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  #{&}__button {
+    border: none;
+    background: none;
+  }
+  /*main-bottom*/
+  #{&}__bottomcontent {
+    display: flex;
+    width: 80%;
+  }
+  #{&}__img-fergus {
+    display: flex;
+    align-items: flex-end;
+  }
+  #{&}__img-bottom {
+    width: 45rem;
+  }
+  /*menu*/
+  #{&}__all-menu {
+    @include flex(center, center, column);
+    width: 100%;
+  }
+  #{&}__menu-gerechten {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #{&}__passie,
+  #{&}__name-price {
+    margin: 0;
+  }
+  #{&}__passie {
+    margin: 1rem;
+    max-width: 20rem;
+  }
+}
+
+/*media query main*/
+@media only screen and (max-width: 1200px) {
+  .main {
+    #{&}__img-fergus {
+      display: none;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .main {
+    #{&}__top-picks {
+      align-items: center;
+      flex-direction: column;
+    }
+    #{&}__box {
+      width: 40rem;
+    }
+  }
+}
+@media only screen and (max-width: 570px) {
+  .main {
+    #{&}__box {
+      width: 20rem;
+    }
+  }
+}
