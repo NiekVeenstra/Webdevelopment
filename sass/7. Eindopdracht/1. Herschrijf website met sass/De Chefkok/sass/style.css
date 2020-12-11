@@ -1,0 +1,130 @@
+/*abstracts*/
+/*colors*/
+/*flexbox*/
+/*base*/
+/*colors*/
+/*font styles*/
+/*text colors*/
+.txt--blc {
+  color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lobster", cursive;
+  font-size: 1.4rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*colors*/
+/*font styles*/
+/*text colors*/
+.txt--blc {
+  color: black;
+}
+
+/*components*/
+/*layout*/
+/*colors*/
+.header .header__nav {
+  font-size: 1.8rem;
+  min-height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 1rem;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #887c79;
+}
+
+.header .header__ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.header .header__li {
+  margin-right: 1rem;
+}
+
+/*colors*/
+.header .header__img {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.5))), url(/images/wokken.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(/images/wokken.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 50rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header .header__content {
+  width: 40rem;
+  color: #7878d8;
+  border: solid 1px #444242;
+  border-radius: 5%;
+  background-color: rgba(99, 88, 88, 0.5);
+  padding: 3rem;
+}
+
+.header .header__button-box {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.header .header__button {
+  border: solid #75c275 2px;
+  background: transparent;
+  padding: 1.2rem;
+  width: 15rem;
+  color: #7878d8;
+  border-radius: 5%;
+}
+
+.header .header__button:nth-child(2) {
+  border: solid #75c275 2px;
+  background: transparent;
+  padding: 1.2rem;
+  width: 15rem;
+  color: #75c275;
+  border-radius: 5%;
+}
+/*# sourceMappingURL=style.css.map */

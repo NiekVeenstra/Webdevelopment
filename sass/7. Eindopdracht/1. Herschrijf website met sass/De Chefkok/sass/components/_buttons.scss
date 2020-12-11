@@ -1,0 +1,8 @@
+@mixin basic-button($txt-button-color) {
+    border: solid rgb(117, 194, 117) 2px;
+    background: transparent;
+    padding: 1.2rem;
+    width: 15rem;
+    color: $txt-button-color;
+    border-radius: 5%;
+  }

@@ -1,0 +1,22 @@
+@import "../abstracts/variables";
+
+.header {
+  #{&}__nav {
+    font-size: 1.8rem;
+    min-height: 5rem;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    width: 100%;
+    align-items: center;
+    background-color: $bck-clr;
+  }
+  #{&}__ul {
+    display: flex;
+    list-style: none;
+  }
+  #{&}__li {
+    margin-right: 1rem;  
+  }
+}
+
