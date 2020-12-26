@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>opdracht 1</h1>
+    <p>Uncaught syntaxError: unecpected token ';'</p>
+    <h1>opdracht 2</h1>
+    <p>Uncaught syntaxError: unecpected token ';'</p>
+    <h1>opdracht 3</h1>
+    <p>getal3 3</p>
+    <h1>opdracht 4</h1>
+    <p>getal3 5</p>
+    <h1>opdracht 5</h1>
+    <p>boolean</p>
+    <h1>opdracht 6</h1>
+    <p>
+      boolean : true or false. string : tussen "...". Number : een getal. BigInt : getal + n 1n.
+      Symbol : symbol(...).
+    </p>
+    <h1>opdracht 8</h1>
+    <p>28</p>
+    <h1>opdracht 9</h1>
+    <p>er word 1 bij opgeteld met ++ en -- gaat er 1 vanaf</p>
+    <h1>opdracht 10</h1>
+    <p>je zou het ook kunnen schrijven number=number+4</p>
+    <h1>opdracht 11</h1>
+    <p>4</p>
+    <h1>opdracht 13</h1>
+    <p>ze worden gewoon naast elkaar samengevoegd als 2 nummers</p>
+    <h1>opdracht 14</h1>
+    <p>
+      wanneer je een double quite in de text van de string wil hebben. bv: 'Hello my "name" is' nu
+      word de double quote gewoon als text gezien.
+    </p>
+    <h1>opdracht 15</h1>
+    <p>je had het ook kunnen schrijven door text = text + "another text"</p>
+    <script>
+      /*opdracht 1*/
+      let getal1 = 1;
+      console.log("getal1 " + getal1);
+      /*opdracht 2*/
+      let getal2 = 2;
+      console.log("getal2 " + getal2);
+      /*opdracht 3*/
+      let getal3 = 3;
+      console.log("getal3 " + getal3);
+      /*opdracht 4*/
+      let getal4 = 5;
+      console.log("getal4 " + getal4);
+      /*opdracht 5*/
+      let datatype = true;
+      console.log("datatype " + typeof datatype);
+      /*opdracht 6*/
+      let datatype6 = "test";
+      console.log("datatype6 " + typeof datatype6);
+      let datatype62 = 1;
+      console.log("datatype62 " + typeof datatype62);
+      let datatype63 = 1n;
+      console.log("datatype63 " + typeof datatype63);
+      let datatype64 = Symbol("foo");
+      console.log("datatype64 " + typeof datatype64);
+      /*opdracht 7*/
+      let number1 = 6;
+      let number2 = 8;
+      let plus = number1 + number2;
+      let min = number2 - number1;
+      let keer = number2 * number1;
+      let deel = number2 / number1;
+      console.log("antwoord " + plus);
+      console.log("antwoord " + min);
+      console.log("antwoord " + keer);
+      console.log("antwoord " + deel);
+      /*opdracht 8*/
+      console.log(3 + (5 * 10) / 2);
+      /*opdracht 9*/
+      let number9 = 3;
+      number9++;
+      console.log(number9);
+      number9--;
+      console.log(number9);
+      const sum = number9++ + 2;
+      console.log(sum);
+
+      let number91 = 3;
+      const som = ++number91 + 2;
+      console.log(som);
+
+      /*opdracht 10*/
+      let number92 = 3;
+      number92 += 4;
+      console.log(number92);
+      /*opdracht 11*/
+      let number11 = 3;
+      number11 += 4;
+      number11 -= 2;
+      number11 /= 5;
+      number11 *= 4;
+      console.log(number11);
+      /*opdracht 12*/
+      let text1 = "Voornaam ";
+      let text2 = "Achternaam";
+      console.log(text1 + text2);
+      /*opdracht 13*/
+      let string13 = "3";
+      let num13 = 3;
+      let combinedText = string13 + num13;
+      console.log(combinedText);
+      /*opdracht 15*/
+      let text15 = "text";
+      text15 += "another text";
+      console.log(text15);
+      /*opdracht 16*/
+      let test16 = "Test";
+      let result = test16.charAt(0);
+      console.log(result);
+      
+      let test161 = "Hard";
+      let test162 = "tek";
+      let concat16 = test161.concat(test162);
+      console.log(concat16);
+
+      let test163 = "Hardtek";
+      let slice16 = test163.slice(0, 4);
+      console.log(slice16);
+
+      let test164 = "Hardtek holland presents";
+      let split16 = test164.split(" ");
+      console.log(split16);
+
+      let test165 = "Hardtek";
+      let substr16 = test165.substr(1, 5);
+      console.log(substr16);
+    </script>
+  </body>
+</html>
