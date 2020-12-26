@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" name="number" id="number" />
+    <button id="btn" onclick="checkNumber()">Button</button>
+
+    <div>
+      <span id="label"></span>
+    </div>
+
+    <h1>opdracht 5</h1>
+    <p>
+      het is kleiner dan of kleinerdan en gelijk aan. dus kleiner dan 4 hoort 4 er zelft niet bij
+      maar bij kleiner dan en gelijk aan wel.
+    </p>
+
+    <h1>opdracht 6</h1>
+    <p>
+      != niet gelijk aan, dus alles wat niet gelijk is aan dat "nummer" is true
+    </p>
+
+    <h1>opdracht 8</h1>
+    <p>
+      een strict equalkity comparison word aangegeven met === en dit is een nog strengere vergelijking. bv 3 == "3" -> true  maar  3 === "3" -> false.
+    </p>
+
+    <script>
+      function checkNumber() {
+        let number1 = parseInt(document.getElementById("number").value);
+        if (number1 === 3) {
+          document.getElementById("label").innerHTML = "Het ingevoeerde getal is gelijk aan 3";
+        } else if (number1 < 3) {
+          document.getElementById("label").innerHTML = "Het ingevoerde getal is kleiner dan 3";
+        } else if (number1 >= 11) {
+          document.getElementById("label").innerHTML =
+            "Het ingevoeerde getal is gelijk of groter dan 11";
+        } else if (number1 > 4) {
+          document.getElementById("label").innerHTML = "Het ingevoeerde getal is groter dan 4";
+        } else {
+          document.getElementById("label").innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>

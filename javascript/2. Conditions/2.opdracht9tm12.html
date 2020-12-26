@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" name="number" id="number" />
+    <button id="btn" onclick="checkNumber()">Button</button>
+    <div>
+      <span id="label"></span>
+    </div>
+    <script>
+      function checkNumber() {
+        let number1 = parseInt(document.getElementById("number").value);
+        if (number1 >= 11 && number1 <= 20) {
+          document.getElementById("label").innerHTML =
+            "Het ingevoeerde getal is gelijk aan 11 of is groter dan 11 en is gelijk aan 20 of kleiner dan 20.";
+        } else if (number1 === 21 || number1 === 23) {
+          document.getElementById("label").innerHTML =
+            "Het ingevoerde getal is gelijk aan 21 of is gelijk aan 23.";
+        } else if ((number1 > 30 && number1 < 35) || (number1 > 40 && number1 < 45)) {
+          document.getElementById("label").innerHTML =
+            "Het getal is tussen de 30 en 35 of het getal is tussen de 40 en 45.";
+        } else {
+          document.getElementById("label").innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>

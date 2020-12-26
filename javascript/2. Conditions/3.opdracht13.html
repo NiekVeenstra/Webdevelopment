@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Translate months</h1>
+    <input type="number" name="number" id="number" />
+    <button onclick="translateMonth()">translate</button>
+    <div id="translatedMonth"></div>
+    <script>
+      function translateMonth() {
+        let number1 = parseInt(document.getElementById("number").value);
+        if (number1 === 1) {
+          document.getElementById("translatedMonth").innerHTML = "January";
+        }
+        if (number1 === 2) {
+          document.getElementById("translatedMonth").innerHTML = "February";
+        }
+        if (number1 === 3) {
+          document.getElementById("translatedMonth").innerHTML = "March";
+        }
+        if (number1 === 4) {
+          document.getElementById("translatedMonth").innerHTML = "April";
+        }
+        if (number1 === 5) {
+          document.getElementById("translatedMonth").innerHTML = "May";
+        }
+        if (number1 === 6) {
+          document.getElementById("translatedMonth").innerHTML = "June";
+        }
+        if (number1 === 7) {
+          document.getElementById("translatedMonth").innerHTML = "Juli";
+        }
+        if (number1 === 8) {
+          document.getElementById("translatedMonth").innerHTML = "August";
+        }
+        if (number1 === 9) {
+          document.getElementById("translatedMonth").innerHTML = "September";
+        }
+        if (number1 === 10) {
+          document.getElementById("translatedMonth").innerHTML = "Oktober";
+        }
+        if (number1 === 11) {
+          document.getElementById("translatedMonth").innerHTML = "November";
+        }
+        if (number1 === 12) {
+          document.getElementById("translatedMonth").innerHTML = "December";
+        } else {
+          document.getElementById("translatedMonth").innerHTML =
+            "I don't know this month of the year.";
+        }
+      }
+    </script>
+  </body>
+</html>
