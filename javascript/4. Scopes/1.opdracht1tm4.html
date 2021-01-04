@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Functions</title>
+  </head>
+  <body>
+    <h1>vraag 1</h1>
+    <p id="answer">
+      het is een local scope omdat carBrand alleen maar toegankelijk is binnen de printCar function.
+      dus er word niets geconsole logt om deze manier.
+    </p>
+    <h1>vraag 2</h1>
+    <p id="answer">
+      carname is global scope omdat deze teogankelijk is buien en binnen de function. carbrand
+      blijft een local scope. dus er word niets geconsole logt om deze manier.
+    </p>
+    <h1>vraag 3</h1>
+    <p id="answer">Volvo want het word nu een global scope door de printcar(); .</p>
+    <h1>vraag 4</h1>
+    <p id="answer">
+      Volvo v40 omdat er nu e en finction in een function zit. dus eerst word de hoofd function
+      gerund welke een function returned waarbij v40 als waarde mee gegeven werd.
+    </p>
+    <button onclick="answer()">click</button>
+    <script>
+      function printCar() {
+        carBrand = "Volvo";
+        return function (type) {
+          console.log(carBrand + " " + type);
+        };
+      }
+      const car = printCar();
+      car("v40");
+
+      // Plaats hieronder alle antwoorden van de opdrachten.
+    </script>
+  </body>
+</html>
