@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Functions</title>
+  </head>
+  <body>
+    <p id="answer"></p>
+    <button onclick="nameGen()">click</button>
+    <script>
+      let add = (name, age, ...nums) => {
+        let total = 0;
+
+        for (const n of nums) {
+          total += n;
+        }
+        return total;
+      };
+
+      const name = "John";
+      const age = 30;
+      const result = add(5, 10, 20);
+      // Plaats hieronder alle antwoorden van de opdrachten.
+      /*parameters zijn name en age dus de namen in de function.
+      rest parameters is ...nums welke nog bepaald moeten worden in de functie dus de waarde van deze parameters worden na derhand pas toegevoegd.
+      */
+    </script>
+  </body>
+</html>

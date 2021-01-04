@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Functions</title>
+  </head>
+  <body>
+    <p id="answer"></p>
+    <button onclick="nameGen()">click</button>
+    <script>
+      let answer = (randomNr) => {
+        // hier kun je coderen
+        let name = "";
+        switch (randomNr) {
+          case 1:
+            name = "John";
+            break;
+          case 2:
+            name = "Oly";
+            break;
+          case 3:
+            name = "Mo";
+            break;
+          case 4:
+            name = "Hendrik";
+            break;
+          case 5:
+            name = "Tony";
+            break;
+          case 6:
+            name = "Irus";
+            break;
+          case 7:
+            name = "Jan";
+            break;
+          case 8:
+            name = "Peter";
+            break;
+        }
+        if (
+          name === "John" ||
+          name === "Oly" ||
+          name === "Mo" ||
+          name === "Hendrik" ||
+          name === "Tony" ||
+          name === "Irus" ||
+          name === "Jan" ||
+          name === "Peter"
+        ) {
+          alert(`Dit is een bekende van ons: ${name}`);
+        } else {
+          alert("onbekend in ons systeem!");
+        }
+      };
+
+      let nameGen = () => {
+        let randomNr = Math.round(Math.random() * 8) + 1;
+        console.log(randomNr);
+        answer(randomNr);
+      };
+      // Plaats hieronder alle antwoorden van de opdrachten.
+    </script>
+  </body>
+</html>
