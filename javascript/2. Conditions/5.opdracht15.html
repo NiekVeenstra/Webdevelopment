@@ -114,12 +114,13 @@
       function guess(obj) {
         let guessCount = document.getElementById("count").innerHTML;
         let guess = obj.querySelector("span").innerText;
+        // let guess = document.getElementsByTagName("span").innerHTML;
         console.log(guess);
         if (guess == guessingWord) {
           document.getElementById(
             "label"
           ).innerHTML = `Gefeliciteerd!! ${guessingWord} was het juiste woord!`;
-        } else if (guess != guessingWord && playerGuessCount != 3) {
+        } else if (guess != guessingWord && playerGuessCount != 2) {
           document.getElementById("label").innerHTML = "keep trying";
           playerGuessCount++;
           console.log(playerGuessCount);
