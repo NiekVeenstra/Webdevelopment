@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Functions</title>
+  </head>
+  <body>
+    <h1>vraag 1</h1>
+    <p id="answer"></p>
+    <button onclick="answer()">click</button>
+    <script>
+      /*opdracht1*/
+      let randomNumbers = [];
+      randomNumbers = [2, 5, 10, 8, 9, 6, 1, 3, 4, 7];
+      console.log(randomNumbers);
+      /*opdracht2*/
+      let randomFruit = [];
+      randomFruit = ["banana", "apple", "pear", "kiwi", "pineapple"];
+      console.log(randomFruit);
+      /*opdracht3*/
+      console.log(randomFruit[0]);
+      /*opdracht4*/
+      console.log(randomFruit[3]);
+      /*opdracht5*/
+      let numberGen = randomNumbers[Math.floor(Math.random() * 10)] % 5;
+      console.log(numberGen);
+      let fruitGen = randomFruit[numberGen];
+      console.log(fruitGen);
+
+      /*opdracht6*/
+      /*push*/
+      console.log(randomFruit);
+      randomFruit.push("orange");
+      console.log(randomFruit);
+      /*pop*/
+      console.log(randomFruit);
+      randomFruit.pop();
+      console.log(randomFruit);
+      /*shift*/
+      console.log(randomFruit);
+      randomFruit.shift();
+      console.log(randomFruit);
+      /*slice*/
+      console.log(randomFruit);
+      let testFruit = randomFruit.slice(1, 3);
+      console.log(testFruit);
+      /*sort*/
+      console.log(randomFruit);
+      randomFruit.sort();
+      console.log(randomFruit);
+
+      /*opdracht8*/
+      console.log(randomFruit);
+      randomFruit[2] = "coconut";
+      console.log(randomFruit);
+
+      /*opdracht9*/
+      console.log(randomFruit);
+      let x = randomFruit[2];
+      randomFruit[2] = randomFruit[3];
+      randomFruit[3] = x;
+      console.log(randomFruit);
+
+      // Plaats hieronder alle antwoorden van de opdrachten.
+    </script>
+  </body>
+</html>
