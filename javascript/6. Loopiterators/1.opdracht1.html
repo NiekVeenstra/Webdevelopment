@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Loops</title>
+  </head>
+  <body>
+    <div id="answer"></div>
+    <script>
+      const sports = [
+        "voetbal",
+        "basketbal",
+        "volleybal",
+        "hockey",
+        "honkbal",
+        "zwemmen",
+        "kortbal",
+      ];
+
+      /*opdracht1*/
+      for (let i = 0; i < sports.length; i++) {
+        console.log(sports[i]);
+      }
+
+      /*opdracht2*/
+      for (let j = 0; j < 21; j++) {
+        console.log(j);
+      }
+
+      /*opdracht3*/
+      for (let k = 0; k < sports.length; k++) {
+        if (k % 2 === 0) {
+          console.log(sports[k]);
+        }
+      }
+
+      /*opdracht4*/
+      // do while loop
+      // let l = 0;
+      // do {
+      //   console.log(sports[l]);
+      //   l++;
+      // } while (l < sports.length);
+
+      let l = 0;
+      while (l < sports.length) {
+        console.log(sports[l]);
+        l++;
+      }
+
+      /*opdracht5*/
+      const y = ["voetbal", "basketbal", "volleybal", "hockey", "honkbal", "zwemmen", "kortbal"];
+
+      for (let x in y) {
+        console.log(y[x]);
+      }
+
+      /*opdracht6*/
+      for (let z of y) {
+        console.log(z);
+      }
+
+      /*opdracht7*/
+      let m = 0;
+      while (m < 3) {
+        if (m === 0) {
+          for (let n = 1; n < 11; n++) {
+            console.log(n);
+          }
+        }
+        if (m === 1) {
+          for (let o = 1; o < 21; o++) {
+            if (o % 2 === 0) {
+              console.log(o);
+            }
+          }
+        }
+        if (m === 2) {
+          for (let p = 1; p < 31; p++) {
+            if (p % 3 === 0) {
+              console.log(p);
+            }
+          }
+        }
+        m++;
+      }
+
+      /*opdracht8*/
+      // let fiboNumber = [];
+      // for (let fibo1 = 0; fibo1 <= 5; fibo1++) {
+      //   fiboNumber.push(fibo1);
+      // }
+      // console.log(fiboNumber);
+
+      // let fiboArray = [];
+      // for (let fibo2 = 0; fibo2 <=5; fibo2++) {
+      //   fiboArray.push(fiboNumber[]);
+      // }
+
+      let fiboArray = [];
+
+      fiboArray[0] = 0;
+      fiboArray[1] = 1;
+
+      for (let fb = 2; fb <= 50; fb++) {
+        fiboArray.push(fiboArray[fb - 1] + fiboArray[fb - 2]);
+      }
+      console.log(fiboArray);
+
+      /*opdracht9*/
+      let randomNr = [2, 7, 5, 10, 4, 9, 3, 1, 8, 6];
+      for (let loops = 0; loops < 7; loops++) {
+        for (let rNr = 0; rNr < 9; rNr++) {
+          if (randomNr[rNr + 1] < randomNr[rNr]) {
+            let swapNr = randomNr[rNr + 1];
+            randomNr[rNr + 1] = randomNr[rNr];
+            randomNr[rNr] = swapNr;
+            console.log(randomNr);
+          }
+        }
+      }
+
+      // console.log("test------");
+      // let randomNr = [2, 7, 5, 10, 4, 9, 3, 1, 8, 6];
+      // function test() {
+      //   for (let rNr = 0; rNr < 9; rNr++) {
+      //     if (randomNr[rNr + 1] < randomNr[rNr]) {
+      //       let swapNr = randomNr[rNr + 1];
+      //       randomNr[rNr + 1] = randomNr[rNr];
+      //       randomNr[rNr] = swapNr;
+      //       console.log(randomNr);
+      //     }
+      //   }
+      // }
+      // test();
+    </script>
+  </body>
+</html>
