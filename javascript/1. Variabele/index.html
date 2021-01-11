@@ -9,7 +9,7 @@
     <h1>opdracht 1</h1>
     <p>undefinded</p>
     <h1>opdracht 2</h1>
-    <p>undefined</p>
+    <p>getal2 2</p>
     <h1>opdracht 3</h1>
     <p>getal3 3</p>
     <h1>opdracht 4</h1>
@@ -18,8 +18,9 @@
     <p>boolean</p>
     <h1>opdracht 6</h1>
     <p>
-      boolean : true or false. string : tussen "...". Number : een getal. BigInt : getal + n 1n.
-      Symbol : symbol(...).
+      boolean : true or false. string : tussen "...". Number : een getal zit een max waarde aan.
+      BigInt : getal + n 1n heeft geen limiet. Symbol : symbol(...) heeft een unieke ID ook al heeft
+      deze dezelfde naam.
     </p>
     <h1>opdracht 8</h1>
     <p>28</p>
@@ -40,7 +41,7 @@
     <p>je had het ook kunnen schrijven door text = text + "another text"</p>
     <script>
       /*opdracht 1*/
-      let getal1 = 1;
+      let getal1;
       console.log("getal1 " + getal1);
       /*opdracht 2*/
       let getal2 = 2;
@@ -57,9 +58,9 @@
       /*opdracht 6*/
       let datatype6 = "test";
       console.log("datatype6 " + typeof datatype6);
-      let datatype62 = 1;
+      let datatype62 = 99999999999999999999999999999;
       console.log("datatype62 " + typeof datatype62);
-      let datatype63 = 1n;
+      let datatype63 = 99999999999999999999999999999n;
       console.log("datatype63 " + typeof datatype63);
       let datatype64 = Symbol("foo");
       console.log("datatype64 " + typeof datatype64);
@@ -117,7 +118,7 @@
       let test16 = "Test";
       let result = test16.charAt(0);
       console.log(result);
-      
+
       let test161 = "Hard";
       let test162 = "tek";
       let concat16 = test161.concat(test162);
