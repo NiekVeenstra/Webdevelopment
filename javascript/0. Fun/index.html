@@ -196,7 +196,7 @@
           alt=""
         />
 
-        <button class="start-button" onclick="moveChar()">START!</button>
+        <button class="start-button" onclick="startGame()">START!</button>
 
         <div class="health-bar-all">
           <div class="health-bar">
@@ -228,25 +228,65 @@
       const monster = document.querySelector(".monster");
       const startButton = document.querySelector(".start-button");
 
-
       const monsterHealth = document.querySelector(".health-bar-fluid");
-      let newMonsterHealth = 100;
+      let newMonsterHealth = 10;
 
-
-      const moveChar = async () => {
+      const startGame = async () => {
         startButton.style.display = "none";
-
         player.style.left = "33%";
         monster.style.right = "33%";
+
         await setTimeout(function () {
           player.src = "https://i.postimg.cc/YCGtNsHH/barbarian-1-attack.gif";
           monster.src = "https://i.postimg.cc/FsqYQcFh/ezgif-com-gif-maker-3.gif";
+        }, 3000);
+        await setTimeout(function () {
+          setInterval(function () {
+            clickDamage();
+          }, 1000);
         }, 3000);
       };
 
       const clickDamage = () => {
         newMonsterHealth -= 1;
         monsterHealth.style.width = `${newMonsterHealth}%`;
+        if (newMonsterHealth <= 0) {
+          player.src = "https://i.postimg.cc/PxQD96vF/barbarian-1-run.gif";
+          monster.src = "https://i.postimg.cc/9QrydC0Q/ezgif-com-gif-maker-2.gif";
+          setTimeout(function () {
+            monster.style.display = "none";
+          }, 1000);
+          player.style.left = "100%";
+          setTimeout(function () {
+            respawn();
+          }, 3000);
+        }
+      };
+      const respawn = async () => {
+        player.style.display = "none";
+        player.style.left = "-17%";
+        monster.style.right = "-17%";
+        monster.src = "https://i.postimg.cc/rsd8xsTC/ezgif-com-gif-maker.gif";
+        newMonsterHealth = 10;
+        await setTimeout(function () {
+          startReset();
+        }, 500);
+      };
+      const startReset = async () => {
+        player.style.display = "block";
+        monster.style.display = "block";
+        await setTimeout(function () {
+          player.style.left = "33%";
+          monster.style.right = "33%";
+        }, 3000);
+        await setTimeout(function () {
+          player.src = "https://i.postimg.cc/YCGtNsHH/barbarian-1-attack.gif";
+          monster.src = "https://i.postimg.cc/FsqYQcFh/ezgif-com-gif-maker-3.gif";
+        }, 6000);
+
+        // player.style.transition = "all 3s linear";
+        // monster.style.transition = "all 3s linear";
+        // startGame();
       };
     </script>
   </body>
