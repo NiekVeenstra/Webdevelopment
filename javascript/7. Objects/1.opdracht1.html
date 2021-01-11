@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="clubs" class="clubs"></div>
+    <script>
+      //opdracht1
+      let Club = {
+        name: ["TechGrounds"],
+        type: "IT",
+        members: 11,
+      };
+      console.log(Club);
+      //opdracht2
+      Club.contacts = {
+        address: "3213KD",
+        tel: 0621345676,
+        contact: "Niek",
+      };
+      console.log(Club);
+      //opdracht3
+      //   let newClub = "test1", "test2", "test3", "test4";
+      //   Club.name.push({"test1", "test2", "test3", "test4"});
+      Club.name.push("test1", "test2", "test3", "test4");
+      console.log(Club);
+
+      //opdracht4
+      const Person = function (name, age) {
+        this.name = name;
+        this.age = age;
+      };
+      const persons = [
+        new Person("Jan", 24),
+        new Person("Klaas", 15),
+        new Person("Yanis", 42),
+        new Person("Rupel", 55),
+        new Person("Hendrik", 32),
+        new Person("Mono", 28),
+        new Person("West", 23),
+      ];
+
+      persons.sort((a, b) => a.age - b.age);
+      console.log(persons);
+      //opdracht5
+      //object constructor
+      var person = new Object();
+
+      person.name = "Anand";
+      person.getName = function () {
+        return this.name;
+      };
+      person.age = 12;
+      person.getAge = function () {
+        return this.age;
+      };
+      //literal constructor
+      var personChen = {
+        name: "Chen",
+        getName: function () {
+          return this.name;
+        },
+      };
+      //function constructor
+      function person(name) {
+        this.name = name;
+        this.getName = function () {
+          return this.name;
+        };
+      }
+      /*The constructor function is used for multiple entries 
+      under the same "object". The object initializer should 
+      only be used for a limited amount of entries, for example 3. 
+      ... The overhead of the constructor is an additional function call 
+      and a few extra properties to set (like the prototype).*/
+
+      //opdracht6
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+      }
+      const persons = [
+        new Person("Jan", 24),
+        new Person("Klaas", 15),
+        new Person("Yanis", 42),
+        new Person("Rupel", 55),
+        new Person("Hendrik", 32),
+        new Person("Mono", 28),
+        new Person("West", 23),
+      ];
+    </script>
+  </body>
+</html>
