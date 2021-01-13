@@ -32,15 +32,23 @@ const getMonster = () => {
 const powerUp = () => {
   dps++;
   return dps;
-}
+};
 const startGame = (obj) => {
   let chosenMon = obj;
-  let nextLvlHp = mobHp();
-  newMonsterHealth = nextLvlHp;
-  monsterHealth.style.width = `${newMonsterHealth}%`;
+  HpCalc()
   transition();
   attackPhase(chosenMon);
 };
+/*hpcalc*/
+const HpCalc = () => {
+  let nextLvlHp = mobHp();
+  newMonsterHealth = nextLvlHp;
+
+  monsterHealth.style.width = `${(newMonsterHealth/newMonsterHealth)*100}%`;
+}
+
+/*hpcalc*/
+
 const transition = () => {
   startButton.style.display = "none";
   player.style.transition = "all 3s linear";
@@ -99,19 +107,18 @@ const respawn = (obj) => {
   player.style.left = "-17%";
   monster.style.right = "-17%";
   monster.src = obj.monsterRun;
-  // roundCount();
 };
-const resetAll = (healthMon, healthBarMon, obj) => {
-  // healthMon = 100;
-  // healthBarMon.style.width = `${healthMon}%`;
-  respawn(obj);
+const resetAll = () => {
+  let run = getRandMon();
+  respawn(run);
   setTimeout(() => {
-    startGame(getRandMon());
+    startGame(run);
   }, 500);
 };
 const getRandMon = () => {
   const monsters = getMonster();
-  index = monsters[Math.floor(Math.random() * monsters.length)];
+  randIndex = Math.floor(Math.random() * monsters.length);
+  index = monsters[randIndex];
   return index;
 };
 const roundCount = () => {
