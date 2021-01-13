@@ -27,6 +27,7 @@
         align-items: center;
         background: url("https://i.postimg.cc/y6SW-b123/BG-dg7.jpg") no-repeat center;
         background-size: cover;
+        font-size: 2rem;
       }
       .content {
         width: 80%;
@@ -126,6 +127,13 @@
         width: 30%;
       }
 
+      .round-count {
+        position: absolute;
+        left: 10%;
+        font-size: 2rem;
+        color: white;
+      }
+
       .health-bar-all {
         position: absolute;
         right: 3%;
@@ -198,6 +206,10 @@
 
         <button class="start-button" onclick="startGame()">START!</button>
 
+        <div class="round-count">
+          <p>Level: <span id="playerRound">0</span></p>
+        </div>
+
         <div class="health-bar-all">
           <div class="health-bar">
             <div class="health-bar-glass">
@@ -230,6 +242,7 @@
 
       const monsterHealth = document.querySelector(".health-bar-fluid");
       let newMonsterHealth = 10;
+      let newRound = 0;
 
       const startGame = async () => {
         startButton.style.display = "none";
@@ -263,30 +276,33 @@
         }
       };
       const respawn = async () => {
-        player.style.display = "none";
+        // player.style.display = "none";
         player.style.left = "-17%";
         monster.style.right = "-17%";
         monster.src = "https://i.postimg.cc/rsd8xsTC/ezgif-com-gif-maker.gif";
-        newMonsterHealth = 10;
         await setTimeout(function () {
           startReset();
-        }, 500);
+        }, 1000);
       };
       const startReset = async () => {
         player.style.display = "block";
         monster.style.display = "block";
+        newMonsterHealth = 10;
+        console.log("hello");
         await setTimeout(function () {
           player.style.left = "33%";
           monster.style.right = "33%";
-        }, 3000);
+        }, 3001);
         await setTimeout(function () {
           player.src = "https://i.postimg.cc/YCGtNsHH/barbarian-1-attack.gif";
           monster.src = "https://i.postimg.cc/FsqYQcFh/ezgif-com-gif-maker-3.gif";
         }, 6000);
+      };
 
-        // player.style.transition = "all 3s linear";
-        // monster.style.transition = "all 3s linear";
-        // startGame();
+      const roundCount = () => {
+        newRound++;
+        document.getElementById("playerRound").innerHTML = `${newRound}`;
+        console.log(newRound);
       };
     </script>
   </body>
