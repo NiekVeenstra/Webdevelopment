@@ -10,6 +10,7 @@ let newMonsterHealth = 100;
 let newRound = 0;
 let dps = 20;
 let clickDps = 10;
+let playerCoins = 0;
 const getMonster = () => {
   // Monster animations.
   return [
@@ -33,24 +34,26 @@ const getMonster = () => {
     },
   ];
 };
-const powerUp = () => {
-  dps++;
-  return dps;
-};
+
+/*start game*/
 const startGame = (obj) => {
   let chosenMon = obj;
   transition();
   let maxHpDam = mobHp();
   attackPhase(chosenMon, maxHpDam);
 };
-/*hpcalculation */
+const transition = () => {
+  startButton.style.display = "none";
+  player.style.transition = "all 3s linear";
+  monster.style.transition = "all 3s linear";
+  player.style.left = `${positionFight}%`;
+  monster.style.right = `${positionFight}%`;
+};
+/*hp calculation */
 const mobHp = () => {
   let roundNr = roundCount();
   let newMobHp = 100 * 1.1 ** roundNr;
-  console.log(newMobHp);
-
   HpCalc(newMobHp);
-
   return newMobHp;
 };
 
@@ -62,19 +65,10 @@ const HpCalc = (nextLvlHp) => {
   return maxMobHealth;
 };
 
-/*hpcalc*/
-
-const transition = () => {
-  startButton.style.display = "none";
-  player.style.transition = "all 3s linear";
-  monster.style.transition = "all 3s linear";
-  player.style.left = `${positionFight}%`;
-  monster.style.right = `${positionFight}%`;
-};
+/*attack*/
 const attackPhase = (obj, maxHpDam) => {
   let round = document.getElementById("playerRound").innerHTML;
   let deadMonster = obj.monsterDead;
-  console.log(round);
   setTimeout(() => {
     player.src = "https://i.postimg.cc/YCGtNsHH/barbarian-1-attack.gif";
     round == 1
@@ -102,6 +96,7 @@ const autoDps = (healthMon, healthBarMon, playerDmg, obj, deadMonster, maxHpDam)
       setTimeout(() => {
         resetAll(healthMon, healthBarMon, obj);
       }, 2600);
+      addCoins();
     } else {
       let damaged = damage(healthMon, healthBarMon, playerDmg, maxHpDam);
       healthMon = damaged;
@@ -138,9 +133,31 @@ const getRandMon = () => {
 const roundCount = () => {
   newRound++;
   document.getElementById("playerRound").innerHTML = `${newRound}`;
-  console.log(newRound);
   return newRound;
 };
+/*add coins*/
+const addCoins = () => {
+  let playerCoins = parseInt(document.getElementById("playerCoins").innerHTML);
+  playerCoins += Math.floor(Math.random() * 3) + 1;
+  document.getElementById("playerCoins").innerHTML = `${playerCoins}`;
+};
+/*power up*/
+const powerUp = () => {
+  let playerMoney = parseInt(document.getElementById("playerCoins").innerHTML);
+  let powerUpCost = parseInt(document.getElementById("powerUpPrice").innerHTML);
+  if (playerMoney >= powerUpCost) {
+    playerMoney -= powerUpCost;
+    dps++;
+    powerUpCost++;
+    document.getElementById("playerCoins").innerHTML = `${playerMoney}`;
+    document.getElementById("powerUpPrice").innerHTML = `${powerUpCost}`;
+    console.log("yeah BOY upgrade like crazy");
+  } else {
+    console.log("you poor bastard, go work for your money");
+  }
+  return dps;
+};
+
 startButton.addEventListener("click", () => {
   let getMons = getRandMon();
   startGame(getMons);

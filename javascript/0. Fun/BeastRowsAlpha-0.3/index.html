@@ -44,10 +44,18 @@
         <div class="mainContent__dungeon__round-count">
           <p>Level: <span id="playerRound">0</span></p>
         </div>
+        <div class="mainContent__dungeon__money-count">
+          <p>coins: <span id="playerCoins">0</span></p>
+        </div>
+        <div class="mainContent__dungeon__diamond-count">
+          <p>diamonds: <span id="playerDiamonds">0</span></p>
+        </div>
         <div class="mainContent__dungeon__health-bar-all">
           <div class="mainContent__dungeon__health-bar-all__health-bar">
             <div class="mainContent__dungeon__health-bar-all__health-bar__health-bar-glass">
-              <div class="mainContent__dungeon__health-bar-all__health-bar__health-bar-glass__health-bar-fluid health-bar-fluid"></div>
+              <div
+                class="mainContent__dungeon__health-bar-all__health-bar__health-bar-glass__health-bar-fluid health-bar-fluid"
+              ></div>
             </div>
           </div>
         </div>
@@ -56,17 +64,19 @@
       <section class="mainContent__playerInput">
         <button class="mainContent__playerInput__levelUp">
           <p>Level Up</p>
-          <span
-            ><img
+          <span class="mainContent__playerInput__price">
+            <img
               class="mainContent__playerInput__coin"
               src="https://i.postimg.cc/zD9N4J56/coin.gif"
               alt=""
-          /></span>
+            />
+            <span class="mainContent__playerInput__price__num" id="levelUpPrice">10</span>
+          </span>
         </button>
         <button class="mainContent__playerInput__shop">
           <p>Shop</p>
-          <span
-            ><img
+          <span>
+            <img
               class="mainContent__playerInput__chest"
               src="https://i.postimg.cc/BnT9kyC0/treasure-chest.gif"
               alt=""
@@ -74,18 +84,15 @@
         </button>
         <button class="mainContent__playerInput__powerUp" onclick="powerUp()">
           <p>Power Up</p>
-          <span
-            ><img
+          <span class="mainContent__playerInput__price">
+            <img
               class="mainContent__playerInput__coin"
               src="https://i.postimg.cc/zD9N4J56/coin.gif"
               alt=""
-          /></span>
+            />
+            <span class="mainContent__playerInput__price__num" id="powerUpPrice">10</span>
+          </span>
         </button>
-      </section>
-      <section class="mainContent__secret">
-        <div class="mainContent__secret__maxHp"></div>
-      </section>
-
       </section>
     </main>
 

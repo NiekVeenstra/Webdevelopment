@@ -169,6 +169,20 @@ html {
   color: white;
 }
 
+.mainContent__dungeon__money-count {
+  color: gold;
+  position: absolute;
+  left: 20%;
+  font-size: 2rem;
+}
+
+.mainContent__dungeon__diamond-count {
+  color: darkturquoise;
+  position: absolute;
+  left: 30%;
+  font-size: 2rem;
+}
+
 .mainContent__dungeon__health-bar-all {
   position: absolute;
   right: 3%;
@@ -247,6 +261,23 @@ html {
 
 .mainContent__playerInput__coin, .mainContent__playerInput__chest {
   width: 30%;
+}
+
+.mainContent__playerInput__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: gold;
 }
 
 /* BACKGROUND IMAGES */

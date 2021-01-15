@@ -138,7 +138,18 @@ html {
       font-size: 2rem;
       color: white;
     }
-
+    &__money-count {
+      color: gold;
+      position: absolute;
+      left: 20%;
+      font-size: 2rem;
+    }
+    &__diamond-count {
+      color: darkturquoise;
+      position: absolute;
+      left: 30%;
+      font-size: 2rem;
+    }
     &__health-bar-all {
       position: absolute;
       right: 3%;
@@ -203,8 +214,16 @@ html {
       border: none;
       outline: none;
     }
-    &__coin, &__chest {
+    &__coin,
+    &__chest {
       width: 30%;
+    }
+    &__price {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      color: gold;
     }
   }
 }
