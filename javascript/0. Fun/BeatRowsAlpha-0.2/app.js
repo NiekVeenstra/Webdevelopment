@@ -2,6 +2,7 @@ const player = document.querySelector(".player");
 const monster = document.querySelector(".monster");
 const startButton = document.querySelector(".start-button");
 const monsterHealth = document.querySelector(".health-bar-fluid");
+
 let newMonsterHealth = 100;
 let newRound = 0;
 let dps = 20;
@@ -35,17 +36,30 @@ const powerUp = () => {
 };
 const startGame = (obj) => {
   let chosenMon = obj;
-  HpCalc()
   transition();
-  attackPhase(chosenMon);
-};
-/*hpcalc*/
-const HpCalc = () => {
-  let nextLvlHp = mobHp();
-  newMonsterHealth = nextLvlHp;
+  let maxHpDam = mobHp();
+  attackPhase(chosenMon, maxHpDam);
 
-  monsterHealth.style.width = `${(newMonsterHealth/newMonsterHealth)*100}%`;
-}
+  
+};
+/*hpcalculation */
+const mobHp = () => {
+  let roundNr = roundCount();
+  let newMobHp = 100 * 1.1 ** roundNr;
+  console.log(newMobHp);
+
+  HpCalc(newMobHp);
+
+  return newMobHp;
+};
+
+const HpCalc = (nextLvlHp) => {
+  newMonsterHealth = nextLvlHp;
+  let maxMobHealth = newMonsterHealth;
+
+  monsterHealth.style.width = `${(newMonsterHealth / newMonsterHealth) * 100}%`;
+  return maxMobHealth;
+};
 
 /*hpcalc*/
 
@@ -56,7 +70,7 @@ const transition = () => {
   player.style.left = "33%";
   monster.style.right = "33%";
 };
-const attackPhase = (obj) => {
+const attackPhase = (obj, maxHpDam) => {
   let round = document.getElementById("playerRound").innerHTML;
   let deadMonster = obj.monsterDead;
   console.log(round);
@@ -67,14 +81,12 @@ const attackPhase = (obj) => {
       : (monster.src = obj.monsterHit);
   }, 3000);
   setTimeout(() => {
-    autoDps(newMonsterHealth, monsterHealth, dps, obj, deadMonster);
+    autoDps(newMonsterHealth, monsterHealth, dps, obj, deadMonster, maxHpDam);
   }, 2000);
 };
-const autoDps = (healthMon, healthBarMon, playerDmg, obj, deadMonster) => {
+const autoDps = (healthMon, healthBarMon, playerDmg, obj, deadMonster, maxHpDam) => {
   const healthCheck = setInterval(function () {
     let round = document.getElementById("playerRound").innerHTML;
-    console.log(`dps: ${healthMon}`);
-    console.log(round);
     if (healthMon <= 0) {
       healthBarMon.style.width = `0%`;
       player.src = "https://i.postimg.cc/PxQD96vF/barbarian-1-run.gif";
@@ -90,14 +102,15 @@ const autoDps = (healthMon, healthBarMon, playerDmg, obj, deadMonster) => {
         resetAll(healthMon, healthBarMon, obj);
       }, 2600);
     } else {
-      let damaged = damage(healthMon, healthBarMon, playerDmg);
+      let damaged = damage(healthMon, healthBarMon, playerDmg, maxHpDam);
       healthMon = damaged;
     }
   }, 1000);
 };
-const damage = (healthMon, healthBarMon, playerDmg) => {
+const damage = (healthMon, healthBarMon, playerDmg, maxHpDam) => {
+  let maxtest = maxHpDam;
   healthMon -= playerDmg;
-  healthBarMon.style.width = `${healthMon}%`;
+  healthBarMon.style.width = `${(healthMon/maxtest)*100}%`;
   return healthMon;
 };
 const respawn = (obj) => {
@@ -126,12 +139,6 @@ const roundCount = () => {
   document.getElementById("playerRound").innerHTML = `${newRound}`;
   console.log(newRound);
   return newRound;
-};
-const mobHp = () => {
-  let roundNr = roundCount();
-  let newMobHp = 100 * 1.1 ** roundNr;
-  console.log(newMobHp);
-  return newMobHp;
 };
 startButton.addEventListener("click", () => {
   let getMons = getRandMon();
