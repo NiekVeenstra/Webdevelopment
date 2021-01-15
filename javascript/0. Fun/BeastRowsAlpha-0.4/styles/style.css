@@ -162,6 +162,80 @@ html {
   outline: none;
 }
 
+.mainContent__dungeon__shopModal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.mainContent__dungeon__shopModal__content {
+  background-color: #f4cd60;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  width: 40%;
+  /* Could be more or less, depending on screen size */
+}
+
+.mainContent__dungeon__shopModal__content__modal_body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainContent__dungeon__shopModal__content__modal_body__button {
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+.mainContent__dungeon__shopModal__content__modal_body__button__princess {
+  width: 100%;
+}
+
+.mainContent__dungeon__shopModal__content__modal_body__button__orc {
+  width: 100%;
+}
+
+.mainContent__dungeon__shopModal__content__modal_body__button__knight {
+  width: 100%;
+}
+
+.mainContent__dungeon__shopModal__content__close {
+  color: black;
+  float: right;
+  font-size: 28px;
+}
+
+.mainContent__dungeon__shopModal__content__close :hover,
+.mainContent__dungeon__shopModal__content__close :focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .mainContent__dungeon__round-count {
   position: absolute;
   left: 10%;
@@ -357,6 +431,24 @@ html {
   }
   100% {
     opacity: 0;
+  }
+}
+
+/* Add Animation */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=style.css.map */

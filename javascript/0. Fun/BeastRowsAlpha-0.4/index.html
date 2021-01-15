@@ -12,13 +12,27 @@
         <h1 class="header__h1">BeastRows</h1>
       </section>
       <ul class="header__slideshow">
-        <li class="header__slideshow__li"><span class="header__slideshow__li__span"></span></li>
-        <li class="header__slideshow__li"><span class="header__slideshow__li__span"></span></li>
-        <li class="header__slideshow__li"><span class="header__slideshow__li__span"></span></li>
-        <li class="header__slideshow__li"><span class="header__slideshow__li__span"></span></li>
-        <li class="header__slideshow__li"><span class="header__slideshow__li__span"></span></li>
-        <li class="header__slideshow__li"><span class="header__slideshow__li__span"></span></li>
-        <li class="header__slideshow__li"><span class="header__slideshow__li__span"></span></li>
+        <li class="header__slideshow__li">
+          <span class="header__slideshow__li__span"></span>
+        </li>
+        <li class="header__slideshow__li">
+          <span class="header__slideshow__li__span"></span>
+        </li>
+        <li class="header__slideshow__li">
+          <span class="header__slideshow__li__span"></span>
+        </li>
+        <li class="header__slideshow__li">
+          <span class="header__slideshow__li__span"></span>
+        </li>
+        <li class="header__slideshow__li">
+          <span class="header__slideshow__li__span"></span>
+        </li>
+        <li class="header__slideshow__li">
+          <span class="header__slideshow__li__span"></span>
+        </li>
+        <li class="header__slideshow__li">
+          <span class="header__slideshow__li__span"></span>
+        </li>
       </ul>
     </header>
 
@@ -36,11 +50,65 @@
         />
         <img
           class="mainContent__dungeon__img-monster monster"
-          onclick="clickDamage()"
           src="https://i.postimg.cc/9MvwxWJH/ezgif-com-gif-maker-6.gif img"
           alt=""
         />
-        <button class="mainContent__dungeon__start-button start-button">START!</button>
+        <button class="mainContent__dungeon__start-button start-button">
+          START!
+        </button>
+        <!-- The Modal -->
+        <div id="myModal" class="mainContent__dungeon__shopModal">
+          <!-- Modal content -->
+          <div class="mainContent__dungeon__shopModal__content">
+            <span
+              class="mainContent__dungeon__shopModal__content__close"
+              id="close_shop"
+            >
+              &times;
+            </span>
+            <div
+              class="mainContent__dungeon__shopModal__content__modal_body"
+              id="modal_body"
+            >
+              <button
+                class="mainContent__dungeon__shopModal__content__modal_body__button"
+                id="princess_skin"
+              >
+                <img
+                  src="https://i.postimg.cc/C13273ZF/princess-crouch-cut.gif"
+                  alt=""
+                  srcset=""
+                  class="mainContent__dungeon__shopModal__content__modal_body__button__princess"
+                />
+                <span>Princess Skin</span>
+              </button>
+              <button
+                class="mainContent__dungeon__shopModal__content__modal_body__button"
+                id="orc_skin"
+              >
+                <img
+                  src="https://i.postimg.cc/RV14yRLS/orc-1-crouch.gif"
+                  alt=""
+                  srcset=""
+                  class="mainContent__dungeon__shopModal__content__modal_body__button__orc"
+                />
+                <span>Orc Skin</span>
+              </button>
+              <button
+                class="mainContent__dungeon__shopModal__content__modal_body__button"
+                id="orc_skin"
+              >
+                <img
+                  src="https://i.postimg.cc/76cZPZ5q/soldier-crouch.gif"
+                  alt=""
+                  srcset=""
+                  class="mainContent__dungeon__shopModal__content__modal_body__button__knight"
+                />
+                <span>Knight Skin</span>
+              </button>
+            </div>
+          </div>
+        </div>
         <div class="mainContent__dungeon__round-count">
           <p>Level: <span id="playerRound">0</span></p>
         </div>
@@ -52,7 +120,9 @@
         </div>
         <div class="mainContent__dungeon__health-bar-all">
           <div class="mainContent__dungeon__health-bar-all__health-bar">
-            <div class="mainContent__dungeon__health-bar-all__health-bar__health-bar-glass">
+            <div
+              class="mainContent__dungeon__health-bar-all__health-bar__health-bar-glass"
+            >
               <div
                 class="mainContent__dungeon__health-bar-all__health-bar__health-bar-glass__health-bar-fluid health-bar-fluid"
               ></div>
@@ -70,10 +140,12 @@
               src="https://i.postimg.cc/zD9N4J56/coin.gif"
               alt=""
             />
-            <span class="mainContent__playerInput__price__num" id="levelUpPrice">10</span>
+            <span class="mainContent__playerInput__price__num" id="levelUpPrice"
+              >10</span
+            >
           </span>
         </button>
-        <button class="mainContent__playerInput__shop">
+        <button class="mainContent__playerInput__shop" id="shop_btn">
           <p>Shop</p>
           <span>
             <img
@@ -90,13 +162,20 @@
               src="https://i.postimg.cc/zD9N4J56/coin.gif"
               alt=""
             />
-            <span class="mainContent__playerInput__price__num" id="powerUpPrice">10</span>
+            <span class="mainContent__playerInput__price__num" id="powerUpPrice"
+              >10</span
+            >
           </span>
         </button>
       </section>
     </main>
 
-    <footer></footer>
+    <footer>
+      <section class="hidden">
+        <span id="hidden-hp"></span>
+      </section>
+      <button onclick="clickDamage()"> test button</button>
+    </footer>
     <script src="./app.js"></script>
   </body>
 </html>
