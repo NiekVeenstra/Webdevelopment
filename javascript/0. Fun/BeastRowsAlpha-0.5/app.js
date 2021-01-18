@@ -8,31 +8,29 @@ const characters = document.getElementsByName("char");
 
 for (let character of characters) {
   character.addEventListener("click", char);
+  // When the user clicks on the Hero, close the modal
+  character.onclick = function () {
+    modal.style.display = "none";
+  };
 }
-
 function char() {
-  let playerDiamonds = parseInt(
-    document.getElementById("playerDiamonds").innerHTML
-  );
+  let playerDiamonds = parseInt(document.getElementById("playerDiamonds").innerHTML);
   if (playerDiamonds >= 100) {
     if (this.id == "orc") {
       document.getElementById("selectedChar").innerHTML = 1;
     }
-
     if (this.id == "princess") {
       document.getElementById("selectedChar").innerHTML = 2;
     }
-
     if (this.id == "knight") {
       document.getElementById("selectedChar").innerHTML = 3;
     }
     shop();
     console.log("in the if statement");
   } else {
-    console.log("Not enough diamonds");
+    alert("Not enough diamonds");
   }
 }
-
 // Get the button that opens the modal
 const btn = document.getElementById("shop_btn");
 
@@ -136,48 +134,28 @@ const clickDamage = () => {
 };
 const attackPhase = (obj, maxHpDam, skin) => {
   let round = document.getElementById("playerRound").innerHTML;
-  let selectedChar = parseInt(
-    document.getElementById("selectedChar").innerHTML
-  );
+  let selectedChar = parseInt(document.getElementById("selectedChar").innerHTML);
   let deadMonster = obj.monsterDead;
   setTimeout(() => {
     console.log(skin[selectedChar].heroHit);
     player.src = skin[selectedChar].heroHit;
     round == 1
-      ? (monster.src =
-          "https://i.postimg.cc/9fg77P9M/ezgif-com-gif-maker-5.gif")
+      ? (monster.src = "https://i.postimg.cc/9fg77P9M/ezgif-com-gif-maker-5.gif")
       : (monster.src = obj.monsterHit);
   }, 3000);
   setTimeout(() => {
-    autoDps(
-      newMonsterHealth,
-      monsterHealth,
-      dps,
-      deadMonster,
-      maxHpDam,
-      skin
-    );
+    autoDps(newMonsterHealth, monsterHealth, dps, deadMonster, maxHpDam, skin);
   }, 2000);
 };
-const autoDps = (
-  healthMon,
-  healthBarMon,
-  playerDmg,
-  deadMonster,
-  maxHpDam,
-  skin
-) => {
+const autoDps = (healthMon, healthBarMon, playerDmg, deadMonster, maxHpDam, skin) => {
   const healthCheck = setInterval(function () {
     let round = document.getElementById("playerRound").innerHTML;
-    let selectedChar = parseInt(
-      document.getElementById("selectedChar").innerHTML
-    );
+    let selectedChar = parseInt(document.getElementById("selectedChar").innerHTML);
     if (healthMon <= 0) {
       healthBarMon.style.width = `0%`;
       player.src = skin[selectedChar].heroRun;
       round == 1
-        ? (monster.src =
-            "https://i.postimg.cc/zBLRSLwk/ezgif-com-gif-maker-4.gif")
+        ? (monster.src = "https://i.postimg.cc/zBLRSLwk/ezgif-com-gif-maker-4.gif")
         : (monster.src = deadMonster);
       setTimeout(() => {
         monster.style.display = "none";
@@ -254,9 +232,7 @@ const powerUp = () => {
 };
 /*add diamond*/
 const addDiamonds = () => {
-  let playerDiamonds = parseInt(
-    document.getElementById("playerDiamonds").innerHTML
-  );
+  let playerDiamonds = parseInt(document.getElementById("playerDiamonds").innerHTML);
   let chance = Math.random();
   if (chance <= 0.1) {
     playerDiamonds += Math.floor(Math.random() * 3) + 1;
@@ -265,9 +241,7 @@ const addDiamonds = () => {
 };
 /*shop*/
 const shop = () => {
-  let playerDiamonds = parseInt(
-    document.getElementById("playerDiamonds").innerHTML
-  );
+  let playerDiamonds = parseInt(document.getElementById("playerDiamonds").innerHTML);
   if (playerDiamonds >= 100) {
     playerDiamonds -= 100;
     document.getElementById("playerDiamonds").innerHTML = `${playerDiamonds}`;
@@ -302,9 +276,7 @@ window.onclick = function (event) {
 };
 
 function getRich() {
-  let playerDiamonds = parseInt(
-    document.getElementById("playerDiamonds").innerHTML
-  );
+  let playerDiamonds = parseInt(document.getElementById("playerDiamonds").innerHTML);
   playerDiamonds += 100;
   document.getElementById("playerDiamonds").innerHTML = `${playerDiamonds}`;
 }

@@ -507,10 +507,9 @@ html {
 @media only screen and (max-width: 540px) {
   .header__h1 {
     font-size: 5rem;
-    color: green;
   }
   .mainContent {
-    margin-top: 10%;
+    margin-top: 5%;
     width: 100%;
   }
   .mainContent__dungeon__start-button {
@@ -540,13 +539,12 @@ html {
   }
 }
 
-@media only screen and (min-width: 541px) and (max-width: 900px) {
+@media only screen and (min-width: 541px) and (max-width: 980px) {
   .header__h1 {
     font-size: 10rem;
-    color: blue;
   }
   .mainContent {
-    margin-top: 10%;
+    margin-top: 5%;
     width: 100%;
   }
   .mainContent__dungeon__start-button {
