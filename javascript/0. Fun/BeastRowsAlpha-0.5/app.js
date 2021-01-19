@@ -2,35 +2,11 @@ const player = document.querySelector(".player");
 const monster = document.querySelector(".monster");
 const startButton = document.querySelector(".start-button");
 const monsterHealth = document.querySelector(".health-bar-fluid");
+const monsterHealthMobile = document.querySelector(".health-bar-fluid-mobile");
 // Get the modal
 const modal = document.getElementById("myModal");
 const characters = document.getElementsByName("char");
 
-for (let character of characters) {
-  character.addEventListener("click", char);
-  // When the user clicks on the Hero, close the modal
-  character.onclick = function () {
-    modal.style.display = "none";
-  };
-}
-function char() {
-  let playerDiamonds = parseInt(document.getElementById("playerDiamonds").innerHTML);
-  if (playerDiamonds >= 100) {
-    if (this.id == "orc") {
-      document.getElementById("selectedChar").innerHTML = 1;
-    }
-    if (this.id == "princess") {
-      document.getElementById("selectedChar").innerHTML = 2;
-    }
-    if (this.id == "knight") {
-      document.getElementById("selectedChar").innerHTML = 3;
-    }
-    shop();
-    console.log("in the if statement");
-  } else {
-    alert("Not enough diamonds");
-  }
-}
 // Get the button that opens the modal
 const btn = document.getElementById("shop_btn");
 
@@ -46,6 +22,7 @@ let dps = 20;
 let clickDps = 10;
 let playerCoins = 0;
 let playerDiamonds = 0;
+
 const getMonster = () => {
   // Monster animations.
   return [
@@ -94,6 +71,7 @@ const getHero = () => {
     },
   ];
 };
+
 /*start game*/
 const startGame = (obj, skin) => {
   console.log(skin);
@@ -113,24 +91,29 @@ const transition = () => {
 const mobHp = () => {
   let roundNr = roundCount();
   let newMobHp = 100 * 1.1 ** roundNr;
+  document.getElementById("hidden-hp").innerHTML = `${newMobHp}`;
+  document.getElementById("hidden-max-hp").innerHTML = `${newMobHp}`;
   HpCalc(newMobHp);
-  return newMobHp;
 };
 
-const HpCalc = (nextLvlHp) => {
-  newMonsterHealth = nextLvlHp;
-  let maxMobHealth = newMonsterHealth;
+const HpCalc = (newMobHp) => {
+  let monsterHpMax = parseInt(document.getElementById("hidden-hp").innerHTML);
+  monsterHealth.style.width = `${(monsterHpMax / monsterHpMax) * 100}%`;
+  monsterHealthMobile.style.width = `${(newMobHp / newMobHp) * 100}%`;
 
-  monsterHealth.style.width = `${(newMonsterHealth / newMonsterHealth) * 100}%`;
-  return maxMobHealth;
+  // newMonsterHealth = nextLvlHp;
+  // let maxMobHealth = newMonsterHealth;
+
+  // monsterHealth.style.width = `${(newMonsterHealth / newMonsterHealth) * 100}%`;
+  // return maxMobHealth;
 };
 
 /*attack*/
 const clickDamage = () => {
-  currentHp = parseInt(document.getElementById("hidden-hp").innerHTML);
+  let currentMonsterHp = parseInt(document.getElementById("hidden-hp").innerHTML);
   clickerDmg = 50;
-  currentHp -= clickerDmg;
-  document.getElementById("hidden-hp").innerHTML = `${currentHp}`;
+  currentMonsterHp -= clickerDmg;
+  document.getElementById("hidden-hp").innerHTML = `${currentMonsterHp}`;
 };
 const attackPhase = (obj, maxHpDam, skin) => {
   let round = document.getElementById("playerRound").innerHTML;
@@ -149,9 +132,10 @@ const attackPhase = (obj, maxHpDam, skin) => {
 };
 const autoDps = (healthMon, healthBarMon, playerDmg, deadMonster, maxHpDam, skin) => {
   const healthCheck = setInterval(function () {
+    let currentMonsterHp = parseInt(document.getElementById("hidden-hp").innerHTML);
     let round = document.getElementById("playerRound").innerHTML;
     let selectedChar = parseInt(document.getElementById("selectedChar").innerHTML);
-    if (healthMon <= 0) {
+    if (currentMonsterHp <= 0) {
       healthBarMon.style.width = `0%`;
       player.src = skin[selectedChar].heroRun;
       round == 1
@@ -174,12 +158,18 @@ const autoDps = (healthMon, healthBarMon, playerDmg, deadMonster, maxHpDam, skin
   }, 1000);
 };
 const damage = (healthMon, healthBarMon, playerDmg, maxHpDam) => {
-  let maxtest = maxHpDam;
-  healthMon -= playerDmg;
-  healthBarMon.style.width = `${(healthMon / maxtest) * 100}%`;
-  console.log(healthMon);
-  document.getElementById("hidden-hp").innerHTML = `${healthMon}`;
-  return healthMon;
+  let currentMonsterHp = parseInt(document.getElementById("hidden-hp").innerHTML);
+  let currentMaxMonsterHp = parseInt(document.getElementById("hidden-max-hp").innerHTML);
+  currentMonsterHp -= playerDmg;
+  document.getElementById("hidden-hp").innerHTML = `${currentMonsterHp}`;
+  healthBarMon.style.width = `${(currentMonsterHp / currentMaxMonsterHp) * 100}%`;
+  monsterHealthMobile.style.width = `${(currentMonsterHp / currentMaxMonsterHp) * 100}%`;
+  // let maxtest = maxHpDam;
+  // healthMon -= playerDmg;
+  // healthBarMon.style.width = `${(healthMon / maxtest) * 100}%`;
+  // console.log(healthMon);
+  // document.getElementById("hidden-hp").innerHTML = `${healthMon}`;
+  // return healthMon;
 };
 const respawn = (obj) => {
   player.style.transition = "none";
@@ -278,5 +268,33 @@ window.onclick = function (event) {
 function getRich() {
   let playerDiamonds = parseInt(document.getElementById("playerDiamonds").innerHTML);
   playerDiamonds += 100;
+  playerCoins += 100;
   document.getElementById("playerDiamonds").innerHTML = `${playerDiamonds}`;
+  document.getElementById("playerCoins").innerHTML = `${playerCoins}`;
+}
+
+for (let character of characters) {
+  character.addEventListener("click", char);
+  // When the user clicks on the Hero, close the modal
+  character.onclick = function () {
+    modal.style.display = "none";
+  };
+}
+function char() {
+  let playerDiamonds = parseInt(document.getElementById("playerDiamonds").innerHTML);
+  if (playerDiamonds >= 100) {
+    if (this.id == "orc") {
+      document.getElementById("selectedChar").innerHTML = 1;
+    }
+    if (this.id == "princess") {
+      document.getElementById("selectedChar").innerHTML = 2;
+    }
+    if (this.id == "knight") {
+      document.getElementById("selectedChar").innerHTML = 3;
+    }
+    shop();
+    console.log("in the if statement");
+  } else {
+    alert("Not enough diamonds");
+  }
 }
