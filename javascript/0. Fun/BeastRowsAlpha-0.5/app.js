@@ -77,8 +77,8 @@ const startGame = (obj, skin) => {
   console.log(skin);
   let chosenMon = obj;
   transition();
-  let maxHpDam = mobHp();
-  attackPhase(chosenMon, maxHpDam, skin);
+  mobHp();
+  attackPhase(chosenMon, skin);
 };
 const transition = () => {
   startButton.style.display = "none";
@@ -93,29 +93,31 @@ const mobHp = () => {
   let newMobHp = 100 * 1.1 ** roundNr;
   document.getElementById("hidden-hp").innerHTML = `${newMobHp}`;
   document.getElementById("hidden-max-hp").innerHTML = `${newMobHp}`;
-  HpCalc(newMobHp);
+  hpCalc(newMobHp);
 };
 
-const HpCalc = (newMobHp) => {
-  let monsterHpMax = parseInt(document.getElementById("hidden-hp").innerHTML);
-  monsterHealth.style.width = `${(monsterHpMax / monsterHpMax) * 100}%`;
+const hpCalc = (newMobHp) => {
   monsterHealthMobile.style.width = `${(newMobHp / newMobHp) * 100}%`;
-
-  // newMonsterHealth = nextLvlHp;
-  // let maxMobHealth = newMonsterHealth;
-
-  // monsterHealth.style.width = `${(newMonsterHealth / newMonsterHealth) * 100}%`;
-  // return maxMobHealth;
+  monsterHealth.style.width = `${(newMobHp / newMobHp) * 100}%`;
+};
+/*update Hpvalue*/
+const hpBarValue = () => {
+  let currentMonsterHp = parseInt(document.getElementById("hidden-hp").innerHTML);
+  let currentMaxMonsterHp = parseInt(document.getElementById("hidden-max-hp").innerHTML);
+  monsterHealth.style.width = `${(currentMonsterHp / currentMaxMonsterHp) * 100}%`;
+  monsterHealthMobile.style.width = `${(currentMonsterHp / currentMaxMonsterHp) * 100}%`;
 };
 
 /*attack*/
 const clickDamage = () => {
   let currentMonsterHp = parseInt(document.getElementById("hidden-hp").innerHTML);
-  clickerDmg = 50;
+  clickerDmg = clickDps;
+  console.log(`your clickerdmg = ${clickerDmg}`);
   currentMonsterHp -= clickerDmg;
   document.getElementById("hidden-hp").innerHTML = `${currentMonsterHp}`;
+  hpBarValue();
 };
-const attackPhase = (obj, maxHpDam, skin) => {
+const attackPhase = (obj, skin) => {
   let round = document.getElementById("playerRound").innerHTML;
   let selectedChar = parseInt(document.getElementById("selectedChar").innerHTML);
   let deadMonster = obj.monsterDead;
@@ -127,16 +129,17 @@ const attackPhase = (obj, maxHpDam, skin) => {
       : (monster.src = obj.monsterHit);
   }, 3000);
   setTimeout(() => {
-    autoDps(newMonsterHealth, monsterHealth, dps, deadMonster, maxHpDam, skin);
+    autoDps(dps, deadMonster, skin);
   }, 2000);
 };
-const autoDps = (healthMon, healthBarMon, playerDmg, deadMonster, maxHpDam, skin) => {
+const autoDps = (playerDmg, deadMonster, skin) => {
   const healthCheck = setInterval(function () {
     let currentMonsterHp = parseInt(document.getElementById("hidden-hp").innerHTML);
     let round = document.getElementById("playerRound").innerHTML;
     let selectedChar = parseInt(document.getElementById("selectedChar").innerHTML);
     if (currentMonsterHp <= 0) {
-      healthBarMon.style.width = `0%`;
+      monsterHealth.style.width = `0%`;
+      monsterHealthMobile.style.width = `0%`;
       player.src = skin[selectedChar].heroRun;
       round == 1
         ? (monster.src = "https://i.postimg.cc/zBLRSLwk/ezgif-com-gif-maker-4.gif")
@@ -152,24 +155,16 @@ const autoDps = (healthMon, healthBarMon, playerDmg, deadMonster, maxHpDam, skin
       addCoins();
       addDiamonds();
     } else {
-      let damaged = damage(healthMon, healthBarMon, playerDmg, maxHpDam);
+      let damaged = damage(playerDmg);
       healthMon = damaged;
     }
   }, 1000);
 };
-const damage = (healthMon, healthBarMon, playerDmg, maxHpDam) => {
+const damage = (playerDmg) => {
   let currentMonsterHp = parseInt(document.getElementById("hidden-hp").innerHTML);
-  let currentMaxMonsterHp = parseInt(document.getElementById("hidden-max-hp").innerHTML);
   currentMonsterHp -= playerDmg;
   document.getElementById("hidden-hp").innerHTML = `${currentMonsterHp}`;
-  healthBarMon.style.width = `${(currentMonsterHp / currentMaxMonsterHp) * 100}%`;
-  monsterHealthMobile.style.width = `${(currentMonsterHp / currentMaxMonsterHp) * 100}%`;
-  // let maxtest = maxHpDam;
-  // healthMon -= playerDmg;
-  // healthBarMon.style.width = `${(healthMon / maxtest) * 100}%`;
-  // console.log(healthMon);
-  // document.getElementById("hidden-hp").innerHTML = `${healthMon}`;
-  // return healthMon;
+  hpBarValue();
 };
 const respawn = (obj) => {
   player.style.transition = "none";
@@ -203,6 +198,22 @@ const addCoins = () => {
   let playerCoins = parseInt(document.getElementById("playerCoins").innerHTML);
   playerCoins += Math.floor(Math.random() * 3) + 1;
   document.getElementById("playerCoins").innerHTML = `${playerCoins}`;
+};
+/*level up*/
+const levelUp = () => {
+  let playerMoney = parseInt(document.getElementById("playerCoins").innerHTML);
+  let levelUpCost = parseInt(document.getElementById("levelUpPrice").innerHTML);
+  if (playerMoney >= levelUpCost) {
+    playerMoney -= levelUpCost;
+    clickDps += 10;
+    levelUpCost++;
+    document.getElementById("playerCoins").innerHTML = `${playerMoney}`;
+    document.getElementById("levelUpPrice").innerHTML = `${levelUpCost}`;
+    console.log("yeah BOY levelUp like crazy");
+  } else {
+    console.log("You poor bastard, go work for your money");
+  }
+  return clickDps;
 };
 /*power up*/
 const powerUp = () => {
