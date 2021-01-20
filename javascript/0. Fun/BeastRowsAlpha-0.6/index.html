@@ -6,11 +6,15 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <title>BeastRows Alpha 0.2</title>
   </head>
+  <!-- All content -->
   <body class="allContent">
+    <!-- header content -->
     <header class="header">
+      <!-- Title -->
       <section class="header__title">
         <h1 class="header__h1">BeastRows</h1>
       </section>
+      <!-- Background slideshow -->
       <ul class="header__slideshow">
         <li class="header__slideshow__li">
           <span class="header__slideshow__li__span"></span>
@@ -35,34 +39,42 @@
         </li>
       </ul>
     </header>
-
+    <!-- Game content -->
     <main class="mainContent">
+      <!-- Dungeon content -->
       <section class="mainContent__dungeon">
+        <!-- Dungeon background -->
         <img
           class="mainContent__dungeon__img-background img"
           src="https://i.postimg.cc/SKz7T7Gw/dungeon-Background2.png"
           alt=""
         />
+        <!-- Player -->
         <img
           class="mainContent__dungeon__img-player player"
           src="https://i.postimg.cc/PxQD96vF/barbarian-1-run.gif img"
           alt=""
         />
+        <!-- monster -->
         <img
           class="mainContent__dungeon__img-monster monster"
           src="https://i.postimg.cc/9MvwxWJH/ezgif-com-gif-maker-6.gif img"
           alt=""
           onclick="clickDamage()"
         />
+        <!-- Start button -->
         <button class="mainContent__dungeon__start-button start-button">START!</button>
-        <!-- The Modal -->
+        <!-- The shop -->
         <div id="myModal" class="mainContent__dungeon__shopModal">
-          <!-- Modal content -->
+          <!-- Shop content -->
           <div class="mainContent__dungeon__shopModal__content">
+            <!-- Close shop button -->
             <span class="mainContent__dungeon__shopModal__content__close" id="close_shop">
               &times;
             </span>
+            <!-- Shop body -->
             <div class="mainContent__dungeon__shopModal__content__modal_body" id="modal_body">
+              <!-- Princess skin -->
               <button
                 class="mainContent__dungeon__shopModal__content__modal_body__button"
                 id="princess_skin"
@@ -78,6 +90,7 @@
                 />
                 <span>Princess Skin</span>
               </button>
+              <!-- Orc skin -->
               <button
                 class="mainContent__dungeon__shopModal__content__modal_body__button"
                 id="orc_skin"
@@ -91,6 +104,7 @@
                   id="orc"
                 />
                 <span>Orc Skin</span>
+                <!-- Knight skin -->
               </button>
               <button
                 class="mainContent__dungeon__shopModal__content__modal_body__button"
@@ -109,15 +123,19 @@
             </div>
           </div>
         </div>
+        <!-- Round count -->
         <div class="mainContent__dungeon__round-count">
           <p>Level: <span id="playerRound">0</span></p>
         </div>
+        <!-- Money count -->
         <div class="mainContent__dungeon__money-count">
           <p>coins: <span id="playerCoins">0</span></p>
         </div>
+        <!-- Diamond count -->
         <div class="mainContent__dungeon__diamond-count">
           <p>diamonds: <span id="playerDiamonds">0</span></p>
         </div>
+        <!-- Healthbar top -->
         <div class="mainContent__dungeon__health-bar-all">
           <div class="mainContent__dungeon__health-bar-all__health-bar">
             <div class="mainContent__dungeon__health-bar-all__health-bar__health-bar-glass">
@@ -130,6 +148,7 @@
       </section>
 
       <section class="mainContent__playerInput">
+        <!-- Healthbar bottom -->
         <div class="mainContent__playerInput__health-bar-all">
           <div class="mainContent__playerInput__health-bar-all__health-bar">
             <div class="mainContent__playerInput__health-bar-all__health-bar__health-bar-glass">
@@ -139,7 +158,9 @@
             </div>
           </div>
         </div>
+        <!-- Player input section -->
         <div class="mainContent__playerInput__buttons">
+          <!-- Level up -->
           <button class="mainContent__playerInput__levelUp" onclick="levelUp()">
             <p>Level Up</p>
             <span class="mainContent__playerInput__price">
@@ -151,6 +172,7 @@
               <span class="mainContent__playerInput__price__num" id="levelUpPrice">10</span>
             </span>
           </button>
+          <!-- Shop -->
           <button class="mainContent__playerInput__shop" id="shop_btn">
             <p>Shop</p>
             <span>
@@ -160,6 +182,7 @@
                 alt=""
             /></span>
           </button>
+          <!-- Power up -->
           <button class="mainContent__playerInput__powerUp" onclick="powerUp()">
             <p>Power Up</p>
             <span class="mainContent__playerInput__price">
@@ -174,16 +197,18 @@
         </div>
       </section>
     </main>
-
-    <footer>
-      <section class="hidden">
+    <!-- Hidden numbers -->
+    <footer class="hidden">
+      <section>
         <span id="hidden-max-hp"></span>
         <span id="hidden-hp"></span>
       </section>
       <button onclick="getRich()">test button</button>
       <section><span id="selectedChar">0</span></section>
     </footer>
-    <script src="./"></script>
-    <script src="./app.js"></script>
+
+    <!-- Javascript files -->
+    <script src="./js/variables.js"></script>
+    <script src="./js/app.js"></script>
   </body>
 </html>
