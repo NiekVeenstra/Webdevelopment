@@ -15,7 +15,7 @@ initial-scale=1.0"
       //opdracht1
       let Club = {
         name: ["TechGrounds"],
-        type: "IT",
+        type: ["IT"],
         members: 11,
       };
       console.log(Club);
@@ -27,9 +27,8 @@ initial-scale=1.0"
       };
       console.log(Club);
       //opdracht3
-      //   let newClub = "test1", "test2", "test3", "test4";
-      //   Club.name.push({"test1", "test2", "test3", "test4"});
       Club.name.push("test1", "test2", "test3", "test4");
+      Club.type.push("test1", "test2", "test3", "test4");
       console.log(Club);
 
       //opdracht4
@@ -82,24 +81,24 @@ initial-scale=1.0"
       and a few extra properties to set (like the prototype).*/
 
       //opdracht6
-      class Person {
+      class Person1 {
         constructor(name, age) {
           this.name = name;
           this.age = age;
         }
       }
-      const persons = [
-        new Person("Jan", 24),
-        new Person("Klaas", 15),
-        new Person("Yanis", 42),
-        new Person("Rupel", 55),
-        new Person("Hendrik", 32),
-        new Person("Mono", 28),
-        new Person("West", 23),
+      const persons1 = [
+        new Person1("Jan", 24),
+        new Person1("Klaas", 15),
+        new Person1("Yanis", 42),
+        new Person1("Rupel", 55),
+        new Person1("Hendrik", 32),
+        new Person1("Mono", 28),
+        new Person1("West", 23),
       ];
 
-      persons.sort((a, b) => a.age - b.age);
-      console.log(persons);
+      persons1.sort((a, b) => a.age - b.age);
+      console.log(persons1);
     </script>
   </body>
 </html>
