@@ -1,5 +1,5 @@
+// Monster animations.
 const getMonster = () => {
-  // Monster animations.
   return [
     {
       name: "monster1",
@@ -107,6 +107,7 @@ const attackPhase = (obj, skin) => {
     autoDps(dps, deadMonster, skin);
   }, 2000);
 };
+
 const autoDps = (playerDmg, deadMonster, skin) => {
   const healthCheck = setInterval(function () {
     let currentMonsterHp = parseInt(document.getElementById("hidden-hp").innerHTML);
@@ -156,6 +157,7 @@ const resetAll = (skin) => {
     startGame(run, skin);
   }, 500);
 };
+
 const getRandMon = () => {
   const monsters = getMonster();
   randIndex = Math.floor(Math.random() * monsters.length);
