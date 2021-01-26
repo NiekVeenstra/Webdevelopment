@@ -18,9 +18,10 @@ class Particle {
     // ctx.arc(
     //   Math.cos(this.position) * this.moveRadius + canvas.width / 2,
     //   Math.sin(this.position) * this.moveRadius + canvas.height / 2,
-    //   this.size,
+    //   this.size *5,
     //   0,
-    //   Math.PI * 2
+    //   Math.PI * 2,
+    //   true
     // );
     // ctx.closePath();
     // ctx.strokeStyle = colors[this.colorNr];
@@ -29,45 +30,28 @@ class Particle {
     ctx.beginPath();
     ctx.arc(
       Math.cos(this.position) * this.moveRadius + canvas.width / 2,
-      Math.sin(this.position) * this.moveRadius + canvas.width / 2,
-      this.size * 10,
+      Math.sin(this.position) * this.moveRadius + canvas.height / 2,
+      this.size * 6,
       0,
       Math.PI * 1,
       true
     );
+
     ctx.lineTo(
-      Math.cos(this.position) * this.moveRadius +
-        canvas.width / 2 -
-        0.1 * (Math.sin(this.position) * this.moveRadius + canvas.width / 2),
-      Math.sin(this.position) * this.moveRadius + canvas.width / 2
+      Math.cos(this.position) * this.moveRadius + canvas.width / 2.09,
+      Math.sin(this.position) * this.moveRadius + canvas.height / 2
     );
     ctx.lineTo(
-      Math.cos(this.position) * this.moveRadius +
-        canvas.width / 2 -
-        0.1 * (Math.sin(this.position) * this.moveRadius + canvas.width / 2),
-      Math.sin(this.position) * this.moveRadius +
-        canvas.width / 2 +
-        0.6 * (Math.cos(this.position) * this.moveRadius + canvas.width / 2)
+      Math.cos(this.position) * this.moveRadius + canvas.width / 2.09,
+      Math.sin(this.position) * this.moveRadius + canvas.height / 1.7
     );
     ctx.lineTo(
-      Math.cos(this.position) * this.moveRadius +
-        canvas.width / 2 +
-        0.1 * (Math.sin(this.position) * this.moveRadius + canvas.width / 2),
-      Math.sin(this.position) * this.moveRadius +
-        canvas.width / 2 +
-        0.6 * (Math.cos(this.position) * this.moveRadius + canvas.width / 2)
+      Math.cos(this.position) * this.moveRadius + canvas.width / 1.9,
+      Math.sin(this.position) * this.moveRadius + canvas.height / 1.7
     );
     ctx.lineTo(
-      Math.cos(this.position) * this.moveRadius +
-        canvas.width / 2 +
-        0.1 * (Math.sin(this.position) * this.moveRadius + canvas.width / 2),
-      Math.sin(this.position) * this.moveRadius + canvas.width / 2
-    );
-    ctx.lineTo(
-      Math.cos(this.position) * this.moveRadius +
-        canvas.width / 2 +
-        0.1 * (Math.sin(this.position) * this.moveRadius + canvas.width / 2),
-      Math.sin(this.position) * this.moveRadius + canvas.width / 2
+      Math.cos(this.position) * this.moveRadius + canvas.width / 1.9,
+      Math.sin(this.position) * this.moveRadius + canvas.height / 2
     );
     ctx.closePath();
     ctx.strokeStyle = colors[this.colorNr];
@@ -81,11 +65,11 @@ class Particle {
 
 function init() {
   particleArray = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 300; i++) {
     let moveRadius = Math.random() * canvas.width;
     let step = Math.random() * 0.005 + 0.005;
     let position = Math.random() * (Math.PI * 2);
-    let size = Math.random() * 28 + 0.1;
+    let size = Math.random() * 28 + 2;
     let colorNr = Math.floor(Math.random() * colors.length);
 
     particleArray.push(new Particle(moveRadius, step, position, size, colorNr));
