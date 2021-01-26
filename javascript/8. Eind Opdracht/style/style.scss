@@ -1,3 +1,5 @@
+@import "_backgroundstyle.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -16,55 +18,112 @@ html {
   align-items: center;
 }
 
-.rekenmachine {
-  border: solid black 2px;
-  background-color: black;
-  border-radius: 10px;
+.rekenmachine-all {
   width: 30rem;
   height: 45rem;
-  box-shadow: 10px 10px 35px 3px rgb(0, 0, 0);
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateX(50deg) rotateY(0deg) rotateZ(-20deg);
+  .rekenmachine-left {
+    height: 100%;
+    width: 60px;
+    top: 0;
+    position: absolute;
+    border: solid 1px white;
+    transform: translateZ(-60px) rotateY(90deg) translateZ(-60px);
+    transform-origin: right;
+    background: black;
+  }
+  .rekenmachine-right {
+    height: 100%;
+    width: 60px;
+    top: 0;
+    position: absolute;
+    border: solid 1px white;
+    transform: translateZ(-60px) rotateY(90deg) translateZ(240px);
+    transform-origin: right;
+    background: black;
+  }
+  .rekenmachine-bottom {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    border: solid 1px white;
+    transform: rotateX(90deg) translateZ(60px);
+    transform-origin: bottom;
+    background-color: black;
+  }
+  .rekenmachine-back {
+    transform: translateZ(-60px) translateY(-450px);
+    border: solid white 2px;
+    background-color: black;
+    width: 30rem;
+    height: 45rem;
+    position: absolute;
+    box-shadow: -10px 10px 35px 3px rgb(255, 0, 0);
+  }
+  .rekenmachine-top {
+    width: 100%;
+    height: 60px;
+    top: 0;
+    position: absolute;
+    border: solid 1px white;
+    transform: rotateX(90deg) translateZ(60px);
+    transform-origin: bottom;
+    background-color: black;
+  }
+}
+
+.rekenmachine-front {
+  // transform: translateZ(-60px);
+  border: solid white 2px;
+  background-color: black;
+  border-radius: 0px;
+  width: 30rem;
+  height: 45rem;
+  // box-shadow: 10px 10px 35px 3px rgb(0, 0, 0);
 
   &__screen {
-      font-size: 5rem;
-      border-radius: 10px 10px 0px 0px;
-      width: 100%;
-      background-color: rgb(80, 79, 79);
-      color: white;
-      padding: 1rem;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      height: 9rem;
+    font-size: 5rem;
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    background-color: rgb(80, 79, 79);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 9rem;
   }
   &__input {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      margin-top: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
     &__buttons {
-        outline: none;
-        border: none;
-        border-radius: 50%;
-        width: 6rem;
-        height: 6rem;
-        font-size: 3rem;
-        margin: 0.5rem;
-        background-color: rgb(146, 145, 145);
+      outline: none;
+      border: none;
+      border-radius: 50%;
+      width: 6rem;
+      height: 6rem;
+      font-size: 3rem;
+      margin: 0.5rem;
+      background-color: rgb(146, 145, 145);
     }
     :nth-child(-n + 3) {
-        background-color: lightgrey;
-      }
+      background-color: lightgrey;
+    }
     :nth-child(4n + 4) {
-        background-color: orange;
-      }
+      background-color: orange;
+    }
     .button-yellow {
-        background-color: orange;
+      background-color: green;
     }
     .button-wide {
-        width: 13rem;
-        border-radius: 200px;
+      width: 13rem;
+      border-radius: 200px;
     }
   }
 }
