@@ -7,10 +7,10 @@
     <title>Rekenmachine eind opdracht</title>
   </head>
   <body class="body">
-    <section class="rekenmachine-all">
-        <div class="rekenmachine-front">
-          <div class="rekenmachine-front__screen" id="rekenmachineInput">
-            <span id="rekenmachineInput10"></span>
+    <section class="rekenmachine-all" id="rekenmachine-all">
+      <div class="rekenmachine-front">
+        <div class="rekenmachine-front__screen" id="rekenmachineInput">
+          <!-- <span id="rekenmachineInput10"></span>
             <span id="rekenmachineInput9"></span>
             <span id="rekenmachineInput8"></span>
             <span id="rekenmachineInput7"></span>
@@ -18,41 +18,51 @@
             <span id="rekenmachineInput5"></span>
             <span id="rekenmachineInput4"></span>
             <span id="rekenmachineInput3"></span>
-            <span id="rekenmachineInput2"></span>
-            <span id="rekenmachineInput1">0</span>
-            <span id="rekenmachineInput0"></span>
-          </div>
-          <div class="rekenmachine-front__input">
-            <button class="rekenmachine-front__input__buttons button-light" id="AC">AC</button>
-            <button class="rekenmachine-front__input__buttons button-light" id="+/-">+/-</button>
-            <button class="rekenmachine-front__input__buttons button-light" id="%">%</button>
-            <button class="rekenmachine-front__input__buttons" id="/">/</button>
-            <button class="rekenmachine-front__input__buttons" id="7">7</button>
-            <button class="rekenmachine-front__input__buttons" id="8">8</button>
-            <button class="rekenmachine-front__input__buttons" id="9">9</button>
-            <button class="rekenmachine-front__input__buttons" id="10">*</button>
-            <button class="rekenmachine-front__input__buttons" id="4">4</button>
-            <button class="rekenmachine-front__input__buttons" id="5">5</button>
-            <button class="rekenmachine-front__input__buttons" id="6">6</button>
-            <button class="rekenmachine-front__input__buttons" id="-">-</button>
-            <button class="rekenmachine-front__input__buttons" id="1">1</button>
-            <button class="rekenmachine-front__input__buttons" id="2">2</button>
-            <button class="rekenmachine-front__input__buttons" id="3">3</button>
-            <button class="rekenmachine-front__input__buttons" id="+">+</button>
-            <button class="rekenmachine-front__input__buttons button-wide" id="0">0</button>
-            <button class="rekenmachine-front__input__buttons" id=".">.</button>
-            <button class="rekenmachine-front__input__buttons button-yellow" id="=">=</button>
-          </div>
+            <span id="rekenmachineInput2"></span> -->
+          <span id="rekenmachineInput1">0</span>
+          <!-- <span id="rekenmachineInput0"></span> -->
         </div>
-        <div class="rekenmachine-left">left</div>
-        <div class="rekenmachine-bottom">bottom</div>
-        <div class="rekenmachine-right">right</div>
-        <div class="rekenmachine-top">top</div>
-        <div class="rekenmachine-back">back</div>
+        <div class="rekenmachine-front__input">
+          <button class="rekenmachine-front__input__buttons button-light" id="AC">AC</button>
+          <button class="rekenmachine-front__input__buttons button-light" id="+/-">+/-</button>
+          <button class="rekenmachine-front__input__buttons button-light" id="%">%</button>
+          <button class="rekenmachine-front__input__buttons" id="/">/</button>
+          <button class="rekenmachine-front__input__buttons" id="7">7</button>
+          <button class="rekenmachine-front__input__buttons" id="8">8</button>
+          <button class="rekenmachine-front__input__buttons" id="9">9</button>
+          <button class="rekenmachine-front__input__buttons" id="10">*</button>
+          <button class="rekenmachine-front__input__buttons" id="4">4</button>
+          <button class="rekenmachine-front__input__buttons" id="5">5</button>
+          <button class="rekenmachine-front__input__buttons" id="6">6</button>
+          <button class="rekenmachine-front__input__buttons" id="-">-</button>
+          <button class="rekenmachine-front__input__buttons" id="1">1</button>
+          <button class="rekenmachine-front__input__buttons" id="2">2</button>
+          <button class="rekenmachine-front__input__buttons" id="3">3</button>
+          <button class="rekenmachine-front__input__buttons" id="+">+</button>
+          <button class="rekenmachine-front__input__buttons button-wide" id="0">0</button>
+          <button class="rekenmachine-front__input__buttons" id=".">.</button>
+          <button class="rekenmachine-front__input__buttons button-yellow" id="=">=</button>
+        </div>
+      </div>
+      <div class="rekenmachine-left">left</div>
+      <div class="rekenmachine-bottom">
+        <div name="background-button" class="rekenmachine-bottom__background1" id="background1">
+          false
+        </div>
+        <div name="background-button" class="rekenmachine-bottom__background2" id="background2">
+          0
+        </div>
+      </div>
+      <div class="rekenmachine-right">right</div>
+      <div class="rekenmachine-top">top</div>
+      <div class="rekenmachine-back">back</div>
     </section>
 
     <canvas class="canvas1" id="canvas1"></canvas>
-    <script src="js/app.js"></script>
+    <canvas class="canvas2" id="canvas2"></canvas>
+
+    <script src="./js/app.js"></script>
+    <script src="./test/test.js"></script>
     <script src="./background/background.js"></script>
   </body>
 </html>

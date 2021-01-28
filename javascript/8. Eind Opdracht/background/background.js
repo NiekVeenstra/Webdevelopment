@@ -1,17 +1,16 @@
-const colors = ["green", "red", "blue", "yellow"];
-const canvas = document.getElementById("canvas1");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+const canvas1 = document.getElementById("canvas1");
+const ctx1 = canvas1.getContext("2d");
+canvas1.width = window.innerWidth;
+canvas1.height = window.innerHeight;
 let particleArray = [];
 
 class Particle {
-  constructor(moveRadius, step, position, size, colorNr) {
+  constructor(moveRadius, step, position, size, color) {
     this.moveRadius = moveRadius;
     this.step = step;
     this.position = position;
     this.size = size;
-    this.colorNr = colorNr;
+    this.color = color;
   }
   draw() {
     // ctx.beginPath();
@@ -27,35 +26,36 @@ class Particle {
     // ctx.strokeStyle = colors[this.colorNr];
     // ctx.stroke();
 
-    ctx.beginPath();
-    ctx.arc(
-      Math.cos(this.position) * this.moveRadius + canvas.width / 2,
-      Math.sin(this.position) * this.moveRadius + canvas.height / 2,
+    ctx1.beginPath();
+    ctx1.arc(
+      Math.cos(this.position) * this.moveRadius + canvas1.width / 2,
+      Math.sin(this.position) * this.moveRadius + canvas1.height / 2,
       this.size * 6,
       0,
       Math.PI * 1,
       true
     );
 
-    ctx.lineTo(
-      Math.cos(this.position) * this.moveRadius + canvas.width / 2.09,
-      Math.sin(this.position) * this.moveRadius + canvas.height / 2
+    ctx1.lineTo(
+      Math.cos(this.position) * this.moveRadius + canvas1.width / 2.09,
+      Math.sin(this.position) * this.moveRadius + canvas1.height / 2
     );
-    ctx.lineTo(
-      Math.cos(this.position) * this.moveRadius + canvas.width / 2.09,
-      Math.sin(this.position) * this.moveRadius + canvas.height / 1.7
+    ctx1.lineTo(
+      Math.cos(this.position) * this.moveRadius + canvas1.width / 2.09,
+      Math.sin(this.position) * this.moveRadius + canvas1.height / 1.7
     );
-    ctx.lineTo(
-      Math.cos(this.position) * this.moveRadius + canvas.width / 1.9,
-      Math.sin(this.position) * this.moveRadius + canvas.height / 1.7
+    ctx1.lineTo(
+      Math.cos(this.position) * this.moveRadius + canvas1.width / 1.9,
+      Math.sin(this.position) * this.moveRadius + canvas1.height / 1.7
     );
-    ctx.lineTo(
-      Math.cos(this.position) * this.moveRadius + canvas.width / 1.9,
-      Math.sin(this.position) * this.moveRadius + canvas.height / 2
+    ctx1.lineTo(
+      Math.cos(this.position) * this.moveRadius + canvas1.width / 1.9,
+      Math.sin(this.position) * this.moveRadius + canvas1.height / 2
     );
-    ctx.closePath();
-    ctx.strokeStyle = colors[this.colorNr];
-    ctx.stroke();
+
+    ctx1.strokeStyle = `#${this.color}`;
+    ctx1.closePath();
+    ctx1.stroke();
   }
   update() {
     this.position += this.step;
@@ -66,20 +66,20 @@ class Particle {
 function init() {
   particleArray = [];
   for (let i = 0; i < 300; i++) {
-    let moveRadius = Math.random() * canvas.width;
+    let moveRadius = Math.random() * canvas1.width + 60;
     let step = Math.random() * 0.005 + 0.005;
     let position = Math.random() * (Math.PI * 2);
     let size = Math.random() * 28 + 2;
-    let colorNr = Math.floor(Math.random() * colors.length);
+    let color = Math.floor(Math.random() * 16777215).toString(16);
 
-    particleArray.push(new Particle(moveRadius, step, position, size, colorNr));
+    particleArray.push(new Particle(moveRadius, step, position, size, color));
   }
 }
 
 function animate() {
   requestAnimationFrame(animate);
-  ctx.fillStyle = "rgba(0,0,0,0.06)";
-  ctx.fillRect(0, 0, innerWidth, innerHeight);
+  ctx1.fillStyle = "rgba(0,0,0,0.06)";
+  ctx1.fillRect(0, 0, innerWidth, innerHeight);
 
   for (let i = 0; i < particleArray.length; i++) {
     particleArray[i].update();
@@ -89,7 +89,7 @@ init();
 animate();
 
 window.addEventListener("resize", function () {
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
+  canvas1.width = innerWidth;
+  canvas1.height = innerHeight;
   init();
 });

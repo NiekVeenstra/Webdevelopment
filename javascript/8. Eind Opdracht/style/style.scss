@@ -1,4 +1,5 @@
 @import "_backgroundstyle.scss";
+@import "_backgroundstyle2.scss";
 
 * {
   margin: 0;
@@ -16,6 +17,13 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#canvas1 {
+  display: none;
+}
+#canvas2 {
+  display: none;
 }
 
 .rekenmachine-all {
@@ -52,6 +60,20 @@ html {
     transform: rotateX(90deg) translateZ(60px);
     transform-origin: bottom;
     background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__background1,
+    &__background2 {
+      background-color: rgba(255, 255, 255, 0.739);
+      color: rgba(255, 255, 255, 0.739);
+      width: 1rem;
+      height: 1rem;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      margin: 1px;
+    }
   }
   .rekenmachine-back {
     transform: translateZ(-60px) translateY(-450px);

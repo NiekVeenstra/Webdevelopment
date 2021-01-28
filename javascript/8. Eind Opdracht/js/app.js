@@ -169,6 +169,7 @@
 
 // checkEmpty();
 
+//rekenmachine
 const buttons = document.querySelectorAll("button");
 let outputScreen = document.getElementById("rekenmachineInput1");
 
@@ -178,22 +179,36 @@ for (let button of buttons) {
 
 function userInputRekenmachine() {
   let userInput = this.innerHTML;
+  let output = outputScreen.innerHTML;
   document.getElementById("AC").innerHTML = "C";
   if (userInput == "/" || userInput == "*" || userInput == "+" || userInput == "-") {
     this.style.backgroundColor = "green";
+    this.style.color = "orange";
     setTimeout(() => {
       this.style.backgroundColor = "";
+      this.style.color = "";
     }, 500);
   }
   if (userInput == "=") {
     let output = outputScreen.innerHTML;
-    let outputArray = output.split("");
-    if (outputArray[outputArray.length-1] == "-") {
-      console.log("yeah");
-      console.log(outputArray.slice(-1));
-      console.log(outputArray[outputArray.length-2]);
-      let answer = parseFloat(eval(outputArray[outputArray.length-2])) - parseFloat(eval(outputArray[outputArray.length-2]));
+    this.style.backgroundColor = "orange";
+    this.style.color = "green";
+    setTimeout(() => {
+      this.style.backgroundColor = "";
+      this.style.color = "";
+    }, 500);
+    if (output.charAt(output.length - 1) == "+") {
+      let answer = output.slice(0, output.length - 1) * 2;
       outputScreen.innerHTML = answer;
+    } else if (output.charAt(output.length - 1) == "/") {
+      outputScreen.innerHTML = 1;
+    } else if (output.charAt(output.length - 1) == "-") {
+      outputScreen.innerHTML = 0;
+    } else if (output.charAt(output.length - 1) == "*") {
+      let answer = output.slice(0, output.length - 1) ** 2;
+      outputScreen.innerHTML = answer;
+    } else if (output.charAt(output.length - 2) == "." || output.charAt(output.length - 3) == ".") {
+      outputScreen.innerHTML = parseFloat(eval(outputScreen.innerHTML)).toFixed(2);
     } else {
       outputScreen.innerHTML = parseFloat(eval(outputScreen.innerHTML));
     }
@@ -204,7 +219,67 @@ function userInputRekenmachine() {
     outputScreen.innerHTML = outputScreen.innerHTML * -1;
   } else if (outputScreen.innerHTML == "0") {
     outputScreen.innerHTML = userInput;
-  } else {
+  } else if (output.length + 1 <= 11) {
     outputScreen.innerHTML += userInput;
+  } else {
+    outputScreen.innerHTML = "ERROR";
+  }
+}
+
+// move3D
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+  let test = document.getElementById("rekenmachine-all");
+  let deg = 0;
+  e = e || window.event;
+
+  if (e.keyCode == "38") {
+    // up arrow
+    console.log("up");
+    deg += 1;
+    test.style.transform = `rotateY(${deg}deg)`;
+    console.log(deg);
+  } else if (e.keyCode == "40") {
+    // down arrow
+    console.log("down");
+    test.style.transform = `rotateX(180deg)`;
+  } else if (e.keyCode == "37") {
+    // left arrow
+    console.log("left");
+    test.style.transform = "rotateX(100deg) rotateY(0deg) rotateZ(20deg)";
+  } else if (e.keyCode == "39") {
+    // right arrow
+    console.log("right");
+    test.style.transform = "rotateX(100deg) rotateY(0deg) rotateZ(100deg)";
+  } else if (e.keyCode == "32") {
+    // spacebar=reset
+    console.log("reset");
+    test.style.transform = "";
+  }
+}
+
+// background
+const backgroundButtons = document.getElementsByName("background-button");
+
+for (let button of backgroundButtons) {
+  button.addEventListener("click", changeBackground);
+}
+
+function changeBackground() {
+  let userClick = this.innerText;
+  if (userClick == "false") {
+    document.getElementById("background1").innerHTML = "true";
+    document.getElementById("canvas1").style.display = "block";
+  } else if (userClick == "true") {
+    document.getElementById("background1").innerHTML = "false";
+    document.getElementById("canvas1").style.display = "none";
+  } else if (userClick == "0") {
+    document.getElementById("background2").innerHTML = "1";
+    document.getElementById("canvas2").style.display = "block";
+  } else if (userClick == "1") {
+    document.getElementById("background2").innerHTML = "0";
+    document.getElementById("canvas2").style.display = "none";
+  } else {
   }
 }
