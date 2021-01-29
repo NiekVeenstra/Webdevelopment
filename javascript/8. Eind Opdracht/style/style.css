@@ -42,6 +42,12 @@ html {
           align-items: center;
 }
 
+.fergus {
+  width: 100%;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 #canvas1 {
   display: none;
 }

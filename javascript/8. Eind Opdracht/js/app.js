@@ -210,7 +210,14 @@ function userInputRekenmachine() {
     } else if (output.charAt(output.length - 2) == "." || output.charAt(output.length - 3) == ".") {
       outputScreen.innerHTML = parseFloat(eval(outputScreen.innerHTML)).toFixed(2);
     } else {
-      outputScreen.innerHTML = parseFloat(eval(outputScreen.innerHTML));
+      for (i = 0; i < 100; i++) {
+        if (output.charAt(output.length - i) == ".") {
+          console.log("dot");
+          outputScreen.innerHTML = parseFloat(eval(outputScreen.innerHTML)).toFixed(2);
+        } else {
+          outputScreen.innerHTML = parseFloat(eval(outputScreen.innerHTML));
+        }
+      }
     }
   } else if (userInput == "AC" || userInput == "C") {
     outputScreen.innerHTML = 0;
@@ -221,8 +228,6 @@ function userInputRekenmachine() {
     outputScreen.innerHTML = userInput;
   } else if (output.length + 1 <= 11) {
     outputScreen.innerHTML += userInput;
-  } else {
-    outputScreen.innerHTML = "ERROR";
   }
 }
 
