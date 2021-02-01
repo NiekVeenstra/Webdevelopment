@@ -1,0 +1,68 @@
+.header {
+  width: 95%;
+  margin: 0 0 0 auto;
+}
+.navigation {
+  @include flex(space-between, center, row);
+  min-height: 10vh;
+  width: 95%;
+  flex-wrap: wrap;
+
+  &__name {
+    @include flex(flex-start, center, row);
+    flex: 1 1 10rem;
+    margin: 3rem;
+  }
+  &__menu {
+    display: flex;
+    justify-content: space-around;
+    flex: 1 1 20rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  /*mobmenu*/
+  .navigation {
+    &__mobmenu {
+      position: relative;
+      display: block;
+      cursor: pointer;
+    }
+    &__mobmenu span {
+      padding: 0.2rem 2rem;
+      background: $black-text;
+      margin: 0.5rem 0rem;
+      display: block;
+      transition: all 0.5s ease;
+    }
+    &__menu {
+        background: $background-color;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        transition: transform 1s ease;
+        @include flex(space-around, center, column);
+      }
+      &__menu a {
+        color: black;
+        font-size: $header3;
+        text-decoration: underline;
+      }
+      .nav-open {
+        transform: translateX(-100%);
+      }
+      .toggle &__line1 {
+        transform: rotateZ(45deg) translateY(300%);
+        background: black;
+      }
+      .toggle &__line2 {
+        opacity: 0;
+      }
+      .toggle &__line3 {
+        transform: rotateZ(-45deg) translateY(-300%);
+        background: black;
+      }
+  }
+}

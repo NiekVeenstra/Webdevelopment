@@ -1,0 +1,41 @@
+.header {
+  width: 100%;
+  height: 100vh;
+  &__canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(40, 50, 61);
+    z-index: -1;
+    border-bottom: #3e5f77 3px solid;
+  }
+}
+.intro {
+  min-height: 90vh;
+  width: 70%;
+  margin: auto;
+  flex-wrap: wrap;
+  color: white;
+  text-align: center;
+  @include flex(space-between, center, column);
+  &__text {
+    padding-top: 20vh;
+  }
+  &__h2 {
+    font-size: 8rem;
+    background: $gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+  &__h3 {
+    font-size: 4rem;
+  }
+  &__p {
+    font-size: 2rem;
+    padding-top: 1rem;
+  }
+}
