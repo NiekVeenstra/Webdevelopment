@@ -1,0 +1,46 @@
+.work {
+  background-color: lightgrey;
+  min-height: 100vh;
+  .parallax {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), transparent),
+      url("https://i.postimg.cc/xdYXsQvj/laptop.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 300px;
+    @include flex(center, center, column);
+    text-align: center;
+    &__h2 {
+      color: rgb(255, 255, 255);
+      font-size: 8rem;
+    }
+  }
+  .projects {
+    padding: 3rem;
+    &__container {
+      @include flex(space-evenly, center, row);
+      flex-wrap: wrap;
+      padding: 3rem 4rem;
+      .box {
+        position: relative;
+        width: 30vh;
+        padding: 20px;
+        text-align: center;
+        overflow: hidden;
+        &__inner {
+          position: relative;
+        }
+        &__img {
+          max-width: 100%;
+          transition: transform 2s;
+        }
+        &:hover {
+          .box__inner {
+            .box__img {
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+    }
+  }
+}

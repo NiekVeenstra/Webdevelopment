@@ -13,9 +13,9 @@
     z-index: 2;
   }
   &__top {
+    @include flex(center, center, column);
     &__h2 {
       font-size: 3.5rem;
-      flex-wrap: nowrap;
       margin-bottom: 3rem;
     }
     &__img {
@@ -25,9 +25,33 @@
       animation: roll_in 1.4s ease;
       filter: drop-shadow(0 0 6px #699bff);
     }
+    &__text {
+      width: 130%;
+    }
     &__p {
       font-size: 2rem;
-      margin-bottom: 10rem;
+      margin-bottom: 3rem;
+    }
+  }
+  &__bottom {
+    background: linear-gradient(180deg, #00103a 0%, #304e63 100%);
+    color: white;
+    filter: drop-shadow(0 0 6px #699bff);
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 100px;
+    @include flex(flex-start, center, column);
+    &__icons {
+      @include flex(space-evenly, center, row);
+      margin: 20px;
+      flex-wrap: wrap;
+    }
+    &__icon-container {
+      height: 10rem;
+      width: 13rem;
+    }
+    &__icon {
+      height: 4rem;
     }
   }
 }
