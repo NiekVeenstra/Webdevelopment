@@ -65,7 +65,7 @@ class Particle {
 
 function init() {
   particleArray = [];
-  for (let i = 0; i < 300; i++) {
+  for (let i = 0; i < 30; i++) {
     let moveRadius = Math.random() * canvas1.width + 60;
     let step = Math.random() * 0.005 + 0.005;
     let position = Math.random() * (Math.PI * 2);
