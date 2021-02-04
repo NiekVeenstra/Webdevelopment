@@ -9,7 +9,8 @@
     height: 100vh;
     background: $gradient;
     z-index: -1;
-    border-bottom: #3e5f77 3px solid;
+    // border-bottom: #3e5f77 3px solid;
+    // border-bottom: #75b5ff 3px solid;
   }
 }
 .intro {
@@ -25,6 +26,10 @@
   }
   &__h3 {
     font-size: 4rem;
+  }
+  &__name {
+    width: 90%;
+    margin: 3rem 0 3rem 0;
   }
   &__p {
     font-size: 2rem;
@@ -61,7 +66,7 @@
 #name path:nth-child(7) {
   stroke-dasharray: 335px;
   stroke-dashoffset: 335px;
-  animation: line-draw 2s ease forwards 1.0s;
+  animation: line-draw 2s ease forwards 1s;
 }
 #name path:nth-child(8) {
   stroke-dasharray: 335px;
@@ -86,7 +91,7 @@
 #name path:nth-child(12) {
   stroke-dasharray: 240px;
   stroke-dashoffset: 240px;
-  animation: line-draw 2s ease forwards 2.0s;
+  animation: line-draw 2s ease forwards 2s;
 }
 #name path:nth-child(13) {
   stroke-dasharray: 350px;
@@ -97,5 +102,41 @@
 @keyframes line-draw {
   to {
     stroke-dashoffset: 0;
+  }
+}
+
+/*responsiveness*/
+@media only screen and (min-width: 0px) and (max-width: 360px) {
+  .intro {
+    &__text {
+      padding-top: 5vh;
+    }
+    &__h3 {
+      font-size: 3rem;
+    }
+    &__name {
+      margin: 0;
+      width: 95%;
+    }
+    &__p {
+      margin-top: 1rem;
+    }
+  }
+}
+@media only screen and (min-width: 360px) and (max-width: 500px) {
+  .intro {
+    &__text {
+      padding-top: 10vh;
+    }
+    &__h3 {
+      font-size: 3rem;
+    }
+    &__name {
+      margin: 0;
+      width: 95%;
+    }
+    &__p {
+      margin-top: 1rem;
+    }
   }
 }
