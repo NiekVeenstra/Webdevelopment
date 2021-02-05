@@ -1,0 +1,11 @@
+.skills {
+  height: 100vh;
+  background: linear-gradient(180deg, #3e5f77 0%, #6ecef6 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  &__svg {
+    width: 80%;
+  }
+}
