@@ -20,6 +20,8 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+// canvas.style.width ='100%';
+// canvas.style.height='100%';
 
 window.addEventListener("resize", function () {
   canvas.width = window.innerWidth;
@@ -63,7 +65,7 @@ function init() {
 
   for (let i = 0; i < 200; i++) {
     let x = Math.random() * innerWidth;
-    let y = Math.random() * innerHeight + innerWidth/3;
+    let y = Math.random() * innerHeight + innerWidth / 3;
     let dx = 1 * 0.0011;
     let dy = 1 * 0.005 + 0.005;
     let radius = 40;

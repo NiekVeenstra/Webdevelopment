@@ -200,8 +200,8 @@ a {
 }
 
 .header {
+  min-height: 100vh;
   width: 100%;
-  height: 100vh;
 }
 
 .header__canvas {
@@ -209,14 +209,15 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  min-height: 70rem;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #000000), to(#00103a));
   background: linear-gradient(top, #000000 30%, #00103a);
   z-index: -1;
 }
 
 .intro {
-  min-height: 90vh;
+  min-height: 80vh;
   width: 70%;
   margin: auto;
   -ms-flex-wrap: wrap;
@@ -239,7 +240,7 @@ a {
 }
 
 .intro__text {
-  padding-top: 20vh;
+  padding-top: 20rem;
 }
 
 .intro__h3 {
@@ -404,7 +405,6 @@ a {
           flex-direction: column;
   text-align: center;
   position: relative;
-  overflow: hidden;
   color: #5f91ff;
 }
 
@@ -598,6 +598,14 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.skills__tree {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -610,8 +618,23 @@ a {
   width: 80%;
 }
 
+.skills__arrow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .work {
-  background-color: #00aeff;
+  background-color: #6ecef6;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -625,7 +648,7 @@ a {
           justify-content: space-between;
 }
 
-.work .test {
+.work__tree {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -647,5 +670,26 @@ a {
   height: 10vh;
   width: 100%;
   background-color: green;
+}
+
+.work__arrow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact {
+  width: 100%;
+  height: 25vh;
+  background-color: #9e5c22;
 }
 /*# sourceMappingURL=style.css.map */

@@ -4,7 +4,7 @@
   @include flex(start, center, column);
   text-align: center;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   color: #5f91ff;
   &__container {
     height: 90vh;
