@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import components
 import TweetList from "./components/TweetList";
 import CreateTweet from "./components/CreateTweet";
-
 
 function App() {
   // state
@@ -10,6 +9,10 @@ function App() {
   const [textInput, setTextInput] = useState("");
   const [tweets, setTweets] = useState([]);
   const message = "Hello";
+
+  useEffect(() => {
+    console.log("yeah im in tha function baby");
+  }, [textInput]);
   return (
     <div className="box">
       <h1>Hello React</h1>

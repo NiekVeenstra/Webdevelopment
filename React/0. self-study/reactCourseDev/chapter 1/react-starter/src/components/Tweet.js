@@ -1,9 +1,11 @@
 import React from "react";
+import "../styles/Tweet.scss";
 
 const Tweet = ({ name, tweet, tweets, setTweets }) => {
   const deleteTweet = () => {
     setTweets(tweets.filter((state) => state.id !== tweet.id));
   };
+
   return (
     <div className="tweet">
       <h2 className="tweet-title">{name}</h2>
