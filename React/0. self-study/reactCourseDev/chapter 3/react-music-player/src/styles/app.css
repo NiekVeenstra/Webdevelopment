@@ -21,6 +21,15 @@ h4 {
   color: #646464;
 }
 
+.App {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.library-active {
+  margin-left: 30%;
+}
+
 .player {
   min-height: 20vh;
   display: -webkit-box;
@@ -43,11 +52,20 @@ h4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .time-control input {
   width: 100%;
   padding: 1rem 0rem;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .time-control p {
@@ -70,6 +88,52 @@ h4 {
 
 .play-control svg {
   cursor: pointer;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+}
+
+.track {
+  background: lightblue;
+  width: 100%;
+  height: 1rem;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.animate-track {
+  background: #cccccc;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .time-control {
+    width: 90%;
+  }
+  .play-control {
+    width: 60%;
+  }
 }
 
 .song-container {
@@ -102,6 +166,12 @@ h4 {
   font-size: 1rem;
 }
 
+@media screen and (max-width: 768px) {
+  .song-container img {
+    width: 60%;
+  }
+}
+
 .library {
   position: fixed;
   top: 0;
@@ -112,6 +182,11 @@ h4 {
   -webkit-box-shadow: 2px 2px 50px #cacaca;
           box-shadow: 2px 2px 50px #cacaca;
   overflow: scroll;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 0;
 }
 
 .library h2 {
@@ -127,6 +202,8 @@ h4 {
           align-items: center;
   padding: 1rem 2rem 1rem 2rem;
   cursor: pointer;
+  -webkit-transition: background 0.5s ease;
+  transition: background 0.5s ease;
 }
 
 .library-song img {
@@ -166,5 +243,54 @@ h4 {
   background-color: rgba(155, 155, 155, 0.5);
   border-radius: 20px;
   border: transparent;
+}
+
+.selected {
+  background: #acbaf8;
+}
+
+.active-library {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .library {
+    width: 100%;
+  }
+}
+
+nav {
+  min-height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border: 2px solid #414141;
+  padding: 0.5rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+nav button:hover {
+  background: #414141;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  nav button {
+    z-index: 10;
+  }
 }
 /*# sourceMappingURL=app.css.map */
