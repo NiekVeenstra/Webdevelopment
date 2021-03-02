@@ -21,6 +21,7 @@ export default function App() {
   console.log(data.map((yea) => yea.date));
   console.log(data.map((test) => parseInt(test.date.slice(2, -5).replace("-", ""), 10)));
   console.log(day);
+  console.log(data.date);
   // console.log(month.map((x) => x));
 
   const tileContent = ({ activeStarDate, date, view }) => {
