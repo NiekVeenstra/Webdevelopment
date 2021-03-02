@@ -17,23 +17,35 @@ export default function App() {
 
   const [value, setValue] = useState(new Date());
 
-  console.log(`test ${day.length}`);
-  for (i = 0; i < day.length; i++) {
-    console.log(day[i]);
-  }
+  // console.log(month);
+  console.log(data.map((yea) => yea.date));
+  console.log(data.map((test) => parseInt(test.date.slice(2, -5).replace("-", ""), 10)));
+  console.log(day);
+  // console.log(month.map((x) => x));
+
+  const tileContent = ({ activeStarDate, date, view }) => {
+    return data.map((test) => {
+      return view === "month" &&
+        date.getDate() === day[0] &&
+        date.getMonth() === month[0] - 1 &&
+        date.getFullYear() === year[0] ? (
+        <p>test test test</p>
+      ) : null;
+    });
+  };
 
   return (
     <div className="App">
-      <Calendar
-        tileContent={({ activeStartDate, date, view }) =>
-          view === "month" &&
-          date.getDate() === day[0] &&
-          date.getMonth() === month[0] - 1 &&
-          date.getFullYear() === year[0] ? (
-            <p>It's holiday!</p>
-          ) : null
-        }
-      />
+      <Calendar tileContent={tileContent} />
     </div>
   );
+
+  // function tileContent({date, view}) {
+  //   return data.datums.map(el=>{
+  //   return (
+  //            view === "month" &&
+  //            date.getDate() === el.date &&
+  //            date.getMonth() === el.month ?
+  //            (<p>{JSON.stringify(el.name)}</p>) : null
+  //            ); } )}
 }
