@@ -1,7 +1,8 @@
 import React from "react";
 import WeatherCard from "./weatherCard";
 
-import "./App.css";
+import "./styles/style.css"
+
 function App() {
   return (
     <div className="App">

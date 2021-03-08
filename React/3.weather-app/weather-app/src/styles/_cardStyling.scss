@@ -1,0 +1,12 @@
+.weatherCard {
+  border: solid black 1px;
+  width: 25%;
+  margin: 5%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
