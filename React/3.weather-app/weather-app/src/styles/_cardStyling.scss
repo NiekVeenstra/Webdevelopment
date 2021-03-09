@@ -1,12 +1,28 @@
 .weatherCard {
-  border: solid black 1px;
+  color: white;
+  border: solid black 5px;
   width: 25%;
-  margin: 5%;
+  min-width: 20rem;
+  margin: 1rem;
+  background: url("https://i.postimg.cc/4xs7RRFw/thinking-about-becoming-a-smart-city.jpg") center
+    no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  cursor: pointer;
 
   &__content {
+    background: rgba(0, 0, 0, 0.342);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 20px;
+    padding: 2rem 1rem 2rem 1rem;
+  }
+  &__extraInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
   }
 }

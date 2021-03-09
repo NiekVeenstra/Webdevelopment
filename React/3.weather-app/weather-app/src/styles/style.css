@@ -6,25 +6,53 @@
 }
 
 .App {
+  background: lightblue;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
+.link {
+  text-decoration: none;
+}
+
+.weatherCards {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .weatherCard {
-  border: solid black 1px;
+  color: white;
+  border: solid black 5px;
   width: 25%;
-  margin: 5%;
+  min-width: 20rem;
+  margin: 1rem;
+  background: url("https://i.postimg.cc/4xs7RRFw/thinking-about-becoming-a-smart-city.jpg") center no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .weatherCard__content {
+  background: rgba(0, 0, 0, 0.342);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,5 +66,21 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border-radius: 20px;
+  padding: 2rem 1rem 2rem 1rem;
+}
+
+.weatherCard__extraInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
 }
 /*# sourceMappingURL=style.css.map */
