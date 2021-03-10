@@ -1,6 +1,4 @@
 import React from "react";
-import WeatherCard from "./weatherCard";
-import { render } from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./styles/style.css";
@@ -15,7 +13,7 @@ function App() {
         <h1>WeatherApp</h1>
         <Switch>
           <Route exact path="/" component={WeatherLanding} />
-          <Route exact path="/detail" component={WeatherDetail} />
+          <Route exact path="/details" component={WeatherDetail} />
         </Switch>
       </div>
     </Router>
