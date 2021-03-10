@@ -12,7 +12,19 @@ function App() {
       <div className="App">
         <h1>WeatherApp</h1>
         <Switch>
-          <Route exact path="/" component={WeatherLanding} />
+          <Route
+            exact
+            path="/"
+            component={WeatherLanding}
+            // weather={weather}
+            // setWeather={setWeather}
+            // weather={weatherMain}
+            // setWeather={setWeatherMain}
+            // weather={weatherImg}
+            // setWeather={setWeatherImg}
+            // coords={coords}
+            // setCoords={setCoords}
+          />
           <Route exact path="/details" component={WeatherDetail} />
         </Switch>
       </div>
