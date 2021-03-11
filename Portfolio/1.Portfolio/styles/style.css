@@ -387,8 +387,7 @@ a {
 }
 
 .about {
-  background: -webkit-gradient(linear, left top, left bottom, from(#00103a), to(#3e5f77));
-  background: linear-gradient(180deg, #00103a 0%, #3e5f77 100%);
+  background-color: #00103a;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -456,8 +455,8 @@ a {
 }
 
 .about__bottom {
-  background: -webkit-gradient(linear, left top, left bottom, from(#00103a), to(#304e63));
-  background: linear-gradient(180deg, #00103a 0%, #304e63 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, #00103a), to(#304e63));
+  background: linear-gradient(180deg, #00103a 70%, #304e63 100%);
   color: white;
   -webkit-filter: drop-shadow(0 0 6px #699bff);
           filter: drop-shadow(0 0 6px #699bff);
@@ -593,8 +592,7 @@ a {
 
 .skills {
   height: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3e5f77), to(#6ecef6));
-  background: linear-gradient(180deg, #3e5f77 0%, #6ecef6 100%);
+  background-color: #00103a;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -612,6 +610,7 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow: hidden;
 }
 
 .skills__svg {
@@ -634,7 +633,7 @@ a {
 }
 
 .work {
-  background-color: #6ecef6;
+  background-color: #00103a;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;

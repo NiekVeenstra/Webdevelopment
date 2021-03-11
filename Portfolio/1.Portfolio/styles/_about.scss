@@ -1,5 +1,5 @@
 .about {
-  background: linear-gradient(180deg, #00103a 0%, #3e5f77 100%);
+  background-color: #00103a;
   height: 100vh;
   @include flex(start, center, column);
   text-align: center;
@@ -34,7 +34,7 @@
     }
   }
   &__bottom {
-    background: linear-gradient(180deg, #00103a 0%, #304e63 100%);
+    background: linear-gradient(180deg, #00103a 70%, #304e63 100%);
     color: white;
     filter: drop-shadow(0 0 6px #699bff);
     margin-top: 20px;
