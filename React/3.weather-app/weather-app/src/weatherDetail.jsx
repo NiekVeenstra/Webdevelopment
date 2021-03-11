@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const WeatherDetail = ({coords}) => {
+const WeatherDetail = () => {
 
     useEffect(() => {
         axios
@@ -14,7 +14,6 @@ const WeatherDetail = ({coords}) => {
           })
           .catch((err) => console.log(err));
       }, []);
-      console.log(coords);
     return (
         <div>
            <h1>weather detail</h1> 

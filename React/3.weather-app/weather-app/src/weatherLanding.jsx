@@ -2,7 +2,8 @@ import React from "react";
 
 import WeatherCard from "./weatherCard";
 
-const WeatherLanding = () => {
+const WeatherLanding = ({ cityArray }) => {
+  console.log(cityArray);
   return (
     <div className="weatherCards">
       <WeatherCard city="Rotterdam" />

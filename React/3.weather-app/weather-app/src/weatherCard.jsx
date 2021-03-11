@@ -18,14 +18,14 @@ const WeatherCard = ({ city }) => {
         setWeatherMain(res.data.main);
         setWeatherImg(res.data.weather[0]);
         // console.log(res.data);
-        console.log(res.data.coord.lon);
-        setCoords(res.data.coord)
-        console.log(coords.lat)
+        // console.log(res.data.coord.lon);
+        setCoords(res.data.coord);
+        // console.log(coords.lat);
       })
       .catch((err) => console.log(err));
   }, []);
   return (
-    <Link to="/details" className="link" coords={coords}>
+    <Link to="/details" className="link">
       <div className="weatherCard">
         {weather && (
           <div className="weatherCard__content">
