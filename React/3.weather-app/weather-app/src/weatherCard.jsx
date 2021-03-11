@@ -2,30 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const WeatherCard = ({ city }) => {
-  const [weather, setWeather] = useState({});
-  const [weatherMain, setWeatherMain] = useState({});
-  const [weatherImg, setWeatherImg] = useState({});
-  const [coords, setCoords] = useState({});
-  const [lat, setLat] = useState({});
-  useEffect(() => {
-    axios
-      .get(
-        `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.REACT_APP_WEATHER_API}`
-      )
-      .then((res) => {
-        setWeather(res.data);
-        setWeatherMain(res.data.main);
-        setWeatherImg(res.data.weather[0]);
-        // console.log(res.data);
-        console.log(res.data.coord.lon);
-        setCoords(res.data.coord)
-        console.log(coords.lon)
-      })
-      .catch((err) => console.log(err));
-  }, []);
+const WeatherCard = ({ city, weather, setWeather, weatherImg, setWeatherImg, weatherMain, setWeatherMain }) => {
   return (
-    <Link to="/details" className="link" coords={coords}>
+    <Link to="/details" className="link">
       <div className="weatherCard">
         {weather && (
           <div className="weatherCard__content">
