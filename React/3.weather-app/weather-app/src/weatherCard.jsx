@@ -20,7 +20,7 @@ const WeatherCard = ({ city }) => {
         // console.log(res.data);
         console.log(res.data.coord.lon);
         setCoords(res.data.coord)
-        console.log(coords.lon)
+        console.log(coords.lat)
       })
       .catch((err) => console.log(err));
   }, []);
