@@ -25,7 +25,6 @@ function App() {
         setWeatherImg(res.data.weather[0]);
         // console.log(res.data);
         // console.log(res.data);
-        // console.log(res.data.coord.lon);
         // setCoords(res.data.coord)
         // console.log(coords.lon)
       })
