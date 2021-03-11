@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import weatherDetail from "./weatherDetail"
 
 const WeatherCard = ({ city }) => {
   const [weather, setWeather] = useState({});
