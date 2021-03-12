@@ -5,11 +5,10 @@ import WeatherCard from "./weatherCard";
 
 const WeatherLanding = () => {
   const msg = useContext(UserContext);
-  console.log(`test ${msg}`);
   return (
     <div className="weatherCards">
-      <WeatherCard city="Rotterdam" />
-      <WeatherCard city="Bangkok" />
+      <WeatherCard city={msg[0]} />
+      <WeatherCard city={msg[1]} />
     </div>
   );
 };

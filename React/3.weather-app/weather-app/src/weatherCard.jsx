@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import weatherDetail from "./weatherDetail"
 
 const WeatherCard = ({ city }) => {
   const [weather, setWeather] = useState({});
   const [weatherMain, setWeatherMain] = useState({});
   const [weatherImg, setWeatherImg] = useState({});
   const [coords, setCoords] = useState({});
-  const [lat, setLat] = useState({});
   useEffect(() => {
     axios
       .get(
@@ -26,7 +24,10 @@ const WeatherCard = ({ city }) => {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <Link to="/details" className="link">
+    <Link
+      to={{ pathname: `/details/${city}`, coords: { coordslat: `${coords.lat}`, coordslon: `${coords.lon}` }, name: `${city}` }}
+      className="link"
+    >
       <div className="weatherCard">
         {weather && (
           <div className="weatherCard__content">

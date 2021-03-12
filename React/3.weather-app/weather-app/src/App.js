@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { UserContext } from "./UserContext";
 
@@ -9,15 +8,7 @@ import WeatherLanding from "./weatherLanding";
 import WeatherDetail from "./weatherDetail";
 
 function App() {
-  const cityArray = [
-    {
-      name: "Rotterdam",
-    },
-    {
-      name: "Bangkok",
-    },
-  ];
-
+  const cityArray = ["Rotterdam", "Bangkok"];
   return (
     <Router>
       <div className="App">
@@ -25,7 +16,7 @@ function App() {
         <Switch>
           <UserContext.Provider value={cityArray}>
             <Route exact path="/" component={WeatherLanding} />
-            <Route exact path="/details" component={WeatherDetail} />
+            <Route path="/details/" component={WeatherDetail} />
           </UserContext.Provider>
         </Switch>
       </div>
