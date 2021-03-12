@@ -11,6 +11,8 @@ const WeatherDetail = () => {
   const city = data.name;
   const lat = data.coords.coordslat;
   const lon = data.coords.coordslon;
+
+  useState("")
   // -------------------------------
   useEffect(() => {
     axios
