@@ -1,0 +1,141 @@
+/* global styles */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  -webkit-animation: opening 1s ease-in-out;
+          animation: opening 1s ease-in-out;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+li,
+button,
+label,
+input,
+p,
+a {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4,
+h5 {
+  font-size: 2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.down-arrow {
+  width: 4rem;
+  margin: 2rem;
+}
+
+/*ANIMATION*/
+@-webkit-keyframes opening {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes opening {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.NavBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  min-height: 10vh;
+  width: 95%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky;
+  border: solid red 1px;
+  background-color: black;
+}
+
+.NavBar__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 10rem;
+          flex: 1 1 10rem;
+  margin: 3rem;
+  color: #ffffff;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.NavBar__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20rem;
+          flex: 1 1 20rem;
+}
+
+.NavBar__menu .link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 2rem;
+}
+/*# sourceMappingURL=styles.css.map */
