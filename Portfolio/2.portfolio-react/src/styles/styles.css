@@ -138,4 +138,20 @@ a {
   text-decoration: none;
   font-size: 2rem;
 }
+
+.HeroContainer {
+  background-color: #8686e9;
+  height: 100vh;
+}
+
+.HeroContainer__background {
+  width: 100%;
+  height: 100%;
+}
+
+.HeroContainer__background .canvas {
+  border: solid red 1px;
+  width: 100%;
+  height: 100%;
+}
 /*# sourceMappingURL=styles.css.map */

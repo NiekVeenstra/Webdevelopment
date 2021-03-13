@@ -21,7 +21,7 @@ const Ul = styled.ul`
     width: 100vw;
     padding-top: 3.5rem;
     transition: transform 0.5s ease-in-out;
-    li {
+    .link {
       color: #fff;
     }
   }
