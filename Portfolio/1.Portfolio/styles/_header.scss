@@ -22,6 +22,7 @@
   color: white;
   text-align: center;
   @include flex(space-between, center, column);
+  overflow: hidden;
   &__text {
     padding-top: 20rem;
   }
