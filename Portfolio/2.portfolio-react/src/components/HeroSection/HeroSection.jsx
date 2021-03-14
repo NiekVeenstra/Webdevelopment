@@ -10,19 +10,19 @@ const HeroSection = () => {
 
   const draw = (ctx, frameCount, canvas) => {
     // ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.fillStyle = "#000000";
-    ctx.beginPath();
-    ctx.arc(300, 100, radius * 0.55, 0, 2 * Math.PI, true);
-    ctx.fill();
+    // ctx.fillStyle = "#000000";
+    // ctx.beginPath();
+    // ctx.arc(300, 100, radius * 0.55, 0, 2 * Math.PI, true);
+    // ctx.fill();
 
-    for (let i = 0; i < 10; i++) {
-      let x = Math.random() * ctx.canvas.width;
-      let y = Math.random() * ctx.canvas.width * ctx.canvas.height;
-      ctx.fillStyle = "#000000";
-      ctx.beginPath();
-      ctx.arc(x, y, radius * 0.55, 0, 2 * Math.PI, true);
-      ctx.fill();
-    }
+        let x = Math.random() * ctx.canvas.width;
+        let y = Math.random() * ctx.canvas.width * ctx.canvas.height;
+        ctx.fillStyle = "#000000";
+        ctx.beginPath();
+        ctx.arc(x, y, radius * 0.55, 0, 2 * Math.PI, true);
+        ctx.fill();
+      
+
   };
   return (
     <div className="HeroContainer">
