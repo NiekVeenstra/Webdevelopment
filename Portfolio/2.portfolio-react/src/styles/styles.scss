@@ -1,0 +1,21 @@
+// global styles
+$header1: 3.5rem;
+$header2: 3rem;
+$header3: 2.5rem;
+$header4: 2rem;
+$text: 2.5rem;
+$gradient: linear-gradient(top, #000000 30%, #00103a);
+$background-color: #ffffff;
+$black-text: #000000;
+$white-text: #ffffff;
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@import "./global";
+@import "./components/NavBar";
+@import "./Home";

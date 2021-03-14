@@ -17,7 +17,7 @@
         <ul class="navigation__menu">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#about">Skills</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -165,11 +165,8 @@
           <h3 class="intro__h3">Nice to meet you</h3>
           <p class="intro__p">Web Developer ready to take on new challenges.</p>
           <a href="#about"><img class="down-arrow" src="./icons/arrow.png" alt="" /></a>
-          
         </div>
-        <img src="https://i.postimg.cc/tCB70bbw/moon-top.png" alt=""/>
       </section>
-      
     </header>
     <main>
       <!-- about section -->
@@ -177,11 +174,14 @@
         <div class="about__container">
           <div class="about__top">
             <h2 class="about__top__h2">Some information about me</h2>
-            <img
-              class="about__top__img"
-              src="https://i.postimg.cc/mrxYBK7K/Niek.jpg"
-              alt="The Beauty Himself"
-            />
+            <div class="moon">
+              <img
+                class="about__top__img"
+                src="https://i.postimg.cc/mrxYBK7K/Niek.jpg"
+                alt="The Beauty Himself"
+              />
+            </div>
+
             <div class="about__top__text">
               <p class="about__top__p">
                 Hi! I'm Niek and I'm a web developer based in the Netherlands. Currently I'm filled
@@ -218,7 +218,45 @@
         </div>
       </section>
       <section class="skills" id="skills">
-        <div class="skills__tree">
+        <div class="skills__container">
+          <h1 class="skills__title">My skills</h1>
+          <div class="skills__card-container">
+            <div class="skills__card">
+              <img src="https://i.postimg.cc/8sg8SmkT/file-type-html-icon-130541-1.png" alt="" />
+            </div>
+            <div class="skills__card">
+              <img src="https://i.postimg.cc/KcMnvhm0/file-type-css-icon-130661-1.png" alt="" />
+            </div>
+            <div class="skills__card">
+              <img
+                src="https://i.postimg.cc/Fsxk798V/bootstrap-plain-logo-icon-146619-1.png"
+                alt=""
+              />
+            </div>
+            <div class="skills__card">
+              <img src="https://i.postimg.cc/cCFZG5kw/file-type-sass-icon-130182-1.png" alt="" />
+            </div>
+            <div class="skills__card">
+              <img
+                src="https://i.postimg.cc/sD8dPWkj/file-type-js-official-icon-130509.png"
+                alt=""
+              />
+            </div>
+            <div class="skills__card">
+              <img
+                src="https://i.postimg.cc/t4yfNzrH/react-original-logo-icon-146374-1.png"
+                alt=""
+              />
+            </div>
+            <div class="skills__card">
+              <img src="https://i.postimg.cc/N0RZ6ztY/github-git-icon-145985.png" alt="" />
+            </div>
+            <div class="skills__card">
+              <img src="https://i.postimg.cc/156ThdgF/brand-scrum-icon-158716.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="skills__earth-top">
           <img src="https://i.postimg.cc/xCb7fdSd/earth-top-PNG39.png" alt="" />
         </div>
         <div class="skills__arrow">
@@ -227,15 +265,29 @@
       </section>
       <!-- work projects -->
       <section class="work" id="work">
-        <div class="work__tree">
+        <div class="work__container-center">
+          <div class="work__container">
+            <h1 class="work__title">My Work</h1>
+            <div class="work__card-container">
+              <div class="work__card">
+                <img src="https://i.postimg.cc/8sg8SmkT/file-type-html-icon-130541-1.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="work__earth-bottom">
           <img src="https://i.postimg.cc/XJFHMDwG/earth-bottom-PNG39.png" alt="" />
         </div>
-        <div class="work__grass"></div>
         <div class="work__arrow">
           <a href="#contact"><img class="down-arrow" src="./icons/arrow.png" alt="" /></a>
         </div>
       </section>
-      <section class="contact" id="contact"></section>
+      <section class="contact" id="contact">
+        <h3>CONTACT</h3>
+        <div class="contact__arrow">
+          <a href="#home"><img class="down-arrow" src="./icons/arrow.png" alt="" /></a>
+        </div>
+      </section>
     </main>
     <script src="js/app.js"></script>
   </body>

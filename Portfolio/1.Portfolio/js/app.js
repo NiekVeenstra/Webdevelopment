@@ -37,6 +37,7 @@ function Star(x, y, dx, dy, radius) {
   this.dy = dy;
   this.radius = radius;
 
+
   this.draw = function () {
     ctx.beginPath();
     ctx.arc(
