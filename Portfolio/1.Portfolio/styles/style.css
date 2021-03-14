@@ -803,14 +803,13 @@ a {
 }
 
 .work__container {
-  width: 80%;
   max-width: 100rem;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, #00103ab7), to(#304e63));
   background: linear-gradient(180deg, #00103ab7 70%, #304e63 100%);
   color: white;
   -webkit-filter: drop-shadow(0 0 6px #699bff);
           filter: drop-shadow(0 0 6px #699bff);
-  border-radius: 100px;
+  border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -824,7 +823,6 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 3rem;
 }
 
 .work__title {
@@ -832,27 +830,13 @@ a {
 }
 
 .work__card-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   padding: 3rem;
 }
 
 .work__card {
-  width: 20%;
+  width: 30rem;
   min-width: 7rem;
+  border: solid red 1px;
 }
 
 .work__card img {
