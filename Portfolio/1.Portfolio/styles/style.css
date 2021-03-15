@@ -57,6 +57,33 @@ a {
   margin: 2rem;
 }
 
+.rotate {
+  -webkit-animation: rotation 40s infinite linear;
+          animation: rotation 40s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
 /*ANIMATION*/
 @-webkit-keyframes opening {
   from {
@@ -453,10 +480,6 @@ a {
   min-width: 20rem;
   height: 50%;
   min-height: 20rem;
-  background: url("https://i.postimg.cc/T3xykjcq/moon-full.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -472,13 +495,16 @@ a {
           align-items: center;
 }
 
-.about__top__img {
+.about__top__moonpic {
+  width: 60%;
+}
+
+.about__top__profilepic {
   width: 160px;
   border-radius: 50%;
-  -webkit-animation: roll_in 1.4s ease;
-          animation: roll_in 1.4s ease;
   -webkit-filter: drop-shadow(0 0 6px #699bff);
           filter: drop-shadow(0 0 6px #699bff);
+  position: absolute;
 }
 
 .about__top__text {
@@ -555,7 +581,7 @@ a {
     font-size: 2rem;
     margin-bottom: 2rem;
   }
-  .about__top__img {
+  .about__top__profilepic {
     width: 130px;
     margin-bottom: 1.5rem;
   }
@@ -575,11 +601,14 @@ a {
     width: 95%;
     padding: 2rem 0;
   }
+  .about__top .moon {
+    display: none;
+  }
   .about__top__h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
   }
-  .about__top__img {
+  .about__top__profilepic {
     width: 130px;
     margin-bottom: 1.5rem;
   }
@@ -719,6 +748,7 @@ a {
   background-color: #699bff;
   -webkit-box-shadow: 10px 10px 6px rgba(128, 128, 128, 0.377);
           box-shadow: 10px 10px 6px rgba(128, 128, 128, 0.377);
+  border-radius: 10px;
 }
 
 .skills__card img {
@@ -770,7 +800,7 @@ a {
   }
   .skills__card {
     width: 30%;
-    margin: 0rem;
+    margin: 1px;
   }
 }
 
@@ -818,9 +848,8 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -830,7 +859,16 @@ a {
           flex-direction: column;
 }
 
+.work__title-container {
+  margin-bottom: 1rem;
+}
+
+.work__title-container h3 {
+  color: #ffffff;
+}
+
 .work__container {
+  width: 80%;
   max-width: 100rem;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, #00103ab7), to(#304e63));
   background: linear-gradient(180deg, #00103ab7 70%, #304e63 100%);
@@ -851,6 +889,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 3rem;
 }
 
 .work__title {
@@ -858,17 +897,76 @@ a {
 }
 
 .work__card-container {
-  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .work__card {
   width: 30rem;
+  height: 20rem;
   min-width: 7rem;
-  border: solid red 1px;
+  background-color: #699bff;
+  border-radius: 10px;
+  margin: 0.5rem;
+  color: #00103a;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.work__card img {
+.work__card .img-container-beastrows {
   width: 100%;
+  height: 80%;
+  background: url("https://i.postimg.cc/pLk379T7/Beast-Rows-Alpha.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.work__card .img-container-techgrounds {
+  width: 100%;
+  height: 80%;
+  background: url("https://i.postimg.cc/yx4nJZpP/Tech-Grounds-Page.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.work__card .img-container-underconstruction {
+  width: 100%;
+  height: 80%;
+  background: url("https://i.postimg.cc/XNzqFdXg/underconstruction.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.work__card p {
+  text-align: center;
 }
 
 .work__earth-bottom {
@@ -900,6 +998,19 @@ a {
       -ms-flex-pack: center;
           justify-content: center;
   z-index: 3;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 430px) {
+  .work__container {
+    width: 95%;
+    padding: 2rem 0;
+  }
+  .work__card {
+    width: 40%;
+    height: 12rem;
+    margin: 1px;
+    padding-bottom: 1rem;
+  }
 }
 
 .contact {

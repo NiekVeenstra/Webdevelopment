@@ -1,10 +1,10 @@
 .skills {
   height: 100vh;
-  width:100%;
+  width: 100%;
   background-color: #00103a;
   @include flex(space-around, center, column);
 
-  &__container{
+  &__container {
     width: 80%;
     max-width: 90rem;
     background: linear-gradient(180deg, #00103ab7 70%, #304e63 100%);
@@ -15,26 +15,27 @@
     @include flex(center, center, column);
     padding: 3rem;
   }
-    &__title{
+  &__title {
     color: white;
   }
-  &__card-container{
+  &__card-container {
     @include flex(center, center, row);
     flex-wrap: wrap;
     padding: 3rem;
   }
-  &__card{
+  &__card {
     width: 15%;
     min-width: 7rem;
     @include flex(center, center, column);
     margin: 1rem;
-    background-color:#699bff ;
+    background-color: #699bff;
     box-shadow: 10px 10px 6px rgba(128, 128, 128, 0.377);
-    img{
+    border-radius: 10px;
+    img {
       width: 90%;
       margin: 1rem;
     }
-    h4{
+    h4 {
       font-size: 1.5rem;
       padding: 0rem 1rem 1rem 1rem;
     }
@@ -66,9 +67,9 @@
       width: 95%;
       padding: 2rem 0;
     }
-    &__card{
+    &__card {
       width: 30%;
-      margin: 0rem;
+      margin: 1px;
     }
   }
 }

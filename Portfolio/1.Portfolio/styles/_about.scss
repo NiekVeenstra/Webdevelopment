@@ -27,20 +27,19 @@
       min-width: 20rem;
       height: 50%;
       min-height: 20rem;
-      background: url("https://i.postimg.cc/T3xykjcq/moon-full.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
-    &__img {
+    &__moonpic{
+      width: 60%;
+    }
+    &__profilepic {
       width: 160px;
       border-radius: 50%;
-      animation: roll_in 1.4s ease;
       filter: drop-shadow(0 0 6px #699bff);
+      position: absolute;
     }
     &__text {
       width: 130%;
@@ -88,7 +87,7 @@
         font-size: 2rem;
         margin-bottom: 2rem;
       }
-      &__img {
+      &__profilepic {
         width: 130px;
         margin-bottom: 1.5rem;
       }
@@ -111,11 +110,14 @@
       padding: 2rem 0;
     }
     &__top {
+      .moon{
+        display: none;
+      }
       &__h2 {
         font-size: 2rem;
         margin-bottom: 2rem;
       }
-      &__img {
+      &__profilepic {
         width: 130px;
         margin-bottom: 1.5rem;
       }
