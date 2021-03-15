@@ -5,13 +5,29 @@
   color: white;
   @include flex(space-around, center, column);
 
-
-  &__icons{
+  &__container {
+    height: 50%;
+    text-align: center;
+    @include flex(space-around, center, column);
+    button {
+      z-index: 3;
+      padding: 1rem;
+      border-radius: 10px;
+      border: none;
+    }
+  }
+  &__icons {
+    z-index: 3;
     background-color: white;
     border-radius: 10px;
-    width:10%;
-    img{
-      width:100%;
+    width: 7rem;
+    height: 7rem;
+    @include flex(center, center, row);
+    a{
+      @include flex(center, center, row);
+    }
+    img {
+      width: 94%;
     }
   }
   &__arrow {
@@ -21,6 +37,26 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    transform: rotateX(180deg)
+    transform: rotateX(180deg);
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 430px) {
+  .contact {
+    &__container {
+      width: 95%;
+      h2{
+        margin: 1rem 0rem;
+      }
+      p{
+        margin: 1rem 0rem;
+      }
+      button{
+        margin: 1rem 0rem;
+      }
+    }
+    &__icons{
+      margin: 1rem 0rem;
+    }
   }
 }
