@@ -1,11 +1,12 @@
 .skills {
   height: 100vh;
+  width:100%;
   background-color: #00103a;
   @include flex(space-around, center, column);
 
   &__container{
     width: 80%;
-    max-width: 100rem;
+    max-width: 90rem;
     background: linear-gradient(180deg, #00103ab7 70%, #304e63 100%);
     color: white;
     filter: drop-shadow(0 0 6px #699bff);
@@ -23,10 +24,19 @@
     padding: 3rem;
   }
   &__card{
-    width: 20%;
-    min-width: 7rem; 
+    width: 15%;
+    min-width: 7rem;
+    @include flex(center, center, column);
+    margin: 1rem;
+    background-color:#699bff ;
+    box-shadow: 10px 10px 6px rgba(128, 128, 128, 0.377);
     img{
-      width: 100%;
+      width: 90%;
+      margin: 1rem;
+    }
+    h4{
+      font-size: 1.5rem;
+      padding: 0rem 1rem 1rem 1rem;
     }
   }
   &__earth-top {
@@ -58,6 +68,7 @@
     }
     &__card{
       width: 30%;
+      margin: 0rem;
     }
   }
 }
