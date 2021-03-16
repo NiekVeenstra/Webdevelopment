@@ -44,6 +44,9 @@
     @include flex(center, center, column);
     &:hover .card-inner {
       transform: rotateY(180deg);
+      // transform: rotate3d(1, 1, 0, 180deg);
+      z-index: 1;
+      // width: 120%;
     }
     .card-front, .card-back {
       position: absolute;
@@ -53,6 +56,8 @@
       padding-bottom: 1rem;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
+      transition: all 1s cubic-bezier(.5,1.3,.5,1.3);
+      transform-style: preserve-3d;
     }
     .card-inner {
       position: relative;
@@ -121,14 +126,21 @@
 
 @media only screen and (min-width: 0px) and (max-width: 430px) {
   .work {
+    height: 150vh;
     &__container {
       width: 95%;
       padding: 2rem 0;
     }
     &__card {
-      width: 40%;
-      height: 12rem;
-      margin: 1px;
+      .card-inner{
+        .card-front .card-back{
+          width: 40%;
+          height: 12rem;
+        }
+      }
+      // width: 40%;
+      // height: 12rem;
+      // margin: 1px;
     }
   }
 }
