@@ -928,7 +928,7 @@ a {
   width: 30rem;
   height: 20rem;
   min-width: 7rem;
-  background-color: #699bff;
+  background-color: transparent;
   border-radius: 10px;
   margin: 0.5rem;
   color: #00103a;
@@ -948,7 +948,42 @@ a {
           flex-direction: column;
 }
 
-.work__card .img-container-beastrows {
+.work__card:hover .card-inner {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.work__card .card-front, .work__card .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding-bottom: 1rem;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.work__card .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  transition: transform 0.6s, -webkit-transform 0.6s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.work__card .card-inner .card-front {
+  background-color: #699bff;
+  color: black;
+}
+
+.work__card .card-inner .card-front .img-container-beastrows {
   width: 100%;
   height: 80%;
   background: url("https://i.postimg.cc/pLk379T7/Beast-Rows-Alpha.png");
@@ -957,7 +992,7 @@ a {
   background-position: center;
 }
 
-.work__card .img-container-techgrounds {
+.work__card .card-inner .card-front .img-container-techgrounds {
   width: 100%;
   height: 80%;
   background: url("https://i.postimg.cc/yx4nJZpP/Tech-Grounds-Page.png");
@@ -966,7 +1001,7 @@ a {
   background-position: center;
 }
 
-.work__card .img-container-underconstruction {
+.work__card .card-inner .card-front .img-container-underconstruction {
   width: 100%;
   height: 80%;
   background: url("https://i.postimg.cc/XNzqFdXg/underconstruction.png");
@@ -975,8 +1010,15 @@ a {
   background-position: center;
 }
 
-.work__card p {
+.work__card .card-inner .card-front p {
   text-align: center;
+}
+
+.work__card .card-inner .card-back {
+  background-color: #699bff;
+  color: white;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .work__earth-bottom {
@@ -995,9 +1037,7 @@ a {
 }
 
 .work__arrow {
-  position: absolute;
   width: 100%;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1019,7 +1059,6 @@ a {
     width: 40%;
     height: 12rem;
     margin: 1px;
-    padding-bottom: 1rem;
   }
 }
 
