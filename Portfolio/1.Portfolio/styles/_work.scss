@@ -42,30 +42,30 @@
     text-align: center;
     @include flex(center, center, column);
 
-      .img-container-beastrows{
-        width: 100%;
-        height: 80%;
-        background: url("https://i.postimg.cc/pLk379T7/Beast-Rows-Alpha.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-      }
-      .img-container-techgrounds{
-        width: 100%;
-        height: 80%;
-        background: url("https://i.postimg.cc/yx4nJZpP/Tech-Grounds-Page.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-      }
-      .img-container-underconstruction{
-        width: 100%;
-        height: 80%;
-        background: url("https://i.postimg.cc/XNzqFdXg/underconstruction.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-      }
+    .img-container-beastrows {
+      width: 100%;
+      height: 80%;
+      background: url("https://i.postimg.cc/pLk379T7/Beast-Rows-Alpha.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .img-container-techgrounds {
+      width: 100%;
+      height: 80%;
+      background: url("https://i.postimg.cc/yx4nJZpP/Tech-Grounds-Page.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .img-container-underconstruction {
+      width: 100%;
+      height: 80%;
+      background: url("https://i.postimg.cc/XNzqFdXg/underconstruction.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
     p {
       text-align: center;
     }
@@ -79,13 +79,14 @@
     position: absolute;
   }
   &__arrow {
-    position: absolute;
+    // position: absolute;
     width: 100%;
-    height: 100%;
+    // height: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     z-index: 3;
+    border: solid red 1px;
   }
 }
 
