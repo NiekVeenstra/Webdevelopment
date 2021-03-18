@@ -4,8 +4,9 @@
   background: linear-gradient(top, #00103a 40%, #000000);
   color: white;
   @include flex(space-around, center, column);
-
+  position: relative;
   &__container {
+    z-index: 1;
     height: 50%;
     text-align: center;
     @include flex(space-around, center, column);
@@ -16,19 +17,28 @@
       border: none;
     }
   }
+  &__link-container {
+    @include flex(center, center, row);
+  }
   &__icons {
     z-index: 3;
     background-color: white;
     border-radius: 10px;
     width: 7rem;
     height: 7rem;
+    margin: 1rem;
     @include flex(center, center, row);
-    a{
+    a {
       @include flex(center, center, row);
     }
     img {
       width: 94%;
     }
+  }
+  &__mars-img {
+    position: absolute;
+    width: 70%;
+    max-width: 55rem;
   }
   &__arrow {
     position: absolute;
@@ -45,17 +55,17 @@
   .contact {
     &__container {
       width: 95%;
-      h2{
+      h2 {
         margin: 1rem 0rem;
       }
-      p{
+      p {
         margin: 1rem 0rem;
       }
-      button{
+      button {
         margin: 1rem 0rem;
       }
     }
-    &__icons{
+    &__icons {
       margin: 1rem 0rem;
     }
   }

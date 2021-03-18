@@ -3,7 +3,7 @@
   width: 100%;
   background-color: #00103a;
   @include flex(space-around, center, column);
-
+  position: relative;
   &__container {
     width: 80%;
     max-width: 90rem;
@@ -48,6 +48,7 @@
     justify-content: center;
     overflow: hidden;
     position: absolute;
+    bottom: 0;
   }
 
   &__arrow {
