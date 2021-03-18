@@ -35,39 +35,75 @@
     width: 30rem;
     height: 20rem;
     min-width: 7rem;
-    background-color: #699bff;
+    // background-color: #699bff;
+    background-color: transparent;
     border-radius: 10px;
     margin: 0.5rem;
     color: #00103a;
     text-align: center;
     @include flex(center, center, column);
 
-    .img-container-beastrows {
-      width: 100%;
-      height: 80%;
-      background: url("https://i.postimg.cc/pLk379T7/Beast-Rows-Alpha.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
+    &:hover .card-inner {
+      transform: rotateY(180deg);
+      // transform: rotate3d(1, 1, 0, 180deg);
+      z-index: 1;
     }
-    .img-container-techgrounds {
+    .card-front, .card-back {
+      position: absolute;
       width: 100%;
-      height: 80%;
-      background: url("https://i.postimg.cc/yx4nJZpP/Tech-Grounds-Page.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
+      height: 100%;
+      border-radius: 10px;
+      padding-bottom: 1rem;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transition: all 1s cubic-bezier(.5,1.3,.5,1.3);
+      transform-style: preserve-3d;
     }
-    .img-container-underconstruction {
+    .card-inner {
+      position: relative;
       width: 100%;
-      height: 80%;
-      background: url("https://i.postimg.cc/XNzqFdXg/underconstruction.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-    }
-    p {
+      height: 100%;
       text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      .card-front {
+        background-color: #699bff;
+        color: black;
+        .img-container-beastrows {
+          width: 100%;
+          height: 80%;
+          background: url("https://i.postimg.cc/pLk379T7/Beast-Rows-Alpha.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+        .img-container-techgrounds {
+          width: 100%;
+          height: 80%;
+          background: url("https://i.postimg.cc/yx4nJZpP/Tech-Grounds-Page.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+        .img-container-underconstruction {
+          width: 100%;
+          height: 80%;
+          background: url("https://i.postimg.cc/XNzqFdXg/underconstruction.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+        p {
+          text-align: center;
+        }
+      }
+      .card-back {
+        background-color: #699bff;
+        color: white;
+        transform: rotateY(180deg);
+      }
+
     }
   }
   &__earth-bottom {
@@ -81,7 +117,6 @@
   &__arrow {
     // position: absolute;
     width: 100%;
-    // height: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -91,15 +126,21 @@
 
 @media only screen and (min-width: 0px) and (max-width: 430px) {
   .work {
+    height: 150vh;
     &__container {
       width: 95%;
       padding: 2rem 0;
     }
     &__card {
-      width: 40%;
-      height: 12rem;
-      margin: 1px;
-      padding-bottom: 1rem;
+      .card-inner{
+        .card-front .card-back{
+          width: 40%;
+          height: 12rem;
+        }
+      }
+      // width: 40%;
+      // height: 12rem;
+      // margin: 1px;
     }
   }
 }
