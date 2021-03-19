@@ -25,7 +25,7 @@
   }
   &__card {
     width: 15%;
-    min-width: 7rem;
+    min-width: 8rem;
     @include flex(center, center, column);
     margin: 1rem;
     background-color: #699bff;
