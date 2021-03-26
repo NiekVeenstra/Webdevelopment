@@ -1,6 +1,7 @@
 import React from "react";
-import "./App.css";
+import "./styling/style.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/NavBar";
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -12,6 +13,7 @@ const App = () => {
   return (
     <AuthProvider>
       <Router>
+      <Navbar />
         <div>
           <PrivateRoute exact path="/" component={Home} />
           <Route exact path="/landing-page" component={LandingPage} />
