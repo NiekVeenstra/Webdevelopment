@@ -25,9 +25,10 @@ const Burger = () => {
   return (
     <>
       <StyledBurger className="navbar__burger" open={open} onClick={() => setOpen(!open)}>
-        <div className={"line" + (open ? "nav-open" : "")}/>
-        <div className="line"/>
-        <div className="line"/>
+        {console.log(open)}
+        <div className={(open ? "nav-open" : "line")}/>
+        <div className={(open ? "nav-open" : "line")}/>
+        <div className={(open ? "nav-open" : "line")}/>
       </StyledBurger>
       <RightNav open={open} />
     </>

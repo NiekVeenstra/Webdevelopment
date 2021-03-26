@@ -12,7 +12,7 @@
     font-family: "Share Tech Mono", monospace;
     font-size: 1.7rem;
   }
-  &__burger{
+  &__burger {
     width: 2rem;
     height: 2rem;
     position: fixed;
@@ -26,15 +26,18 @@
       flex-flow: column nowrap;
     }
     .line {
-        width: 2rem;
-        height: 0.25rem;
-        border-radius: 10px;
-        transform-origin: 1px;
-        transition: all 0.3s linear;
-      }
-      .nav-open{
-        transition: all 0.3s linear;
-        transform: rotate(45deg) rotate(0);
-      }
+      width: 2rem;
+      height: 0.25rem;
+      border-radius: 10px;
+      transform-origin: 1px;
+      transition: all 0.3s linear;
+      background-color: yellow;
+    }
+    .nav-open {
+      transform: rotate(45deg);
+      background-color: #ccc;
+      z-index: 10;
+      // rotate(0);
+    }
   }
 }
