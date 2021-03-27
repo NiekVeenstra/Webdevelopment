@@ -1,0 +1,17 @@
+.crypto-container {
+  border: solid red 1px;
+  .row {
+    border: solid rgb(0, 4, 255) 1px;
+    display: flex;
+    flex-direction: row;
+    &__crypto {
+      border: solid rgb(53, 148, 81) 1px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      &__img {
+        width: 15%;
+      }
+    }
+  }
+}

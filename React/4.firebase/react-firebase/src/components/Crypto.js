@@ -3,11 +3,11 @@ import React from "react";
 const Crypto = ({ name, price, symbol, marketcap, volume, image, priceChange }) => {
   return (
     <div className="crypto-container">
-      <div className="crypto-row">
-        <div className="crypto">
-          <img src={image} alt="crypto" />
-          <h1>{name}</h1>
-          <p className="crypto-symbol">{symbol}</p>
+      <div className="row">
+        <div className="row__crypto">
+          <img src={image} alt="crypto" className="row__crypto__img"/>
+          <h1 className="row__crypto__name">{name}</h1>
+          <p className="row__crypto__crypto-symbol">{symbol}</p>
         </div>
         <div className="crypto-data">
           <p className="crypto-price">&#x20AC;{price}</p>

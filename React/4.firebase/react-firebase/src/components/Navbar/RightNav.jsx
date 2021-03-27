@@ -23,6 +23,7 @@ const Ul = styled.ul`
     transition: transform 0.5s ease-in-out;
     .link {
       color: #000000;
+      font-size: 2rem;
       text-decoration: none;
     }
   }
@@ -30,23 +31,30 @@ const Ul = styled.ul`
 
 const RightNav = ({ open }) => {
   return (
-    <Ul open={open}>
+    <Ul className="menu-container" open={open}>
+      {/* className={open ? " menu-container-open" : " menu-container"} */}
       <li>
         {" "}
-        <Link className="link" to="/" style={{ textDecoration: 'none', color: "black" }}>
+        <Link className="link" to="/" style={{ textDecoration: "none", color: "black", fontSize: "2rem" }}>
           Home
         </Link>
       </li>
       <li>
         {" "}
-        <Link className="link" to="/login" style={{ textDecoration: 'none', color: "black"  }}>
+        <Link className="link" to="/login" style={{ textDecoration: "none", color: "black", fontSize: "2rem" }}>
           Login
         </Link>
       </li>
       <li>
         {" "}
-        <Link className="link" to="/signup" style={{ textDecoration: 'none', color: "black"  }}>
+        <Link className="link" to="/signup" style={{ textDecoration: "none", color: "black", fontSize: "2rem" }}>
           Sign Up
+        </Link>
+      </li>
+      <li>
+        {" "}
+        <Link className="link" to="/" style={{ textDecoration: "none", color: "black", fontSize: "2rem" }}>
+          Settings
         </Link>
       </li>
     </Ul>

@@ -35,7 +35,7 @@ body {
   padding: 15px 0;
   text-decoration: none;
   font-family: "Share Tech Mono", monospace;
-  font-size: 1.7rem;
+  font-size: 2.5rem;
 }
 
 .navbar__burger {
@@ -70,12 +70,60 @@ body {
           transform-origin: 1px;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  background-color: black;
 }
 
 .navbar__burger .nav-open {
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  -webkit-transform: rotate(45deg) rotate(0);
-          transform: rotate(45deg) rotate(0);
+  width: 2rem;
+  height: 0.25rem;
+  border-radius: 10px;
+  background-color: #ccc;
+}
+
+.navbar__burger .nav-open:nth-child(1) {
+  -webkit-transform: rotate(45deg) translateY(9px);
+          transform: rotate(45deg) translateY(9px);
+}
+
+.navbar__burger .nav-open:nth-child(2) {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+}
+
+.navbar__burger .nav-open:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translateY(-9px);
+          transform: rotate(-45deg) translateY(-9px);
+}
+
+.crypto-container {
+  border: solid red 1px;
+}
+
+.crypto-container .row {
+  border: solid #0004ff 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.crypto-container .row__crypto {
+  border: solid #359451 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.crypto-container .row__crypto__img {
+  width: 15%;
 }
 /*# sourceMappingURL=style.css.map */
