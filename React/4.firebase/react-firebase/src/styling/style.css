@@ -100,6 +100,14 @@ body {
   border: solid red 1px;
 }
 
+.crypto-container .red {
+  color: red;
+}
+
+.crypto-container .green {
+  color: green;
+}
+
 .crypto-container .row {
   border: solid #0004ff 1px;
   display: -webkit-box;
@@ -125,5 +133,35 @@ body {
 
 .crypto-container .row__crypto__img {
   width: 15%;
+}
+
+.crypto-container .row__crypto__name-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.crypto-container .row__data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: solid pink 1px;
 }
 /*# sourceMappingURL=style.css.map */
