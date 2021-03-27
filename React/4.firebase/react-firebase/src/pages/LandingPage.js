@@ -13,7 +13,6 @@ const LandingPage = () => {
       )
       .then((res) => {
         setCryptos(res.data);
-        console.log(res);
         console.log(res.data);
       })
       .catch((err) => console.log(err.id));
@@ -26,29 +25,47 @@ const LandingPage = () => {
   const searchCryptos = cryptos.filter((crypto) =>
     crypto.name.toLowerCase().includes(search.toLowerCase())
   );
+
+  const searchBar = () =>{
+    console.log("test")
+  }
   return (
     <div className="landing-page">
-      <h1>Welcome to Niek's Crypto World</h1>
-      <div className="search-bar">
-        <h1>Search your crypto</h1>
-        <form>
-          <input className="coin-input" type="text" onChange={handleChange} placeholder="Search" />
-        </form>
+      <div className="content">
+        <h1 className="content__h1">Welcome to Niek's Crypto World</h1>
+        <div className="content__search-bar">
+          <h1>Search your crypto</h1>
+          <button className="content__search-bar__button" onClick={searchBar}>
+            <img
+              src="https://i.postimg.cc/Znd9kBKF/seo-social-web-network-internet-340-icon-icons-com-61497.png"
+              alt="search"
+            />
+          </button>
+          <form>
+            <input
+              className="coin-input"
+              type="text"
+              onChange={handleChange}
+              placeholder="Search"
+            />
+          </form>
+        </div>
+        {searchCryptos.map((crypto) => {
+          return (
+            <Crypto
+              key={crypto.id}
+              name={crypto.name}
+              price={crypto.current_price}
+              symbol={crypto.symbol}
+              volume={crypto.total_volume}
+              marketcap={crypto.market_cap}
+              image={crypto.image}
+              priceChange={crypto.price_change_percentage_24h}
+              rank={crypto.market_cap_rank}
+            />
+          );
+        })}
       </div>
-      {searchCryptos.map((crypto) => {
-        return (
-          <Crypto
-            key={crypto.id}
-            name={crypto.name}
-            price={crypto.current_price}
-            symbol={crypto.symbol}
-            volume={crypto.total_volume}
-            marketcap={crypto.market_cap}
-            image={crypto.image}
-            priceChange={crypto.price_change_percentage_24h}
-          />
-        );
-      })}
     </div>
   );
 };

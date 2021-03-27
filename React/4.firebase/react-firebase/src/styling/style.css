@@ -1,3 +1,19 @@
+.text-red {
+  color: red;
+}
+
+.text-green {
+  color: green;
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
 /* global styles */
 * {
   margin: 0;
@@ -96,20 +112,50 @@ body {
           transform: rotate(-45deg) translateY(-9px);
 }
 
+.landing-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+  background-color: white;
+}
+
+.landing-page .content {
+  width: 80%;
+  max-width: 120rem;
+}
+
+.landing-page .content__search-bar__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border: solid black 3px;
+  border-radius: 100%;
+  background-color: transparent;
+  outline: none;
+}
+
+.landing-page .content__search-bar__button img {
+  width: 70%;
+  padding-bottom: 0.5rem;
+}
+
 .crypto-container {
-  border: solid red 1px;
-}
-
-.crypto-container .red {
-  color: red;
-}
-
-.crypto-container .green {
-  color: green;
-}
-
-.crypto-container .row {
-  border: solid #0004ff 1px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,10 +163,27 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: 2px solid #f1f1f1;
+}
+
+.crypto-container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
 }
 
 .crypto-container .row__crypto {
-  border: solid #359451 1px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -133,6 +196,7 @@ body {
 
 .crypto-container .row__crypto__img {
   width: 15%;
+  padding: 0.6rem;
 }
 
 .crypto-container .row__crypto__name-container {
@@ -159,9 +223,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: solid pink 1px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: 1.7rem;
 }
 /*# sourceMappingURL=style.css.map */

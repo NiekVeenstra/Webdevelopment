@@ -1,3 +1,27 @@
+// variables
+$overal-background-color: white;
+$overal-text-color: black;
+
+
+
+// reusable styles
+.text-red {
+  color: red;
+}
+.text-green {
+  color: green;
+}
+.show {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+
+
+
+// import
 @import "./global";
 @import "./custom-Navbar";
+@import "./landing-page";
 @import "./crypto-card-landing-page";

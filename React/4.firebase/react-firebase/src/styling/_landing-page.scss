@@ -1,0 +1,28 @@
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $overal-text-color;
+  background-color: $overal-background-color;
+  .content {
+    width: 80%;
+    max-width: 120rem;
+    &__search-bar {
+      &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        height: 4rem;
+        border: solid black 3px;
+        border-radius: 100%;
+        background-color: transparent;
+        outline: none;
+        img {
+          width: 70%;
+          padding-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}

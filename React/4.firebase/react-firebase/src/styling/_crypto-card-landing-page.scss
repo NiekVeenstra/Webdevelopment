@@ -1,22 +1,20 @@
 .crypto-container {
-  .red {
-    color: red;
-  }
-  .green {
-    color: green;
-  }
-  border: solid red 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: 2px solid #f1f1f1;
   .row {
-    border: solid rgb(0, 4, 255) 1px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
     &__crypto {
-      border: solid rgb(53, 148, 81) 1px;
       display: flex;
       justify-content: space-around;
       align-items: center;
       &__img {
         width: 15%;
+        padding: 0.6rem;
       }
       &__name-container {
         display: flex;
@@ -28,8 +26,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      border: solid pink 1px;
+      align-items: flex-end;
+      font-size: 1.7rem;
     }
   }
 }
