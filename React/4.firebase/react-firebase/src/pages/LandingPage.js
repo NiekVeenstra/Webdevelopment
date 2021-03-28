@@ -13,7 +13,7 @@ const LandingPage = () => {
       )
       .then((res) => {
         setCryptos(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((err) => console.log(err.id));
   }, []);
@@ -26,16 +26,23 @@ const LandingPage = () => {
     crypto.name.toLowerCase().includes(search.toLowerCase())
   );
 
-  const searchBar = () =>{
-    console.log("test")
-  }
+  const searchBar = () => {
+    console.log("test");
+  };
+
+  const data = {
+    labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+    datasets: [
+      { data: [1, 2, 9, 4, 1, 6], backgroundColor: "transparent", borderColor: "lightblue" },
+    ],
+  };
   return (
     <div className="landing-page">
       <div className="content">
-        <h1 className="content__h1">Welcome to Niek's Crypto World</h1>
+        <h1 className="content__h1 hidden">Welcome to Niek's Crypto World</h1>
         <div className="content__search-bar">
-          <h1>Search your crypto</h1>
-          <button className="content__search-bar__button" onClick={searchBar}>
+          <h1>Top 100 crypto</h1>
+          <button className="content__search-bar__button hidden" onClick={searchBar}>
             <img
               src="https://i.postimg.cc/Znd9kBKF/seo-social-web-network-internet-340-icon-icons-com-61497.png"
               alt="search"
@@ -46,7 +53,7 @@ const LandingPage = () => {
               className="coin-input"
               type="text"
               onChange={handleChange}
-              placeholder="Search"
+              placeholder="Search top 100..."
             />
           </form>
         </div>

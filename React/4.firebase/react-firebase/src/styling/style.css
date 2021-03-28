@@ -130,6 +130,20 @@ body {
 .landing-page .content {
   width: 80%;
   max-width: 120rem;
+  min-width: 80rem;
+}
+
+.landing-page .content__search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.5rem 0;
 }
 
 .landing-page .content__search-bar__button {
@@ -148,6 +162,7 @@ body {
   border-radius: 100%;
   background-color: transparent;
   outline: none;
+  display: none;
 }
 
 .landing-page .content__search-bar__button img {
@@ -203,13 +218,31 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.crypto-container .row__crypto__name {
+  margin: 0 1rem;
+}
+
+.crypto-container .row__crypto__abbreviation {
+  font-size: 1.3rem;
+}
+
+.crypto-container .row__graph-container {
+  width: 15rem;
+}
+
+.crypto-container .row__graph-container .graph {
+  width: 100%;
 }
 
 .crypto-container .row__data {

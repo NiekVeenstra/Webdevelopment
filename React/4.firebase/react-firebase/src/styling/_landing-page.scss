@@ -7,7 +7,12 @@
   .content {
     width: 80%;
     max-width: 120rem;
+    min-width: 80rem;
     &__search-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 0;
       &__button {
         display: flex;
         align-items: center;
@@ -18,6 +23,7 @@
         border-radius: 100%;
         background-color: transparent;
         outline: none;
+        display: none;
         img {
           width: 70%;
           padding-bottom: 0.5rem;

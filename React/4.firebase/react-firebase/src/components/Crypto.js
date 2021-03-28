@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Line, defaults } from "react-chartjs-2";
+
+defaults.global.legend.display = false;
 
 const Crypto = ({ name, price, symbol, marketcap, volume, image, priceChange, rank }) => {
   const [chart, setChart] = useState([]);
@@ -8,22 +11,36 @@ const Crypto = ({ name, price, symbol, marketcap, volume, image, priceChange, ra
     axios
       .get(`https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=eur&days=1`)
       .then((res) => {
-        setChart(res.data);
-        console.log(res.data);
+        setChart(res.data.prices[0]);
+        // console.log(res.data);
+        // console.log(res.data.prices);
+        // console.log(res.data.prices[0]);
       })
       .catch((err) => console.log(err.id));
   }, []);
 
+  let x = chart[1];
+  console.log(x);
+
+  const data = {
+    labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+    datasets: [{ data: [chart[1]], backgroundColor: "transparent", borderColor: "lightblue" }],
+  };
+
   return (
     <div className="crypto-container">
+      <Line className="graph" data={data} />
       <div className="row">
         <div className="row__crypto">
           <h3>{rank}.</h3>
           <img src={image} alt="crypto" className="row__crypto__img" />
           <div className="row__crypto__name-container">
             <h1 className="row__crypto__name">{name}</h1>
-            <p className="row__crypto__crypto-symbol">({symbol})</p>
+            <p className="row__crypto__abbreviation">({symbol})</p>
           </div>
+        </div>
+        <div className="row__graph-container">
+          <Line className="graph" data={data} />
         </div>
         <div className="row__data">
           <p className="row__data__price">&#x20AC;{price}</p>
