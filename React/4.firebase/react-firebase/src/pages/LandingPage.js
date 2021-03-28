@@ -13,7 +13,6 @@ const LandingPage = () => {
       )
       .then((res) => {
         setCryptos(res.data);
-        // console.log(res.data);
       })
       .catch((err) => console.log(err.id));
   }, []);
@@ -30,12 +29,12 @@ const LandingPage = () => {
     console.log("test");
   };
 
-  const data = {
-    labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
-    datasets: [
-      { data: [1, 2, 9, 4, 1, 6], backgroundColor: "transparent", borderColor: "lightblue" },
-    ],
-  };
+  // const data = {
+  //   labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+  //   datasets: [
+  //     { data: [1, 2, 9, 4, 1, 6], backgroundColor: "transparent", borderColor: "lightblue" },
+  //   ],
+  // };
   return (
     <div className="landing-page">
       <div className="content">

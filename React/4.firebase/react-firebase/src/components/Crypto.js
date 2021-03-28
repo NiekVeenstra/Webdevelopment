@@ -6,21 +6,20 @@ defaults.global.legend.display = false;
 
 const Crypto = ({ name, price, symbol, marketcap, volume, image, priceChange, rank }) => {
   const [chart, setChart] = useState([]);
-
+  // console.log({ name });
+  const nameLowercase = name.toLowerCase();
+  console.log(nameLowercase);
   useEffect(() => {
     axios
-      .get(`https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=eur&days=1`)
+      .get(
+        `https://api.coingecko.com/api/v3/coins/${nameLowercase}/market_chart?vs_currency=eur&days=1`
+      )
       .then((res) => {
-        setChart(res.data.prices[0]);
-        // console.log(res.data);
-        // console.log(res.data.prices);
-        // console.log(res.data.prices[0]);
+        setChart(res.data.prices);
       })
       .catch((err) => console.log(err.id));
-  }, []);
+  }, [nameLowercase]);
 
-  let x = chart[1];
-  console.log(x);
 
   const data = {
     labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],

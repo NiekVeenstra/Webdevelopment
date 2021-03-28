@@ -6,7 +6,6 @@ const Burger = () => {
   return (
     <>
       <div className="navbar__burger" open={open} onClick={() => setOpen(!open)}>
-        {console.log(open)}
         <div className={open ? " nav-open" : " line"} />
         <div className={open ? " nav-open" : " line"} />
         <div className={open ? " nav-open" : " line"} />
