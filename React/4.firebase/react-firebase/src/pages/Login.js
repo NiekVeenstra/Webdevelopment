@@ -27,7 +27,7 @@ const Login = ({ history }) => {
   return (
     <div className="login-page">
       <div className="container">
-        <h1 className="container__h1">Log in</h1>
+        <h1 className="container__h1">Log In</h1>
         <form className="container__form" onSubmit={handleLogin}>
           <label className="container__form__label">
             Email:
@@ -40,7 +40,10 @@ const Login = ({ history }) => {
           <button className="container__form__login-button" type="submit">Log in</button>
         </form>
         <p>
-          Don't have an account yet? <a href="/signup">Sign Up Now</a>
+          Don't have an account yet? <a href="/signup">Sign Up Now.</a>
+        </p>
+        <p>
+          Did you forget your password? <a href="/forgot-password">Forgot Password.</a>
         </p>
       </div>
     </div>

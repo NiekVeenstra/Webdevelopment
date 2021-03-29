@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Line, defaults } from "react-chartjs-2";
+import React from "react";
+// import axios from "axios";
+// import { Line, defaults } from "react-chartjs-2";
 
-defaults.global.legend.display = false;
+// defaults.global.legend.display = false;
 
 const Crypto = ({ name, price, symbol, marketcap, volume, image, priceChange, rank }) => {
-  const [chart, setChart] = useState([]);
+  // const [chart, setChart] = useState([]);
   // console.log({ name });
   // const nameLowercase = name.toLowerCase();
   // console.log(nameLowercase);

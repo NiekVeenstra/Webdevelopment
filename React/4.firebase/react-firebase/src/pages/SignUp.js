@@ -43,7 +43,7 @@ const SignUp = ({ history }) => {
         </label>
         <label>
           Password:
-          <input name="password" type="password" ref={passwordRef} placeholder="Password" />
+          <input name="password" type="password" ref={passwordRef} placeholder="Password" required/>
         </label>
         <label>
           Password Confirmation:
