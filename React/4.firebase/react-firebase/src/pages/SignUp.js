@@ -29,34 +29,48 @@ const SignUp = ({ history }) => {
   );
 
   return (
-    <div>
-      <h1>Sign up</h1>
-      {error && (
-        <div className="text-red" variant="danger">
-          {error}
-        </div>
-      )}
-      <form onSubmit={handleSignUp}>
-        <label>
-          Email:
-          <input name="email" type="email" ref={emailRef} placeholder="Email" required />
-        </label>
-        <label>
-          Password:
-          <input name="password" type="password" ref={passwordRef} placeholder="Password" required/>
-        </label>
-        <label>
-          Password Confirmation:
-          <input
-            name="password"
-            type="password"
-            ref={passwordConfirmRef}
-            placeholder="Password"
-            required
-          />
-        </label>
-        <button type="submit">Sign Up</button>
-      </form>
+    <div className="signup-page">
+      <div className="container">
+        <h1 className="container__h1">Sign up</h1>
+        {error && (
+          <div className="text-red" variant="danger">
+            {error}
+          </div>
+        )}
+        <form className="container__form" onSubmit={handleSignUp}>
+          <label className="container__form__label">
+            Email:
+            <input name="email" type="email" ref={emailRef} placeholder="Email" required />
+          </label>
+          <label className="container__form__label">
+            Password:
+            <input
+              name="password"
+              type="password"
+              ref={passwordRef}
+              placeholder="Password"
+              required
+            />
+          </label>
+          <label className="container__form__label">
+            Password Confirmation:
+            <input
+              name="password"
+              type="password"
+              ref={passwordConfirmRef}
+              placeholder="Password"
+              required
+            />
+          </label>
+          <button className="container__form__login-button" type="submit">Sign Up</button>
+        </form>
+        <p>
+          Already have an account? <a href="/signup">Login Now.</a>
+        </p>
+        <p>
+          Did you forget your password? <a href="/forgot-password">Forgot Password.</a>
+        </p>
+      </div>
     </div>
   );
 };

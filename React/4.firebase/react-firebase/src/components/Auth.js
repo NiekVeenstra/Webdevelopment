@@ -31,13 +31,16 @@
 //   );
 // };
 
-
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import app from "../base";
 
 // const auth = app.auth()
 
 export const AuthContext = React.createContext();
+
+export function useAuth() {
+  return useContext(AuthContext);
+}
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);

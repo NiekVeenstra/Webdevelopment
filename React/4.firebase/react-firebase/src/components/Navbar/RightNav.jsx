@@ -53,7 +53,7 @@ const RightNav = ({ open }) => {
       </li>
       <li>
         {" "}
-        <Link className="link" to="/" style={{ textDecoration: "none", color: "black", fontSize: "2rem" }}>
+        <Link className="link" to="/settings" style={{ textDecoration: "none", color: "black", fontSize: "2rem" }}>
           Settings
         </Link>
       </li>

@@ -1,19 +1,28 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import { useAuth } from "../components/Auth";
 
-import app from "../base";
-
-const ForgotPassword = () => {
+export default function ForgotPassword() {
   const emailRef = useRef();
+  const { resetPassword } = useAuth();
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handlePasswordResetRequest = (event) => {
-    event.preventDefault();
-    console.log(emailRef.current.value);
-    const email = emailRef.current.value;
+  async function handlePasswordResetRequest(e) {
+    e.preventDefault();
+    console.log({ error, message, loading });
+    try {
+      setMessage("");
+      setError("");
+      setLoading(true);
+      await resetPassword(emailRef.current.value);
+      setMessage("Check your inbox for further instructions");
+    } catch {
+      setError("Failed to reset password");
+    }
 
-    console.log(app.auth());
-
-    // app.doPasswordReset(email);
-  };
+    setLoading(false);
+  }
 
   return (
     <div className="forgot-password-page">
@@ -31,6 +40,6 @@ const ForgotPassword = () => {
       </div>
     </div>
   );
-};
+}
 
-export default ForgotPassword;
+// export default ForgotPassword;
