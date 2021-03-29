@@ -29,18 +29,18 @@ const LandingPage = () => {
     console.log("test");
   };
 
-  // const data = {
-  //   labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
-  //   datasets: [
-  //     { data: [1, 2, 9, 4, 1, 6], backgroundColor: "transparent", borderColor: "lightblue" },
-  //   ],
-  // };
   return (
     <div className="landing-page">
       <div className="content">
-        <h1 className="content__h1 hidden">Welcome to Niek's Crypto World</h1>
+        <div className="content__intro">
+          <h2 className="content__intro__welcome">Welcome to Niek's Crypto World.</h2>
+          <p className="content__intro__p">
+            Feel free to make an account and you will be able to make a personal list of crypto that
+            you wanna keep an eye on.
+          </p>
+        </div>
         <div className="content__search-bar">
-          <h1>Top 100 crypto</h1>
+          <h3 className="content__search-bar__title">Top 100 crypto</h3>
           <button className="content__search-bar__button hidden" onClick={searchBar}>
             <img
               src="https://i.postimg.cc/Znd9kBKF/seo-social-web-network-internet-340-icon-icons-com-61497.png"
