@@ -1,15 +1,24 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 // import RightNav from "./RightNav";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Auth";
+import app from "../../base";
 
 const Ul = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
+  align-items: center;
   li {
     padding: 18px 10px;
+    .log-out {
+      font-size: 2rem;
+      border: solid black 1px;
+      background: transparent;
+      padding: 0.3rem;
+      cursor: pointer;
+    }
     .link {
       color: #000000;
       font-size: 2rem;
@@ -48,49 +57,55 @@ const Burger = () => {
         <div className={open ? " nav-open" : " line"} />
       </div>
       {/* <RightNav open={open} /> */}
-      
-{/* temp solution */}
-<Ul className="menu-container" open={open} onClick={() => setOpen(!open)}>
-      {/* className={open ? " menu-container-open" : " menu-container"} */}
-      <li>
-        {" "}
-        <Link className="link" to="/">
-          Home
-        </Link>
-      </li>
-      {!currentUser && (
+
+      {/* temp solution */}
+      <Ul className="menu-container" open={open} onClick={() => setOpen(!open)}>
+        {/* className={open ? " menu-container-open" : " menu-container"} */}
         <li>
           {" "}
-          <Link className="link" to="/login">
-            Login
+          <Link className="link" to="/">
+            Home
           </Link>
         </li>
-      )}
-      {!currentUser && (
-        <li>
-          {" "}
-          <Link className="link" to="/signup">
-            Sign Up
-          </Link>
-        </li>
-      )}
-      {!!currentUser && (
-        <li>
-          {" "}
-          <Link className="link" to="/settings">
-            {/* <img
+        {!currentUser && (
+          <li>
+            {" "}
+            <Link className="link" to="/login">
+              Login
+            </Link>
+          </li>
+        )}
+        {!currentUser && (
+          <li>
+            {" "}
+            <Link className="link" to="/signup">
+              Sign Up
+            </Link>
+          </li>
+        )}
+        {!!currentUser && (
+          <li>
+            {" "}
+            <Link className="link" to="/settings">
+              {/* <img
             className="img"
             src="https://i.postimg.cc/W1CLyW31/account-avatar-face-man-people-profile-user-icon-123197.png"
             alt=""
           /> */}
-            Settings
-          </Link>
-        </li>
-      )}
-    </Ul>
-{/*  */}
-
-
+              Settings
+            </Link>
+          </li>
+        )}
+        {!!currentUser && (
+          <li>
+            {" "}
+            <button className="log-out" onClick={() => app.auth().signOut()}>
+              Sign out
+            </button>
+          </li>
+        )}
+      </Ul>
+      {/*  */}
     </>
   );
 };
