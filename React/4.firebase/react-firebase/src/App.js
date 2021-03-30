@@ -18,11 +18,11 @@ const App = () => {
         <Navbar />
         <div>
           <PrivateRoute exact path="/" component={Home} />
+          <PrivateRoute exact path="/settings" component={Settings} />
           <Route exact path="/landing-page" component={LandingPage} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/forgot-password" component={ForgotPassword} />
-          <Route exact path="/settings" component={Settings} />
         </div>
       </Router>
     </AuthProvider>

@@ -8,6 +8,15 @@ const Ul = styled.ul`
   flex-flow: row nowrap;
   li {
     padding: 18px 10px;
+    .link {
+      color: #000000;
+      font-size: 2rem;
+      text-decoration: none;
+      .img {
+        border: solid red 1px;
+        width: 2.5rem;
+      }
+    }
   }
   @media (max-width: 768px) {
     flex-flow: column nowrap;
@@ -21,11 +30,6 @@ const Ul = styled.ul`
     width: 100vw;
     padding-top: 3.5rem;
     transition: transform 0.5s ease-in-out;
-    .link {
-      color: #000000;
-      font-size: 2rem;
-      text-decoration: none;
-    }
   }
 `;
 
@@ -35,25 +39,30 @@ const RightNav = ({ open }) => {
       {/* className={open ? " menu-container-open" : " menu-container"} */}
       <li>
         {" "}
-        <Link className="link" to="/" style={{ textDecoration: "none", color: "black", fontSize: "2rem" }}>
+        <Link className="link" to="/">
           Home
         </Link>
       </li>
       <li>
         {" "}
-        <Link className="link" to="/login" style={{ textDecoration: "none", color: "black", fontSize: "2rem" }}>
+        <Link className="link" to="/login">
           Login
         </Link>
       </li>
       <li>
         {" "}
-        <Link className="link" to="/signup" style={{ textDecoration: "none", color: "black", fontSize: "2rem" }}>
+        <Link className="link" to="/signup">
           Sign Up
         </Link>
       </li>
       <li>
         {" "}
-        <Link className="link" to="/settings" style={{ textDecoration: "none", color: "black", fontSize: "2rem" }}>
+        <Link className="link" to="/settings">
+          {/* <img
+            className="img"
+            src="https://i.postimg.cc/W1CLyW31/account-avatar-face-man-people-profile-user-icon-123197.png"
+            alt=""
+          /> */}
           Settings
         </Link>
       </li>
