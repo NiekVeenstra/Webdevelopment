@@ -1,32 +1,34 @@
-import React, { useCallback, useRef, useState } from "react";
-import { withRouter } from "react-router";
-import app from "../base";
+import React, { useRef, useState } from "react";
+import { useAuth } from "../components/Auth";
+import { useHistory } from "react-router-dom";
 
-const SignUp = ({ history }) => {
+export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+  const { signup } = useAuth();
   const [error, setError] = useState("");
-  const handleSignUp = useCallback(
-    async (event) => {
-      event.preventDefault();
-      // const { email, password } = event.target.elements;
+  const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
-      if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-        return setError("Passwords do not match");
-      }
+  async function handleSignUp(e) {
+    e.preventDefault();
 
-      try {
-        await app
-          .auth()
-          .createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value);
-        history.push("/");
-      } catch (error) {
-        alert(error);
-      }
-    },
-    [history]
-  );
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      return setError("Passwords do not match");
+    }
+
+    try {
+      setError("");
+      setLoading(true);
+      await signup(emailRef.current.value, passwordRef.current.value);
+      history.push("/");
+    } catch {
+      setError("Failed to create an account");
+    }
+
+    setLoading(false);
+  }
 
   return (
     <div className="signup-page">
@@ -62,7 +64,9 @@ const SignUp = ({ history }) => {
               required
             />
           </label>
-          <button className="container__form__login-button" type="submit">Sign Up</button>
+          <button disabled={loading} className="container__form__login-button" type="submit">
+            Sign Up
+          </button>
         </form>
         <p>
           Already have an account? <a href="/signup">Login Now.</a>
@@ -73,6 +77,6 @@ const SignUp = ({ history }) => {
       </div>
     </div>
   );
-};
+}
 
-export default withRouter(SignUp);
+// export default withRouter(SignUp);

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Auth";
 
 const Ul = styled.ul`
   list-style: none;
@@ -34,6 +35,7 @@ const Ul = styled.ul`
 `;
 
 const RightNav = ({ open }) => {
+  const { currentUser } = useContext(AuthContext);
   return (
     <Ul className="menu-container" open={open}>
       {/* className={open ? " menu-container-open" : " menu-container"} */}
@@ -43,29 +45,35 @@ const RightNav = ({ open }) => {
           Home
         </Link>
       </li>
-      <li>
-        {" "}
-        <Link className="link" to="/login">
-          Login
-        </Link>
-      </li>
-      <li>
-        {" "}
-        <Link className="link" to="/signup">
-          Sign Up
-        </Link>
-      </li>
-      <li>
-        {" "}
-        <Link className="link" to="/settings">
-          {/* <img
+      {!currentUser && (
+        <li>
+          {" "}
+          <Link className="link" to="/login">
+            Login
+          </Link>
+        </li>
+      )}
+      {!currentUser && (
+        <li>
+          {" "}
+          <Link className="link" to="/signup">
+            Sign Up
+          </Link>
+        </li>
+      )}
+      {!!currentUser && (
+        <li>
+          {" "}
+          <Link className="link" to="/settings">
+            {/* <img
             className="img"
             src="https://i.postimg.cc/W1CLyW31/account-avatar-face-man-people-profile-user-icon-123197.png"
             alt=""
           /> */}
-          Settings
-        </Link>
-      </li>
+            Settings
+          </Link>
+        </li>
+      )}
     </Ul>
   );
 };

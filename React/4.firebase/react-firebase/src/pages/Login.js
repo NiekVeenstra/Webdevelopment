@@ -1,43 +1,50 @@
-import React, { useCallback, useContext } from "react";
-import { withRouter, Redirect } from "react-router";
-import app from "../base";
-import { AuthContext } from "../components/Auth";
+import React, { useRef, useState } from "react";
+import { useAuth } from "../components/Auth";
+import { useHistory } from "react-router-dom";
 
-const Login = ({ history }) => {
-  const handleLogin = useCallback(
-    async (event) => {
-      event.preventDefault();
-      const { email, password } = event.target.elements;
-      try {
-        await app.auth().signInWithEmailAndPassword(email.value, password.value);
-        history.push("/");
-      } catch (error) {
-        alert(error);
-      }
-    },
-    [history]
-  );
+export default function Login() {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const { login } = useAuth();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
-  const { currentUser } = useContext(AuthContext);
+  async function handleLogin(e) {
+    e.preventDefault();
+    try {
+      setError("");
+      setLoading(true);
+      await login(emailRef.current.value, passwordRef.current.value);
+      history.push("/");
+    } catch {
+      setError("Failed to log in");
+    }
 
-  if (currentUser) {
-    return <Redirect to="/" />;
+    setLoading(false);
   }
 
   return (
     <div className="login-page">
       <div className="container">
         <h1 className="container__h1">Log In</h1>
+        {error && (
+          <div className="text-red" variant="danger">
+            {error}
+          </div>
+        )}
         <form className="container__form" onSubmit={handleLogin}>
           <label className="container__form__label">
             Email:
-            <input name="email" type="email" placeholder="Email" />
+            <input name="email" type="email" ref={emailRef} placeholder="Email" />
           </label>
           <label className="container__form__label">
             Password:
-            <input name="password" type="password" placeholder="Password" />
+            <input name="password" type="password" ref={passwordRef} placeholder="Password" />
           </label>
-          <button className="container__form__login-button" type="submit">Log in</button>
+          <button disabled={loading} className="container__form__login-button" type="submit">
+            Log in
+          </button>
         </form>
         <p>
           Don't have an account yet? <a href="/signup">Sign Up Now.</a>
@@ -48,6 +55,6 @@ const Login = ({ history }) => {
       </div>
     </div>
   );
-};
+}
 
-export default withRouter(Login);
+// export default withRouter(Login);
