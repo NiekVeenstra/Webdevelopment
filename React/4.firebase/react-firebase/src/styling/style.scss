@@ -16,6 +16,10 @@ $overal-text-color: black;
   display: none;
 }
 
+.coin {
+  border: solid red 1px;
+}
+
 // import
 @import "./global";
 @import "./custom-Navbar";

@@ -14,6 +14,10 @@
   display: none;
 }
 
+.coin {
+  border: solid red 1px;
+}
+
 /* global styles */
 * {
   margin: 0;
