@@ -1,0 +1,26 @@
+.private-coin {
+  border-bottom: 2px solid #f1f1f1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__icon {
+    width: 15%;
+    padding: 0.6rem;
+  }
+  &__name {
+    font-size: 2.5rem;
+  }
+  &__container1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  &__name {
+    margin: 0 1rem;
+  }
+  &__abbreviation {
+    font-size: 1.3rem;
+  }
+}

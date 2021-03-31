@@ -555,4 +555,50 @@ body {
           align-items: flex-end;
   font-size: 1.7rem;
 }
+
+.private-coin {
+  border-bottom: 2px solid #f1f1f1;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.private-coin__icon {
+  width: 15%;
+  padding: 0.6rem;
+}
+
+.private-coin__name {
+  font-size: 2.5rem;
+}
+
+.private-coin__container1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.private-coin__name {
+  margin: 0 1rem;
+}
+
+.private-coin__abbreviation {
+  font-size: 1.3rem;
+}
 /*# sourceMappingURL=style.css.map */
