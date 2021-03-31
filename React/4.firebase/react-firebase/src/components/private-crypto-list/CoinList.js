@@ -27,12 +27,12 @@ const CoinList = () => {
       return <div>Loading...</div>;
     }
     return (
-        <ul className="coinlist">
-        {coins.map((coin) => {
-         <Coin key={coin.id} coin={coin} />;
-        })}
-      </ul>,
-    <h1>testing</h1>
+    //   <ul className="coinlist">
+    //     {coins.map((coin) => {
+    //       <Coin key={coin.id} coin={coin} />;
+    //     })}
+    //   </ul>
+      <Coin />
     );
   };
 
