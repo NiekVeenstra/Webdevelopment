@@ -1,10 +1,11 @@
 import React from "react";
+import PrivateCryptoList from "../components/private-crypto-list/PrivateCryptoList";
 
 const Home = () => {
   return (
-    <>
-      <h1>Home</h1>
-    </>
+    <div>
+      <PrivateCryptoList/>
+    </div>
   );
 };
 
