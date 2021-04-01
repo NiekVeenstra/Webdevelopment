@@ -69,7 +69,7 @@ export default function Signup() {
           </button>
         </form>
         <p>
-          Already have an account? <a href="/signup">Login Now.</a>
+          Already have an account? <a href="/login">Login Now.</a>
         </p>
         <p>
           Did you forget your password? <a href="/forgot-password">Forgot Password.</a>

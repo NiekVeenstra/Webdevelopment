@@ -4,9 +4,11 @@ import CoinList from "./CoinList";
 
 const PrivateCryptoList = () => {
   return (
-    <div>
-      <AddCoin />
-      <CoinList />
+    <div className="private-crypto-list">
+      <div className="private-crypto-list__inner-container">
+        <AddCoin />
+        <CoinList />
+      </div>
     </div>
   );
 };
