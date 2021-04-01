@@ -62,8 +62,9 @@
             justify-content: center;
             align-items: center;
             width: 1rem;
-            margin-right: 1rem;
+            margin-right: 1.5rem;
             &__img {
+              border-radius: 50%;
               display: none;
               width: 100%;
             }

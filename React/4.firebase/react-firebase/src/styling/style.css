@@ -676,10 +676,11 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 1rem;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 }
 
 .private-crypto-list__inner-container .coin-list .private-coin-link .private-coin__delete-icon__img {
+  border-radius: 50%;
   display: none;
   width: 100%;
 }
