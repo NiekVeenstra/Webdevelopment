@@ -24,8 +24,10 @@ const Coin = ({ coin }) => {
             </span>
           </div>
         </div>
-        <span className="private-coin__delete-icon">
-          <img src="https://i.postimg.cc/GmJw75fZ/x-106506.png" alt="" />
+        <span className="private-coin__delete-icon" onClick={(e) => {
+          
+        }}>
+          <img className="private-coin__delete-icon__img" src="https://i.postimg.cc/GmJw75fZ/x-106506.png" alt="" />
         </span>
       </li>
     </Link>

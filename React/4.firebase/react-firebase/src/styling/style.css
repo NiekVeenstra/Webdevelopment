@@ -581,6 +581,10 @@ body {
   color: black;
 }
 
+.private-crypto-list__inner-container .coin-list .private-coin-link .private-coin:hover .private-coin__delete-icon__img {
+  display: block;
+}
+
 .private-crypto-list__inner-container .coin-list .private-coin-link .private-coin {
   border-bottom: 2px solid #f1f1f1;
   width: 100%;
@@ -675,7 +679,8 @@ body {
   margin-right: 1rem;
 }
 
-.private-crypto-list__inner-container .coin-list .private-coin-link .private-coin__delete-icon img {
+.private-crypto-list__inner-container .coin-list .private-coin-link .private-coin__delete-icon__img {
+  display: none;
   width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
