@@ -19,7 +19,12 @@ const CoinList = () => {
       setCoins(response.data);
       setIsLoading(false);
     };
-    fetchData();
+
+    if (watchList.length > 0) {
+      fetchData();
+    } else {
+      setCoins([]);
+    }
   }, [watchList]);
 
   const renderCoins = () => {
