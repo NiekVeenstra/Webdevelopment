@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Coin = ({ coin, deleteCoin }) => {
   return (
-    <Link className="private-coin-link" to="/coindetail">
+    <Link className="private-coin-link" to={`/coins/${coin.id}`}>
       <li className="private-coin">
         <img className="private-coin__icon" src={coin.image} alt="crypto-sign" />
         <div className="private-coin__container2">
