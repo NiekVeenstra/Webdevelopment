@@ -22,7 +22,6 @@ $overal-text-color: black;
 
 // import
 @import "./global";
-@import "./custom-Navbar";
 @import "./landing-page";
 @import "./login-page";
 @import "./signup-page";
@@ -30,3 +29,4 @@ $overal-text-color: black;
 @import "./crypto-card-landing-page";
 @import "./private-crypto-list";
 @import "./crypto-details-page";
+@import "./custom-Navbar";

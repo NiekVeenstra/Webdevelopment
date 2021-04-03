@@ -40,14 +40,12 @@ const RightNav = ({ open }) => {
     <Ul className="menu-container" open={open}>
       {/* className={open ? " menu-container-open" : " menu-container"} */}
       <li>
-        {" "}
         <Link className="link" to="/">
           Home
         </Link>
       </li>
       {!currentUser && (
         <li>
-          {" "}
           <Link className="link" to="/login">
             Login
           </Link>
@@ -55,7 +53,6 @@ const RightNav = ({ open }) => {
       )}
       {!currentUser && (
         <li>
-          {" "}
           <Link className="link" to="/signup">
             Sign Up
           </Link>
@@ -63,7 +60,6 @@ const RightNav = ({ open }) => {
       )}
       {!!currentUser && (
         <li>
-          {" "}
           <Link className="link" to="/settings">
             {/* <img
             className="img"

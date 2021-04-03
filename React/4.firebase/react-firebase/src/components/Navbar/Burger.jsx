@@ -16,7 +16,7 @@ const Ul = styled.ul`
       font-size: 2rem;
       border: solid black 1px;
       background: transparent;
-      padding: 0.3rem;
+      padding: 0 0.3rem;
       cursor: pointer;
     }
     .link {
