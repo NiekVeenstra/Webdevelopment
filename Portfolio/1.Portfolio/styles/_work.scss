@@ -48,7 +48,8 @@
       // transform: rotate3d(1, 1, 0, 180deg);
       z-index: 1;
     }
-    .card-front, .card-back {
+    .card-front,
+    .card-back {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -86,6 +87,14 @@
           background-size: cover;
           background-position: center;
         }
+        .img-container-crypto-world {
+          width: 100%;
+          height: 80%;
+          background: url("https://i.postimg.cc/1zN50Fmm/Nieks-crypto-world.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
         .img-container-underconstruction {
           width: 100%;
           height: 80%;
@@ -102,17 +111,16 @@
         background-color: #699bff;
         color: white;
         transform: rotateY(180deg);
-        p{
+        p {
           font-size: 1.8rem;
         }
-        button{
-          border:none;
+        button {
+          border: none;
           border-radius: 10px;
-          padding:0.5rem 1rem;
-          color:#00103a;
+          padding: 0.5rem 1rem;
+          color: #00103a;
         }
       }
-
     }
   }
   &__earth-bottom {
@@ -122,6 +130,11 @@
     justify-content: center;
     overflow: hidden;
     position: absolute;
+    img{
+      width: 120%;
+      max-width: 180rem;
+      min-width: 140rem;
+    }
   }
   &__arrow {
     // position: absolute;
@@ -141,8 +154,8 @@
       padding: 2rem 0;
     }
     &__card {
-      .card-inner{
-        .card-front .card-back{
+      .card-inner {
+        .card-front .card-back {
           width: 40%;
           height: 12rem;
         }

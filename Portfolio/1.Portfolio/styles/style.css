@@ -167,6 +167,9 @@ a {
 
 @media screen and (max-width: 800px) {
   /*mobmenu*/
+  .navigation {
+    position: unset;
+  }
   .navigation__mobmenu {
     position: relative;
     display: block;
@@ -593,11 +596,15 @@ a {
 
 /*responsiveness*/
 @media only screen and (min-width: 0px) and (max-width: 360px) {
+  .about {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
   .about__container {
     width: 95%;
     padding: 2rem 0;
   }
-  .about__top .moon {
+  .about__container a {
     display: none;
   }
   .about__top__h2 {
@@ -620,12 +627,21 @@ a {
 }
 
 @media only screen and (min-width: 360px) and (max-width: 700px) {
+  .about {
+    height: 130vh;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
   .about__container {
     width: 95%;
     padding: 2rem 0;
   }
-  .about__top .moon {
+  .about__container a {
     display: none;
+  }
+  .about__top .moon {
+    width: 120%;
+    z-index: -1;
   }
   .about__top__h2 {
     font-size: 2rem;
@@ -649,6 +665,9 @@ a {
 @media only screen and (min-width: 700px) and (max-width: 1000px) {
   .about__container {
     width: 85%;
+  }
+  .about__container a {
+    display: none;
   }
   .about__top__text {
     width: 95%;
@@ -802,6 +821,12 @@ a {
   bottom: 0;
 }
 
+.skills__earth-top img {
+  width: 120%;
+  max-width: 180rem;
+  min-width: 140rem;
+}
+
 .skills__arrow {
   position: absolute;
   width: 100%;
@@ -819,6 +844,9 @@ a {
 
 /*responsiveness*/
 @media only screen and (min-width: 0px) and (max-width: 430px) {
+  .skills {
+    height: 140vh;
+  }
   .skills__container {
     width: 95%;
     padding: 2rem 0;
@@ -969,7 +997,8 @@ a {
   z-index: 1;
 }
 
-.work__card .card-front, .work__card .card-back {
+.work__card .card-front,
+.work__card .card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1012,6 +1041,15 @@ a {
   width: 100%;
   height: 80%;
   background: url("https://i.postimg.cc/yx4nJZpP/Tech-Grounds-Page.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.work__card .card-inner .card-front .img-container-crypto-world {
+  width: 100%;
+  height: 80%;
+  background: url("https://i.postimg.cc/1zN50Fmm/Nieks-crypto-world.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1061,6 +1099,12 @@ a {
           justify-content: center;
   overflow: hidden;
   position: absolute;
+}
+
+.work__earth-bottom img {
+  width: 120%;
+  max-width: 180rem;
+  min-width: 140rem;
 }
 
 .work__arrow {
@@ -1219,6 +1263,9 @@ a {
 }
 
 @media only screen and (min-width: 0px) and (max-width: 430px) {
+  .contact {
+    height: 110vh;
+  }
   .contact__container {
     width: 95%;
   }
