@@ -1,5 +1,6 @@
 .skills {
   height: 100vh;
+  min-height: 90rem;
   width: 100%;
   background-color: #00103a;
   @include flex(space-around, center, column);

@@ -1,6 +1,7 @@
 .work {
   background-color: #00103a;
   height: 100vh;
+  min-height: 70rem;
   @include flex(space-between, center, column);
   &__container-center {
     z-index: 1;
@@ -130,7 +131,7 @@
     justify-content: center;
     overflow: hidden;
     position: absolute;
-    img{
+    img {
       width: 120%;
       max-width: 180rem;
       min-width: 140rem;

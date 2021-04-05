@@ -1,7 +1,8 @@
 .about {
   background-color: #00103a;
   height: 100vh;
-  @include flex(flex-end, center, column);
+  min-height: 100rem;
+  @include flex(space-around, center, column);
   text-align: center;
   position: relative;
   // overflow: hidden;
