@@ -14,9 +14,10 @@ function myCalculator($num01, $oper, $num02) {
     }
     return $sum;
 }
-
+    
 $num01 = $_GET["num01"];
 $oper = $_GET["oper"];
 $num02 = $_GET["num02"];
-
+    
 echo "Value: " . myCalculator($num01, $oper, $num02)
+    
