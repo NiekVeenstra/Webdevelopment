@@ -56,6 +56,7 @@ const App = () => {
     const nextQuestion = number + 1;
 
     if (nextQuestion === TOTAL_QUESTIONS) {
+      //start game
       setGameOver(true);
     } else {
       setNumber(nextQuestion);
